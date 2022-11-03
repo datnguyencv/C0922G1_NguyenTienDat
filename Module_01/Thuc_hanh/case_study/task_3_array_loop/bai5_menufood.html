@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5 Tạo menu + Thanh toán</title>
+</head>
+<body>
+<center>
+    <h2>Menu đồ quán hiện có</h2>
+    <button onclick="orderList()" style="background-color: aqua ;width: 100px" type="button">Order</button>
+    <button onclick="banking()" style="background-color: aqua ;width: 100px" type="button">Thanh toán</button>
+</center>
+</body>
+<center>
+    <script>
+        let menu = ["Nước dừa", "Nước chanh", "Cà phê VN", "Mạc sỉu", "Cacao", "Sữa chua"];
+        let price = [10000, 7000, 20000, 25000, 30000, 10000];
+
+        for (let i = 0; i < menu.length; i++) {
+            document.write((i + 1) + ".__" + menu[i] + "<br>")
+        }
+        let charge = 0;
+
+        function orderList() {
+            do {
+                menupick = parseInt(prompt("Bạn chọn mục số ? (Nhấn số 7 để thoát gọi món)."));
+                for (let i = 0; i < menu.length; i++) {
+                    if ((menupick - 1) === i) {
+                        alert(menu[i] + " có giá tiền là " + price[i] + " $ ");
+                        let amount = parseInt(prompt("Bạn muốn " + menu[i] + " số lượng bao nhiêu?"));
+                        charge += price[i] * amount;
+                        alert("Tổng tiền tạm tính là " + charge + " $. Tiếp tục không bạn!");
+                    }
+                }
+            } while (menupick !== 7);
+        }
+
+        function banking() {
+            alert("Tổng số tiền phải trả là: " + charge + " $");
+        }
+    </script>
+
+</center>
+</html>

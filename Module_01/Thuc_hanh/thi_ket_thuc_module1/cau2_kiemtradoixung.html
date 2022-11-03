@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra đối xứng</title>
+</head>
+<body>
+
+</body>
+<script>
+    function kiemtra(string) {
+        let arr = string.split('');
+        let check = true;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] !== arr[arr.length - i - 1])
+                check = false;
+        }
+        if (check) alert("Chuỗi [" + arr.join('') + "] là chuỗi đối xứng");
+        else alert("Chuỗi [" + arr.join('') + "] là chuỗi không đối xứng");
+    }
+    let chuoi = prompt("Nhập vào chuỗi ");
+    kiemtra(chuoi);
+</script>
+</html>

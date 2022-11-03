@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị Ký tự</title>
+</head>
+<body>
+
+</body>
+<script>
+    let input;
+    do {
+        input = prompt("Nhập n phần tử nhỏ hơn 20").split("");
+    }while (input.length>20)
+    document.write("Mảng vừa nhập là : " + input + "<br>");
+    let inputa = [];
+    for (let i = 0; i < input.length; i++) {
+        inputa.push(input[i]);
+    }
+    for (let i = 0; i < inputa.length; i++) {
+        for (let j = i+1; j < inputa.length;) {
+            if (inputa[i] === inputa[j]){
+                inputa.splice(j,1);
+            }else {
+                j++;
+            }
+        }
+    }
+    let assign = "";
+    for (let i = 0; i < inputa.length; i++) {
+        let count = 0;
+        for (let j = 0; j < input.length; j++) {
+            if (inputa[i] === input[j]) {
+                count += 1;
+            }
+        }
+        assign += "Ký tự " + "'" + inputa[i] + "'" + " Xuất hiện " + count + " lần <br>";
+    }
+    document.write(assign);
+</script>
+</html>

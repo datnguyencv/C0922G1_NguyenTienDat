@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự</title>
+</head>
+<body>
+
+</body>
+<script>
+    let str = prompt("Nhập chữ cái cần kiểm tra:(English A-Z or a-z) :");
+            alert(" Bạn vừa nhập chữ "+str);
+    let convert=str.toUpperCase();
+    switch (convert) {
+        case 'O':
+        case 'U':
+        case 'I':
+        case 'A':
+        case 'E':
+            alert("Đây là chữ nguyên âm");
+            break;
+        default:
+            alert("Chữ cái bạn đã nhập phụ âm");
+    }
+</script>
+</html>

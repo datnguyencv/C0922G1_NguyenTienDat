@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tách chẵn lẻ</title>
+</head>
+<body>
+
+</body>
+<!--Viết chương trình nhập vào một mảng số nguyên và sau đó tách các số chẵn và lẻ -->
+<!--trong mảng đó sang hai mảng khác.-->
+<script>
+    let array =[];
+    let arrLe = [];
+    let arrChan = [];
+    let n=+prompt("Nhập vào số lượng phần tử ");
+    for (let i=0;i<n;i++) {
+        array[i]=+prompt("Nhập số thứ : "+i);
+        if (array[i]%2===0) {
+            arrChan.push(array[i]);
+        }
+        else arrLe.push(array[i]);
+    }
+    alert("Mảng đã nhập "+array);
+    alert("Mảng lẻ: " +arrLe);
+    alert("Mảng chẵn: " +arrChan);
+</script>
+</html>

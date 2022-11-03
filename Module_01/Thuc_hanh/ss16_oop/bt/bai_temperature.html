@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Kenvin <-> DoC</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Temperature {
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+        getFahrenheit() {
+            return 9 / 5 * this.celsius + 32;
+        }
+        getKelvin(){
+            return this.celsius + 273.15;
+        }
+    }
+    let temperature = new Temperature(+parseInt(prompt('Nhập vào Nhiệt độ dộ C cần chuyển đổi là : ')));
+    let fahrenheit = temperature.getFahrenheit();
+    let kelvin = temperature.getKelvin();
+    document.writeln('Nhiệt độ F: ' + fahrenheit + ' độ F' + '<br>' + 'Nhiệt độ K_Kelvin: ' + kelvin + ' độ K');
+</script>
+</html>

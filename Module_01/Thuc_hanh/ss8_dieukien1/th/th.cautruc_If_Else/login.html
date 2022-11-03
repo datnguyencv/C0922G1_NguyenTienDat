@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<script>
+    let name=prompt('Nhập tên người dùng : ',"");
+    if (name=='Admin') {
+        let password = prompt('Nhập mật khẩu : ', "");
+        if (password = 'TheMaster')
+            alert('Wellcome');
+        else if (password = null)
+            alert('Canceled');
+        else if (name = null)
+            alert('Canceled')
+    }
+    else alert("I don't know you");
+</script>
+</body>
+</html>

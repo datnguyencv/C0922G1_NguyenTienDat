@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<h1> QUẢN LÝ TÀI KHOẢN NGÂN HÀNG </h1>
+<table style=" border: 0px solid black; width: 600px; float: right">
+    <tr>
+        <th style="font-size: 40px" colspan="5">DANH SÁCH TÀI KHOẢN</th>
+    </tr>
+    <tr>
+        <th>Mã Tài Khoản</th>
+        <th>Chủ Tài Khoản</th>
+        <th>Tên Ngân Hàng</th>
+        <th>Tiền trong Tài Khoản</th>
+        <th></th>
+    </tr>
+    <tbody id="danhsach">
+    </tbody>
+</table>
+<table border="1" style="width: 500px; height: 300px" ;>
+    <tr>
+        <th colspan="2"> THÔNG TIN KHÁCH HÀNG</th>
+    </tr>
+    <tr>
+        <th>MÃ TÀI KHOẢN</th>
+        <td><input type="text" id="id"></td>
+    </tr>
+    <tr>
+        <th>CHỦ TÀI KHOÀN</th>
+        <td><input type="text" id="chutaikhoan"></td>
+    </tr>
+    <tr>
+        <th>TÊN NGÂN HÀNG</th>
+        <td><input type="text" id="nganhang"></td>
+    </tr>
+    <tr>
+        <th>SỐ TIỀN TRONG TÀI KHOẢN</th>
+        <td><input type="text" id="tongtien"></td>
+    </tr>
+    <tr >
+        <td colspan="2">
+            <button style="background-color: green;float:right" id="add" onclick="add()">Add</button>
+        </td>
+    </tr>
+</table>
+<script>
+    class TaiKhoan {
+        constructor (id, chutaikhoan, nganhang, tongtien) {
+            this.id= id;
+            this.chutaikhoan= chutaikhoan;
+            this.nganhang= nganhang;
+            this.tongtien= tongtien;
+        }
+        getID() {
+            return this.id;
+        }
+        getChutaikhoan() {
+            return this.chutaikhoan;
+        }
+        getNganhang() {
+            return this.nganhang;
+        }
+        getTongtien(){
+            return this.tongtien;
+        }
+        setID(id) {
+            this.id=id;
+        }
+        setChutaikhoan(chutaikhoan) {
+            this.chutaikhoan=chutaikhoan;
+        }
+        setNganhang(nganhang) {
+            this.nganhang=nganhang;
+        }
+        setTongtien(tongtien){
+            this.Tongtien=tongtien;
+        }
+    }
+    class QuanLytaiKhoan {
+        constructor(arr) {
+            this.taikhoan = arr;
+        }
+        danhSach() {
+            let table = "";
+            for (let i = 0; i < this.taikhoan.length; i++) {
+                table += '<tr>';
+                table += '<th>';
+                table += this.taikhoan[i].id;
+                table += '</th>';
+                table += '<th>';
+                table += this.taikhoan[i].chutaikhoan;
+                table += '</th>';
+                table += '<th>';
+                table += this.taikhoan[i].nganhang;
+                table += '</th>';
+                table += '<th>';
+                table += this.taikhoan[i].tongtien;
+                table += '</th>';
+                table += '<td>' +
+                    '<button style="background-color: red "  type="button" onclick="xoa('+i+')">Delete</button> ' +
+                    '</td>';
+                table += '</tr>';
+            }
+            document.getElementById('danhsach').innerHTML = table;
+        }
+        add(taiKhoan1) {
+            this.taikhoan.push(taiKhoan1);
+        }
+        xoa(index) {
+            this.taikhoan.splice(index, 1);
+        }
+    }
+    let arr =[];
+    let quanLy = new QuanLytaiKhoan(arr);
+    function add(){
+        let id = document.getElementById('id').value;
+        let chuTaiKhoan = document.getElementById('chutaikhoan').value;
+        let nganHang = document.getElementById('nganhang').value;
+        let tongTien = document.getElementById('tongtien').value;
+        let taiKhoan1 = new TaiKhoan(id,chuTaiKhoan,nganHang,tongTien);
+        quanLy.add(taiKhoan1);
+        quanLy.danhSach();
+        clear();
+    }
+    function clear(){
+        document.getElementById('id').value = '';
+        document.getElementById('chutaikhoan').value = '';
+        document.getElementById('nganhang').value = '';
+        document.getElementById('tongtien').value = '';
+    }
+    function xoa(index) {
+        quanLy.xoa(index);
+        quanLy.danhSach();
+    }
+
+</script>
+
+</body>
+</html>

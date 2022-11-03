@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng 1 chiều</title>
+</head>
+<body>
+
+</body>
+<!--Nhập từ bàn phím mảng số nguyên gồm n phần tử.-->
+<!--1. Tính trung bình cộng các số lẻ ở vị trí chẵn-->
+<!--2. Tìm số lớn nhất trong mảng vừa nhập-->
+<!--3. Tìm vị trí các số nhỏ nhất trong mảng-->
+<!--4. Đếm các số chính phương có trong mảng-->
+<!--5. Hiện thị các số nguyên tố có trong mảng lên màn hình-->
+<!--6. Thay thế các phần tử âm có trong mảng bằng giá trị 0-->
+<!--7. Xóa các phần tử âm có trong mảng-->
+<!--8. Sắp xếp mảng đã nhập theo thứ tự tăng dần-->
+
+<script>
+    let nSoNguyen = parseInt(prompt("Nhập độ dài n của mảng."));
+    let arr = [];
+    for (let i = 0; i < nSoNguyen; i++) {
+        let numArr = +prompt("Nhập số thứ arr[" + (i + 1) + "]");
+        arr.push(numArr);
+    }
+
+    let sum = 0;
+    let dem = 0;
+    for (let i = 0; i < arr.length; i += 2) {
+        if (arr[i] % 2 === 1) {
+            sum += arr[i];
+            dem += 1;
+        }
+    }
+    alert("Trung bình cộng số lẻ ở vị trí chẵn : " + sum / dem);
+
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (max < arr[i]) {
+            max = arr[i];
+        }
+    }
+    alert("Số lớn nhất là : " + max);
+
+    let min = arr[0];
+    let indexx = "";
+    for (let i = 1; i < arr.length; i++) {
+        if (min > arr[i]) {
+            min = arr[i];
+        }
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (min === arr[i]) {
+            indexx += i;
+        }
+    }
+    alert("Vị trí số nhỏ nhất : " + indexx);
+
+    let soChinhPhuong = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (Math.sqrt(arr[i]) % 1 === 0) {
+            soChinhPhuong += 1;
+        }
+    }
+    alert("Số Lượng Số Chính Phương : " + soChinhPhuong);
+
+    function checkPrime(a) {
+        let primeNum = true;
+        for (let i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i === 0 || a < 0) {
+                primeNum = false;
+                return primeNum;
+            }
+        }
+        return primeNum;
+    }
+
+    let soNguyenTo = "";
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+        } else {
+            let check = checkPrime(arr[i]);
+            if (check === true) {
+                soNguyenTo += arr[i] + ",";
+            }
+        }
+    }
+    alert("Dãy các số Nguyên tố là : " + soNguyenTo);
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+            arr[i] = 0;
+        }
+    }
+    alert("Dãy sau thay thế số âm thành 0 : " + arr);
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+            arr.splice(i, 1);
+        }
+    }
+    alert("Dãy sau khi xoá số âm " + arr);
+
+    function sapXep(a, b) {
+        return a - b;
+    }
+
+    arr.sort(sapXep);
+    alert("Dãy sau khi sắp xếp : " + arr);
+
+</script>
+</html>

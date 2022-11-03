@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h4> Cách tính tiền điện <br>
+    Bậc 1 (0 đến 50kWh): 1.678 đồng/kWh <br>
+    Bậc 2 (51 đến 100kWh): 1.734 đồng/kWh <br>
+    Bậc 3 (101 đến 200 kWh): 2.014 đồng/kWh <br>
+    Bậc 4 (201 đến 300 kWh): 2.536 đồng/kWh <br>
+    Bậc 5 (301 đến 400 kWh): 2.834 đồng/kWh <br>
+    Bậc 6 (401 kWh trở lên): 2.927 đồng/kWh <br>
+</h4>
+<p>Vui lòng nhập vào số chữ điện đã dùng: </p>
+<input id="soDientd" type="text">
+<button type="button" onclick="tinhTien()">Tính tiền</button>
+<br>
+<p id="result"></p> <br>
+</body>
+<script>
+function tinhTien() {
+    let soDien=parseInt(document.getElementById('soDientd').value);
+    let resurt1;
+if (soDien<=50)
+    resurt1=soDien*1678;
+    else if (soDien<=100)
+        resurt1=50*1678+(soDien-50)*1734;
+        else if (soDien<=200)
+            resurt1=50*1678+50*1734+(soDien-100)*2014;
+            else if (soDien<=300)
+                resurt1=50*1678+50*1734+100*2014+(soDien-200)*2536;
+                else if (soDien<=400)
+                    resurt1=50*1678+50*1734+100*2014+10*2536+(soDien-300)*2834;
+                    else if (soDien>401)
+                        resurt1=50 * 1.678 + 50 * 1.734 + 100 * 2.014 + 100 * 2.536 + 100 * 2.854 + (soDien - 400) * 2.927;
+document.getElementById("result").innerHTML='Giá điện được tính la: '+ resurt1 + " Đồng.";
+}
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Không trùng</title>
+</head>
+<body>
+
+</body>
+<!--Viết chương trình nhập  các phần tử cho mảng sao cho không có phần tử nào trùng nhau.-->
+
+<script>
+    let num=+prompt("Nhập vào số lượng phần tử :");
+    let arr=[];
+    for (let i=0;i<num;i++) {
+        arr[i]=prompt("Nhập phần tử thứ " +i);
+        for (let j=0;j<i;j++) {
+            if (arr[i]===arr[j]) {
+                alert(" Số bạn nhập đã có " +j+", hãy nhập lại");
+                i--;
+                break;
+            }
+        }
+    }
+    alert("Mảng đã nhập : " +arr);
+</script>
+</html>

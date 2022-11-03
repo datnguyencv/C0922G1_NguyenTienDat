@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển </title>
+</head>
+<body>
+<center>
+<h2>Dictionary</h2> <br>
+    Nhập vào 1 trong số apple, banana, orange, potato:
+<input id="input" type="text">
+<button type="button" onclick="translate1()">Dịch</button>
+    <p id="Display"> Kết quả hiển thị ở đây </p>
+    <hr>
+</center>
+</body>
+<script>
+    function translate1() {
+        let textIn = document.getElementById('input').value;
+        let eng = ["apple", "banana", "orange", "potato"];
+        let vnm = ["táo", "chuối", "cam", "khoai tây"];
+        let indexEng = -1;
+        for (let i = 0; i < eng.length; i++) {
+            if (textIn === eng[i]) {
+                indexEng = i;
+            }
+            if (indexEng === -1) {
+                document.getElementById('Display').innerHTML = 'Không có';
+            } else {
+                document.getElementById('Display').innerHTML = vnm[indexEng];
+            }
+        }
+    }
+</script>
+</html>

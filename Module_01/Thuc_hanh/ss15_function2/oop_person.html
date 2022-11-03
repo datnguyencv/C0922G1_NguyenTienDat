@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OPP</title>
+</head>
+<body>
+
+</body>
+<script>
+    let person={
+        name:['Nam','Khanh','Quoc','Dat'],
+        group:'One',
+        gender:'Male',
+        interest:['Code','Study','Music'],
+        bio:function(){
+      document.writeln(this.name[0]+', '+this.name[1]+', '+this.name[2]+', '+this.name[3]+'<br>'+' Group: '+this.group+'<br>'+' Giới tính: '+this.gender+'<br>'+' Sở thích: '+ this.interest[0]+'_ '+this.interest[1]+'_ '+this.interest[2]+'.');
+      },
+    greeting: function () {
+        document.writeln('Hi! I_m ' +this.name[0]+ '.');
+        }
+    };
+    person.bio();
+</script>
+</html>

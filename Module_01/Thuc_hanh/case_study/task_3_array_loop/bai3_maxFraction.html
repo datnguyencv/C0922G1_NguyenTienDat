@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3 Phân số lớn nhất</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numerators   = [5, 2, 5, 2, 3, 4, 7];
+    let denominators = [6, 3, 4, 4, 5, 1];
+    let maxFraction = 0;
+    let index = 0;
+    for(let i=0;i<numerators.length;i++){
+        if((numerators[i]/denominators[i]) >= maxFraction){
+            maxFraction = (numerators[i]/denominators[i]);
+            result = (numerators[i] +"/" + denominators[i])
+            index = i;
+        }
+    }
+    alert(result + " -Là phân số lớn nhất có chỉ số là: " + index)
+</script>
+</html>

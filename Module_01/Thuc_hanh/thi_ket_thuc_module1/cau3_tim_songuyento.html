@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số Nguyên Tố</title>
+</head>
+<body>
+</body>
+<script>
+    let nSoNguyen = parseInt(prompt("Nhập độ dài n của mảng."));
+    let arr = [];
+    for (let i = 0; i < nSoNguyen; i++) {
+        let assign = +prompt("Nhập số thứ arr[" + (i+1) + "]");
+        arr.push(assign);
+    }
+    function kiemTraSoNguyenTo(a) {
+        if (a === 1 || a === 0) {
+            return false
+        }
+        for (let i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i === 0) {
+                return false;
+            }
+
+        }
+        return true;
+    }
+    let counts = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+        }else {
+            let soNguyenTo = kiemTraSoNguyenTo(arr[i]);
+            if (soNguyenTo === true) {
+                counts.push(arr[i]);
+            }
+        }
+
+    }
+    counts.sort(function (a,b) {
+        return a-b;
+    })
+    alert("Các số nguyên tố trong mảng là: " + counts);
+</script>
+</html>

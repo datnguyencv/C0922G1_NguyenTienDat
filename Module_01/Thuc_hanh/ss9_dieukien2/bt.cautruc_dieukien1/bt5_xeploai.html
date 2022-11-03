@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp loại học sinh</title>
+</head>
+<body>
+</body>
+<script>
+    let baiKiemTra=parseFloat(prompt('Nhập Điểm bài kiểm tra '));
+    let giuaKi=parseFloat(prompt('Nhập Điểm bài giữa kì '));
+    let cuoiKi=parseFloat(prompt('Nhập Điểm bài cuối kì '));
+    let xet=(baiKiemTra*0.2+giuaKi*0.3+cuoiKi*0.5)
+    if (xet>=8)
+        alert('Loại Giỏi');
+    else if (xet>=6)
+        alert('Loại Khá');
+    else if (xet<=4)
+        alert('Loại Trung Bình');
+</script>
+</html>

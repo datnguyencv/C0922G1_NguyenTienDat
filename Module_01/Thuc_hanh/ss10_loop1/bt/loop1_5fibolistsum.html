@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3 Hiển thị 20 số đầu tiên của dãy Fibonacci</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = 0;
+    let b = 1;
+    let fibo;
+    let sumfibo= a+b;
+    document.write("0   |   1   | ")
+    for (let i = 1; i <= 18; i++ ) {
+        fibo = a + b;
+        document.write( fibo + "    |   ");
+        sumfibo+=fibo;
+        a = b;
+        b = fibo;
+    }
+document.write('Tổng của 20 số đầu tiên dãy Fibonacci là '+sumfibo);
+</script>
+</html>

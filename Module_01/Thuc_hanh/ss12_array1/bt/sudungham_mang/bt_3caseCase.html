@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển chứ Hoa thành thường và ngược lại</title>
+</head>
+<body>
+</body>
+<script>
+        let str = prompt("Nhập vào cHUỖI cẦN tHỰC HIỆN : ");
+        let arStr = [];
+        for (let i = 0; i < str.length; i++) {
+            arStr.push(str.charAt(i));
+        }
+        console.log(arStr);
+        let result = [];
+        for (let i = 0; i < str.length; i++) {
+            if (arStr[i] === arStr[i].toUpperCase()) {
+                result.push(arStr[i].toLowerCase());
+            }else
+                result.push(arStr[i].toUpperCase());
+        }
+
+        console.log(result.join(""));
+</script>
+</html>

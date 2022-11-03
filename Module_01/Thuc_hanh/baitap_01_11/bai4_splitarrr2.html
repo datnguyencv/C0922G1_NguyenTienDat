@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tách mảng</title>
+</head>
+<body>
+
+</body>
+<!--Viết chương trình tách đôi mảng số nguyên ban đầu sang hai mảng, một nửa đầu sang mảng thứ nhất -->
+<!--và nửa còn lại sang mảng thứ hai. Sau đó hiển thị hai mảng đó ra màn hình.-->
+<script>
+    let arrInput = [];
+    let arrFisrt = [];
+    let arrSecond = [];
+    let long = +prompt("Nhập n độ dài của mảng cần tách đôi ");
+    while (long % 2 !== 0) {
+        long = +prompt("Độ dài phải Chẵn, Nhập lại ");
+    }
+    for (let i = 0; i < long; i++) {
+        let num = +prompt("Nhập số thứ " + i);
+        arrInput.push(num);
+    }
+    for (let i = 0; i < arrInput.length; i++) {
+        if (i<(arrInput.length/2)){
+            arrFisrt.push(arrInput[i]);
+        }else {
+            arrSecond.push(arrInput[i]);
+        }
+    }
+    alert("Mảng bạn nhập vào " + arrInput+ "\n Mảng đầu " + arrFisrt + "\n Mảng cuối " + arrSecond);
+</script>
+</html>

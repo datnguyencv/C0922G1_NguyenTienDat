@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3 Đếm số ký tự giống nhau</title>
+</head>
+<body>
+
+</body>
+<script>
+    let strFisrt=prompt("Nhập vào chuỗi thứ nhất");
+    let strSecond=prompt("Nhập vào chuỗi thứ hai ");
+    let arrFisrt=strFisrt.toString().split("");
+    let arrSecond=strSecond.toString().split("");
+    let arrNew=[];
+    for (let i=0;i<=arrFisrt.length;i++){
+        if (arrFisrt.includes(arrSecond[i])){
+            if (!arrNew.includes(arrSecond[i])){
+                arrNew.push(arrSecond[i])
+            }
+        }
+    }
+    console.log('Số ký tự giống nhau '+arrNew.length+'. Ký tự đó là '+arrNew);
+</script>
+</html>

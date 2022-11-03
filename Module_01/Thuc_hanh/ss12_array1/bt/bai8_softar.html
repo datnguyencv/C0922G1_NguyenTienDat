@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8 Sắp xếp chuỗi</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    let num=prompt('Nhập chuỗi ký tự :');
+    let str = num.toString();
+    let input = [str];
+    let result=[];
+    let revert = (str.length - 1);
+    while (revert >= 0) {
+        (result.push(str[revert]))
+        revert--;
+    }
+    document.write('Chuỗi đảo ngược là: '+result.join(''));
+</script>
+</html>

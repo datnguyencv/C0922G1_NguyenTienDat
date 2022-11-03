@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sản phẩm</title>
+</head>
+<body>
+</body>
+<script>
+    class listShop {
+        constructor(id, name, brand, cost) {
+            this.id = id;
+            this.name = name;
+            this.brand = brand;
+            this.cost = cost;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getBrand() {
+            return this.brand;
+        }
+
+        getCost() {
+            return this.cost;
+        }
+
+        toStr() {
+            return "ID: " + this.id + " name: " + this.name + " brand: " + this.brand + " cost: " + this.cost;
+        }
+    }
+
+    let iteam1 = new listShop(1, 'IPhoneXX', 'Apple', 20000);
+    let iteam2 = new listShop(2, 'Note XX', 'SamSung', 10000);
+    let iteam3 = new listShop(3, 'Lumina', 'Nokia', 30000);
+    let arr = [iteam1, iteam2, iteam3];
+    let table = "<table border='1px' style='border-collapse: collapse'>";
+    for (let i = 0; i < arr.length; i++) {
+        table += "<tr>";
+        table += "<td>" + arr[i].getId() + "</td>";
+        table += "<td>" + arr[i].getName() + "</td>";
+        table += "<td>" + arr[i].getBrand() + "</td>";
+        table += "<td>" + arr[i].getCost() + "</td>";
+        table += "</tr>";
+    }
+    table += "</table>"
+    document.write(table);
+</script>
+</html>

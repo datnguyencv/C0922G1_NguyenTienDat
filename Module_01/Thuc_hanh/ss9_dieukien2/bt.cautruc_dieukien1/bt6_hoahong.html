@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoa hồng</title>
+</head>
+<body>
+
+</body>
+<script>
+    let hoaHong = parseFloat(prompt("Nhập vào doanh số bán hàng: (VND)"));
+    if (hoaHong >= 2000)
+        alert("Hoa hồng thưởng thêm 10%: Số tiền " + hoaHong/10 + " VND");
+    else if (hoaHong >= 1500)
+        alert("Hoa hồng thưởng thêm 8%: Số tiền " + hoaHong*8/100 + " VND");
+    else if (hoaHong >= 1000)
+        alert("Hoa hồng thưởng thêm 6% : Số tiền " + hoaHong*6/100 + " VND");
+    else
+        alert("Hoa hồng thưởng thêm 5%: Số tiền " + hoaHong*5/100 + " VND");
+</script>
+</html>

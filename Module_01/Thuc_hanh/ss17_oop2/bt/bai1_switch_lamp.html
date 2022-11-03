@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Switch lamp</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    class ElectricLamp  {
+        constructor(status) {
+
+            this.status = false //Đèn chưa bật
+        }
+         turnOff() {
+            if (this.status) {
+                this.status = false
+                console.log(` Đèn đã đuọc tắt `)
+
+            } else {
+                console.log(` Đèn đang tắt mà bạn, tắt sao được nữa`)
+            }
+        }
+
+        turnOn() {
+            if (this.status) {
+                console.log(` Đèn đang bật mà bạn`)
+
+            } else {
+                this.status = true
+                console.log(` Đèn đã đuọc bât `)
+            }
+        }
+    }
+
+    class SwitchButton {
+        constructor(lamp, status) {
+            this.lamp = lamp;
+            this.status = status;
+        }
+
+        connectToLamp(ElectricLamp) {
+            this.lamp = ElectricLamp;
+        }
+
+        switchOff() {
+            this.status = false
+            this.lamp.turnOff()
+        }
+
+        switchOn() {
+            this.status = true
+            this.lamp.turnOn()
+        }
+    }
+
+    let bongDenLed = new ElectricLamp();
+    let congTac = new SwitchButton();
+
+    congTac.connectToLamp(bongDenLed)
+
+    bongDenLed.turnOff()
+    congTac.switchOn()
+    congTac.switchOn()
+    congTac.switchOff()
+    congTac.switchOff()
+
+    //bật tắt 10 lần
+    let solan=10;
+    while (solan>0){
+        congTac.switchOn();
+        congTac.switchOff();
+        console.log("Bật tắt 1 lượt ")
+        solan--;
+        if (solan===0) {
+            alert('Cháy bóng đèn rồi bật tắt gì nhiều thế');
+            break;
+        }
+    }
+</script>
+</html>

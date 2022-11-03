@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tổng số chẵn</title>
+</head>
+<body>
+
+</body>
+<script>
+    let inputRow = +prompt(` Nhập giá trị hàng `);
+    let inputCol = +prompt(` Nhập giá trị cột `);
+    sumChan(inputRow, inputCol);
+    function sumChan(inputRow, inputCol) {
+        let arr = new Array(inputRow);
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = new Array(inputCol);
+            for (let j = 0; j < arr[i].length; j++) {
+                arr[i][j] = +prompt(` nhập giá trị`);
+                if (arr[i][j] % 2 === 0) {
+                    sum += arr[i][j];
+                }
+            }
+        }
+        console.log("Mảng nhập vào là " + arr);
+        console.log("Tổng các số chẵn " + sum);
+    }
+</script>
+</html>

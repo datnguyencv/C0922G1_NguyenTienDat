@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng cửu chương</title>
+</head>
+<body>
+<h1>Bảng cửu chương</h1>
+<!--<table style="border:1px; border-collapse: collapse; width: 400px;height: 100px">
+    <tr></tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    <tr></tr>
+        <td>1</td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    <tr></tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    <tr></tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    <tr></tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    <tr></tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    <tr></tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    <tr></tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    <tr></tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+</table>-->
+</body>
+<script>
+
+        let caculation, i, j;
+    caculation = "<table border=2 style='border-collapse: collapse'>";
+    for (i = 1; i <= 10; i++) {
+        caculation = caculation + "<tr>";
+        for (j = 1; j <= 10; j++) {
+            caculation = caculation +"<td>"+ j +"*"+ i +"="+ i*j +"</td>";
+        }
+        caculation = caculation + "</tr>";
+    }
+    caculation = caculation + "</table>";
+    document.write(caculation);
+</script>
+
+</html>

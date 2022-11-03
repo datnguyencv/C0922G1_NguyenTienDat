@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h4> Tính tiền thuế Thu nhập cá nhân <br>
+
+<img src="https://img.timviec.com.vn/2020/11/cach-tinh-thue-thu-nhap-ca-nhan-2.jpg" style="height: 30%;width: 30%">
+    <img src="https://img.timviec.com.vn/2020/11/cach-tinh-thue-thu-nhap-ca-nhan-4.jpg" style="height: 40%;width: 40%">
+</h4>
+<p>Vui lòng nhập vào số tiền Thu nhập phải chịu thuế: </p>
+<input id="chiuThue" type="text">
+<button type="button" onclick="tinhTien()">Tính tiền</button>
+<br>
+<p id="result"></p> <br>
+</body>
+<script>
+    function tinhTien() {
+        let soTien=parseInt(document.getElementById('chiuThue').value);
+        let resurt1;
+        if (soTien<=5)
+            resurt1=soTien*5/100;
+        else if (soTien<=10)
+            resurt1=0.25+(soTien-5)*10/100;
+        else if (soTien<=18)
+            resurt1=0.75+(soTien-10)*15/100;
+        else if (soTien<=32)
+            resurt1=1.95+(soTien-18)*20/100;
+        else if (soTien<=52)
+            resurt1=4.75+(soTien-32)*25/100;
+        else if (soTien<=80)
+            resurt1=9.75+(soTien-52)*30/100;
+        else if (soTien>80)
+            resurt1=18.15 + (soTien - 80) * 35/100;
+        document.getElementById("result").innerHTML='Tiền thuế phải nộp là: '+ resurt1 + " Triệu Đồng.";
+    }
+</script>
+</html>

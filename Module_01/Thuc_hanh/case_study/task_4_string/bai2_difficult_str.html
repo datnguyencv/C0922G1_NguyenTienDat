@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2 Đếm số ký tự khác nhau</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = prompt("Nhập vào chuỗi kiểm tra ");
+    let arr = array.toString().split("");
+    let arrNew = [];
+    for (let i = 0; i <= arr.length; i++) {
+        if (!arrNew.includes(arr[i])) {
+            arrNew.push(arr[i]);
+        }
+    }
+    alert("Chuỗi nhập vào có " + (arrNew.length - 1) + " ký tự khác nhau là " + arrNew);
+</script>
+</html>

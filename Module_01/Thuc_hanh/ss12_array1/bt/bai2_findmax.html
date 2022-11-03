@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2 tìm số lớn nhất và vị trí trong dãy</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrNum = [1, 18, 2, 150, 6, 22, 15, 5, 14, 0];
+    let max = arrNum[0];
+    let result = 0;
+    for (let i = 1; i < arrNum.length; i++) {
+        if (arrNum[i] > max) {
+            max = arrNum[i];
+            result = arrNum.indexOf(arrNum[i]);
+        }
+    }
+    document.write("Số lớn nhất là: " + max + " ở vị trí " + result);
+</script>
+</html>

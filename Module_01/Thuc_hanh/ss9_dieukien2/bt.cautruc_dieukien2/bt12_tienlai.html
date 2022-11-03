@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tiền Lãi Cộng Dồn</title>
+</head>
+<body>
+<img src="https://allimages.sgp1.digitaloceanspaces.com/tipeduvn/2021/11/1636542746_865_Lai-kep-la-gi-Cong-thu%CC%81c-tinh-la%CC%83i-ke%CC%81p.png" width="25%";weight="25%">
+<link rel="stylesheet" href="https://tienichnho.com/tinh-lai-kep">
+<h3>Vui lòng nhập vào số tiền ban đầu</h3>
+<input type="number" id="tienIn">
+<h3>Nhập số tháng muốn vay tu</h3>
+<input type="number" id="thangVay"> <br>
+<h3>Lãi suất hiện tại %/năm. Mặc định ghép 1 lần 1 năm</h3>
+<input type="number"id="laiSuat"><p><br>
+<button onclick="output()" type="button">Kiểm tra</button>
+<p id="tienLai"></p> <br>
+</body>
+<script>
+    function output() {
+        let tienIn = parseFloat(document.getElementById("tienIn").value);
+        let thangVay = parseInt(document.getElementById("thangVay").value);
+        let laiSuat= parseInt(document.getElementById("laiSuat").value);
+        let tienLai = tienIn*(Math.pow((1 + laiSuat/100) , thangVay/12)) - tienIn;
+        tienLai = parseInt(tienLai);
+        document.getElementById("tienLai").innerHTML = "tiền lãi khách cần trả sau " + thangVay + " tháng là " + tienLai + " VNĐ";
+    }
+</script>
+</html>

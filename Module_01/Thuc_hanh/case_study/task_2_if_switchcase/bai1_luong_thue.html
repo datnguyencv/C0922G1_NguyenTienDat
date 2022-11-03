@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1: Tính lương sau thuế </title>
+</head>
+<body>
+
+</body>
+<script>
+    let moneyfisrt = parseInt(prompt("Nhập lương của của bạn: "))
+    let tax = 0;
+    let moneyresult = 0;
+    if (moneyfisrt >= 15000000) {
+        tax = moneyfisrt * 0.2;
+        moneyresult = moneyfisrt - tax
+    } else if (moneyfisrt >= 7000000) {
+        tax = moneyfisrt * 0.1;
+        moneyresult = moneyfisrt - tax
+    } else {
+        tax = moneyfisrt * 0.05;
+        moneyresult = moneyfisrt - tax;
+    }
+    alert("Thuế phải nộp : " + tax + " VNĐ/. Tiền lương thực sự nhận được: " + moneyresult +" VNĐ/.");
+</script>
+</html>

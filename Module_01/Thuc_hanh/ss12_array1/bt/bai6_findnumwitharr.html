@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6 Tìm số trong mảng</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrNum = [];
+    for (let i = 0; i < 10; i++)
+        arrNum[i] = +prompt("Nhập mảng 10 số " + (i + 1));
+    let V = +prompt("Số muốn tìm trong mảng là : ");
+    let num = false;
+    for (let i = 0; i < 10; i++)
+        if (arrNum[i] === V) {
+            num = true;
+            break;
+        }
+    if (num)
+        alert(V + " in the array");
+    else
+        alert(V + " not in the array");
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let strings = prompt("Nhập vào xâu");
+    document.write("Chuổi nhập vào là: " + strings + "<br>");
+    function titleCase(stringss) {
+        let sentence = stringss.toLowerCase().split(" ");
+        for(let i = 0; i< sentence.length; i++){
+            if (sentence[i] !== ""){
+                sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);
+            }
+        }
+        for (let i = 0; i < sentence.length;) {
+            if (sentence[i] === "" && sentence[i+1] === ""){
+                sentence.splice(i,1);
+                continue;
+            }
+            i++;
+        }
+        return sentence.join(" ");
+    }
+    let a = titleCase(strings);
+    document.write("Chuổi sau khi sửa là: " + a + "<br>");
+    b = a.split(" ");
+    let max = 0;
+    let tuMax = "";
+    for (let i = 0; i < b.length; i++) {
+        if (b[i].length > max) {
+            max = b[i].length;
+            tuMax = b[i];
+        }
+    }
+    document.write("Từ dài nhất là: " + tuMax + ':<br> Dài ' + max + " ký tự");
+</script>
+</html>

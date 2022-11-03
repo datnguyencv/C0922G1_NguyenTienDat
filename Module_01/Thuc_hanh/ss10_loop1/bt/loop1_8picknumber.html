@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hãy thử đoán xem</title>
+</head>
+<body>
+<h3>Chơi game đoán số nào bạn ơi Bạn có 3 lần đoán nhé </h3>
+<button type="button" onclick="random()" style="border-collapse: collapse; color: #be3730;border: #0000FF;width: 200px;height: 120px;text-align: match-parent"><h1>Play</h1></button>
+</body>
+<script>
+
+    function random() {
+        let numberRangeA=parseInt(prompt('Nhập vào khoảng số bạn muốn đoán bắt đầu từ :'));
+        let numberRangeB=parseInt(prompt('Nhập vào khoảng số bạn muốn đoán đến :'));
+        let delta=parseInt(numberRangeA+(numberRangeB-numberRangeA)*Math.random());
+        for (let i=0;i<4;i++){
+            if (i==3){ alert('Bạn đã nhập quá số lần. ')
+            break;}
+            let pi=parseInt(prompt('Nhập số bạn muốn đoán '));
+            if (delta===pi){
+                alert('Bạn đã đoán đúng ')
+                break;}
+            else if (pi > delta)
+                    alert('Số bạn nhập lớn hơn. Hãy nhập lại ');
+                else
+                    alert('Số bạn nhập bé hơn. Hãy nhập lại');
+    }
+
+    }
+
+</script>
+</html>

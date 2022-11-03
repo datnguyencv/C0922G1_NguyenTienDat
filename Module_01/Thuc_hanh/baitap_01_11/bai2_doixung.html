@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đối xứng</title>
+</head>
+<body>
+
+</body>
+<!--Viết chương trình thực hiện các công việc:-->
+<!--Nhập liệu cho mảng một chiều có n phần tử nguyên (n > 0) từ bàn phím.-->
+<!--Kiểm tra mảng một chiều vừa nhập có đối xứng hay không?-->
+<script>
+    let num=+prompt("Nhập số lượng phần tử ");
+    while (num<=0) {
+        num=+prompt("Nhập lại ");
+    }
+    let arr=[];
+    for (let i=0;i<num;i++) {
+        arr[i]=parseInt(prompt("Nhập số thứ : " +i));
+    }
+    let check = true;
+    for (let i=0;i<num;i++) {
+        if(arr[i]!==arr[num-i-1]) {
+            check=false;
+            break;
+        }
+    }
+    if (check) alert("Mảng đã nhập đối xứng nhau ");
+    else alert("Mảng không đối xứng ");
+</script>
+</html>

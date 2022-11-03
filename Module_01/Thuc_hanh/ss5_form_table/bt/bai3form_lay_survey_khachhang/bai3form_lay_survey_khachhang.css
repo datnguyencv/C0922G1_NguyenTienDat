@@ -1,0 +1,19 @@
+select{
+    width: 750px;
+}
+#currency{
+    width: 70px;
+}
+#currency2{
+    width: 20px;
+}
+#table{
+    border:1px solid black;
+    border-collapse: collapse;
+    text-align: left;
+}
+.mid {
+    width: 120px;
+    text-align: center;
+}
+

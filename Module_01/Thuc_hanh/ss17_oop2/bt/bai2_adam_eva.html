@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2:Phát triển ứng dụng mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        isEmpty() {
+            if (this.weight === 0) {
+                return true;
+            } else return false;
+        }
+
+        decreaseApple() {
+            return this.weight--;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        check(apple) {
+            if (apple.isEmpty() === false) {
+                console.log("Táo đã hết rồi");
+            } else console.log("Táo vẫn còn");
+
+        }
+
+        eat(apple) {
+            if (apple.isEmpty() === false) {
+                this.weight++;
+                apple.decreaseApple();
+                return this.weight;
+            } else document.write("<h1>Táo hết rồi ăn gì nữa</h1>").inHtml = "break;";//Thoát lặp khi hết táo
+        }
+
+        say(string) {
+            return document.write(string);
+        }
+    }
+
+    let apple = new Apple(11);
+    let adam = new Human("Adam", "Nam", 75);
+    adam.say(adam.name + " là " + adam.gender + ". Cân nặng: " + adam.getWeight() + " kg" + "<br>");
+    let eva = new Human("Eva", "Nữ", 50);
+    document.write(eva.name + " là " + eva.gender + ". Cân nặng: " + eva.getWeight() + " kg" + "<br>");
+    document.write("Quả táo nặng: " + apple.getWeight() + " kg" + "<br><br>");
+    adam.say("Tôi là: " + adam.name + "<br>");
+    eva.say("Vợ tôi: " + eva.name + "<br>");
+    document.write("<h1>Nơi thể hiện tình yêu ngọt ngào</h1>" + "<br>");
+    //chia táo
+    while (apple.weight > 0) {
+        adam.say("Cả hai người đều nhường nhau ăn táo." + "<br>");
+        adam.say(adam.name + " cắn 1 miếng táo ");
+        adam.say("Cân nặng của " + adam.name + " sau khi ăn 1 miếng là: " + adam.eat(apple) + " kg" + "<br>");
+        adam.say("Quả táo còn: " + apple.getWeight() + " kg " + "<br><br>");
+        eva.say(eva.name + " cắn 1 miếng táo ");
+        eva.say("Cân nặng của " + eva.name + " sau khi ăn 1 miếng là: " + eva.eat(apple) + " kg" + "<br>");
+        eva.say("Quả táo còn: " + apple.getWeight() + " kg " + "<br><br>");
+        adam.say("<h3>Kết thúc 1 lượt ăn</h3>" + "<br>" + "");
+    }
+    eva.say("<h1>Táo hết rồi ăn gì nữa</h1>");
+</script>
+</body>
+</html>

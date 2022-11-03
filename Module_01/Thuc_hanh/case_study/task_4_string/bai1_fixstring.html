@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4 Sửa lỗi chính tả</title>
+</head>
+<body>
+
+</body>
+<script>
+    let name = prompt('Nhập vào Họ tên bất kỳ ');
+    let str = name.toLowerCase().split(' ');
+    console.log(str)
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== "") {
+            str[i] = str[i][0].toUpperCase() + str[i].slice(1);
+        }
+    }
+    console.log(str)
+    let arrNew = str.join(' ');
+    document.write("Họ và tên bạn nhập vào đã chuẩn hoá: " + arrNew + "<br>");
+    let str1 = arrNew.split(" ");
+    let maxArr = 0;
+    let result = "";
+    for (let i = 0; i < str1.length; i++) {
+        if (maxArr < str1[i].length) {
+            maxArr = str1[i].length;
+            result = str1[i];
+        }
+    }
+
+    document.write(" Từ dài nhất trong đó là từ " + result + " với " + maxArr + " ký tự");
+
+</script>
+</html>

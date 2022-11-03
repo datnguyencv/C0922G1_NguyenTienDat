@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2 Sắp xếp chuỗi</title>
+</head>
+<body>
+
+</body>
+<script>
+    let lengthArray = +prompt("Nhập độ dài của mảng : ");
+    let arrayNumber = new Array(lengthArray);
+    for (let i = 0; i < arrayNumber.length; i++) {
+        arrayNumber[i] = prompt("Nhập phần tử của mảng :" + i);
+    }
+    document.write('Mảng đã nhập vào là '+arrayNumber + "<br>");
+    let arrayNew=arrayNumber.reverse();
+    for (let item of arrayNew)
+        document.write(item);
+</script>
+</html>

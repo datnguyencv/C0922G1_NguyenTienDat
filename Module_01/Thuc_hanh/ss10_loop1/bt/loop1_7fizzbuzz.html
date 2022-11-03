@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    for(let i=0;i<50;i++){
+        document.write(i);
+        if(i%3===0 && i%5===0) {
+            document.write("_Fizz_Buzz<br/>" );
+
+        } else if(i%3===0) {
+            document.write("_Fizz<br/>" );
+        }else if(i%5===0) {
+            document.write("_Buzz<br/>" );
+        }
+        else{
+            document.write("<br/>");
+        }
+    }
+
+</script>
+</body>
+</html>

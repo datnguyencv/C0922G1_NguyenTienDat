@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lí sản phẩm</title>
+</head>
+<body>
+<center>
+    <h4>Add New Product</h4>
+    <input type="text" placeholder="New product" id="value">
+    <button type="button" onclick="addProduct()" style="background-color: limegreen">Add</button>
+    <h4>Display All Product</h4>
+    <p id="result"></p>
+    <script>
+        let arrayProduct = ["Sony Xperia", "Samsung Galaxy", "Nokia 6",
+            "Xiaomi Redmi Note4", "Apple Iphone 6S", "Xiaomi Mmi 5s Plus",
+            "Apple Iphone 8 Plus", "Fujitsu F-04E", "Oppo A71"
+        ];
+
+        function addArray(array) {
+            let board = "<table style='width: 700px;height: 300px'>";
+            for (let i = 0; i < array.length; i++) {
+                if (i % 2 == 0) {
+                    board = board + "<tr style='background-color: yellowgreen'>";
+                    board = board + "<th>" + (i + 1) + "</th>";
+                    board = board + "<th>" + array[i] + "</th>";
+                    board = board + "<th>" + "<button type='button' onclick='editProduct(" + i + ")' style='background-color: limegreen'> Edit </button>" + "</th>";
+                    board = board + "<th>" + "<button type='button' onclick='deleteProduct(" + i + ")' style='background-color: limegreen'> Delete </button>" + "</th>";
+                    board = board + "</tr>";
+                } else {
+                    board = board + "<tr style='background-color: red'>";
+                    board = board + "<th>" + (i + 1) + "</th>";
+                    board = board + "<th>" + array[i] + "</th>";
+                    board = board + "<th>" + "<button type='button' onclick='editProduct(" + i + ")' style='background-color: limegreen'> Edit </button>" + "</th>";
+                    board = board + "<th>" + "<button type='button' onclick='deleteProduct(" + i + ")' style='background-color: limegreen'> Delete </button>" + "</th>";
+                    board = board + "</tr>";
+                }
+            }
+            board = board + "</table>";
+            document.getElementById("result").innerHTML = board;
+        }
+
+        addArray(arrayProduct);
+
+        function addProduct() {
+            arrayProduct.push(document.getElementById("value").value);
+            addArray(arrayProduct);
+        }
+
+        function deleteProduct(i) {
+            arrayProduct.splice(i, 1);
+            addArray(arrayProduct);
+        }
+
+        function editProduct(i) {
+            let editProductI = prompt("Enter new product");
+            arrayProduct[i] = editProductI;
+            addArray(arrayProduct)
+        }
+    </script>
+</center>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ hình</title>
+</head>
+<body>
+<script>
+    let size = parseInt(prompt("Nhập kích thước hình:"))
+    let i;
+    let j;
+    for (i = 0; i <= size; i++) {
+        for (j = 0; j < i; j++) {
+            document.writeln("*  ");
+        }
+        document.writeln("<br>")
+    }
+    document.writeln("<br>")
+    document.writeln("Tam giác ngược" + "<br>")
+    for (i = 0; i <= size; i++) {
+        for (j = size; j > i; j--) {
+                document.writeln("*  ");
+        }
+        document.writeln("<br>")
+    }
+    document.writeln("<br>")
+    document.writeln("Tam giác thứ 3" + "<br>")
+    for (i = 0; i <= size; i++) {
+        for (j = 0; j <= size; j++) {
+            if (j < (size - i)) {
+                document.write("&nbsp&nbsp")
+            } else {
+                document.write("*")
+            }
+        } document.write("<br>")
+    }
+    document.writeln("<br>")
+    document.writeln("<br>")
+    for (i = 0; i <= size; i++) {
+        for (j = size; j >= 0; j--) {
+            if (j <= (size - i)) {
+                document.write("*")
+            } else {
+                document.write("&nbsp;&nbsp")
+            }
+        } document.write("<br>")
+    }
+
+</script>
+</body>
+</html>

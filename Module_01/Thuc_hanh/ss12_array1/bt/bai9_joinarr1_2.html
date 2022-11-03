@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9 Nối 2 mảng sang mảng thứ 3 và hiển thị</title>
+</head>
+<body>
+</body>
+<script>
+    let lengthArrA = +prompt("Nhập độ dài của mảng A:");
+    let arrayNumA = new Array(lengthArrA);
+    for (let i = 0; i < arrayNumA.length; i++) {
+        arrayNumA[i] = +prompt("Nhập phần tử của mảng A:" + i);
+    }
+    document.write(arrayNumA + "<br>");
+
+
+    let lengthArrB = +prompt("Nhập độ dài của mảng B:");
+    let arrayNumB = new Array(lengthArrB);
+    for (let i = 0; i < arrayNumB.length; i++) {
+        arrayNumB[i] = +prompt("Nhập phần tử của mảng B:" + i);
+    }
+    document.write(arrayNumB + "<br>");
+    // let arrayNumC = arrayNumB.concat(arrayNumA);
+    // document.write(arrayNumC);
+    let arrayNumC = [];
+    for (let j = 0; j < arrayNumB.length; j++) {
+        arrayNumC.push(arrayNumB[j]);
+    }
+    for (let i = 0; i < arrayNumA.length ; i++) {
+        arrayNumC.push(arrayNumA[i]);
+    }
+    document.write(arrayNumC);
+</script>
+</html>

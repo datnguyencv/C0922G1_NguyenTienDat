@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra mảng</title>
+</head>
+<body>
+
+</body>
+<script>
+    let lengthArray = +prompt("Nhập độ dài của mảng : ");
+    let arrayNumber = new Array(lengthArray);
+    for (let i = 0; i < arrayNumber.length; i++) {
+        arrayNumber[i] = +prompt("Nhập phần tử của mảng :" + i);
+    }
+    let arr=new Array(arrayNumber);
+    document.write('Mảng đã nhập vào là '+arrayNumber + "<br>");
+    //Tạo mảng tăng dần
+    function arrayIncrease() {
+        let temp=arrayNumber[0];
+        for (let i=0;i<arrayNumber.length-1;i++) {
+            for (let j = i + 1; j < arrayNumber.length; j++) {
+                if (arrayNumber[i] < arrayNumber[j]) {
+                    temp = arrayNumber[j];
+                    arrayNumber[j] = arrayNumber[i];
+                    arrayNumber[i] = temp;
+                }
+            }
+        }
+        return arrayNumber;
+    }
+
+    let arrayUp=arrayIncrease();
+    document.write("Mảng tăng dần là "+arrayUp+"<br>");
+
+    // document.write('Mảng mới là '+arrayIncrease(arrayNumber));
+
+
+    //Tạo mảng giảm dần
+    function arrayReduce() {
+        let temp=arrayNumber[0];
+        for (let i=0;i<arrayNumber.length-1;i++) {
+            for (let j = i + 1; j < arrayNumber.length; j++) {
+                if (arrayNumber[i] > arrayNumber[j]) {
+                    temp = arrayNumber[j];
+                    arrayNumber[j] = arrayNumber[i];
+                    arrayNumber[i] = temp;
+                }
+            }
+        }
+        return arrayNumber;
+    }
+
+    let arrayDown=arrayReduce();
+    document.write("Mảng giảm dần là "+arrayDown);
+    //Hiện thị kiểm tra mảng _ Yes /No
+    document.write("Mảng là "+arr);
+    for (let i=0;i<=arrayNumber.length;i++) {
+        if ((arr[i]===arrayUp[i])||(arr[i]===arrayDown[i])){
+        // if ((arrayDown.indexOf(arrayNumber) !== -1) | (arrayUp.indexOf(arrayNumber) !== -1)) {
+            alert(`Oke`);
+        } else {
+            alert('No');
+        }
+        break;
+    }
+</script>
+</html>
