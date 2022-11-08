@@ -11,10 +11,11 @@ public class SumDiagonal {
         int inputColum = Integer.parseInt(sc.nextLine());
         int[][] arr = new int[inputRow][inputColum];
         int sum = 0;
+        int count=0;
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                System.out.println("Nhập phần tử số " + arr[i][j]);
+                System.out.println("Nhập phần tử số " + count++);
                 arr[i][j] = Integer.parseInt(sc.nextLine());
             }
         }
@@ -29,13 +30,11 @@ public class SumDiagonal {
         for (int i = 0; i < arr.length; i++) {
             for (int j = arr[i].length - 1; j >= 0; j--) {
                 if ((arr[i].length - 1) - i == j) {
-                    System.out.println(arr[i][j]);
                     sum += arr[i][j];
                 }
             }
         }
-        System.out.print("Kết quả là: ");
-        System.out.println(sum);
+        System.out.print("Kết quả tổng các đường chéo là: "+sum);
     }
 }
 
