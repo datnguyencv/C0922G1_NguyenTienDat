@@ -22,9 +22,10 @@ public class Cylinder extends Circle {
 
     @Override
     public String toString() {
-        return  "Màu sắc " + getColor() +
-                ", Bán Kính " + getRadius() +
-                ", Diện Tích " + getEquation() +
+        return  "Cylinder{" +
+                "Màu sắc " + getColor() +
+                ", Bán kính " + getRadius() +
+                ", Thể tích hình trụ " + getEquation() +
                 '}';
     }
 

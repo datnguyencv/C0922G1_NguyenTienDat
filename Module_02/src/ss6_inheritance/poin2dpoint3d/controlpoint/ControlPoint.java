@@ -1,7 +1,7 @@
-package ss6_inheritance.Poin2dPoint3d.controlpoint;
+package ss6_inheritance.poin2dpoint3d.controlpoint;
 
-import ss6_inheritance.Poin2dPoint3d.model.Point2D;
-import ss6_inheritance.Poin2dPoint3d.model.Point3D;
+import ss6_inheritance.poin2dpoint3d.model.Point2D;
+import ss6_inheritance.poin2dpoint3d.model.Point3D;
 
 public class ControlPoint {
     public static void main(String[] args) {
