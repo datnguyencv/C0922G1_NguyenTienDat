@@ -2,32 +2,25 @@ package ss11_dsa_stack_queue.check_palindrome;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
-public class CheckPalindrome {
+class CheckPalindrome {
     public static void main(String[] args) {
-        String input = "mamm";
-        String[] input2 = input.split("");
+        System.out.print("Nhập vào chuỗi cần kiểm tra:");
+        Scanner in = new Scanner(System.in);
+        String inputString = in.nextLine();
+        Queue queue = new LinkedList();
 
-//        for (int i = 0; i <input2.length ; i++) {
-//            if (!input2[i].equals(input2[input2.length-1-i])){
-//                System.out.println(" chuỗi không là Palindrome");
-//                return;
-//            }
-//        }
-//            System.out.println(" chuỗi Palindrome");
+        for (int i = inputString.length() - 1; i >= 0; i--) {
+            queue.add(inputString.charAt(i));
+        }
 
-        Queue<String> input3 = new LinkedList<>();
-        for (int i = 0; i < input2.length; i++) {
-            input3.add(input2[i]);
+        String reverseString = "";
+        while (!queue.isEmpty()) {
+            reverseString = reverseString + queue.remove();
         }
-        System.out.println(input3);
-        for (int i = 0; i < input3.size(); i++) {
-            if (!input2[i].equals(((LinkedList<String>)input3).get(i))) {
-                System.out.println(" chuỗi không là Palindrome");
-                return;
-            }
-        }
-        System.out.println(" chuỗi Palindrome");
+
+        if (inputString.equals(reverseString)) System.out.println("Input : "+inputString+" _ Is a Palindrome.");
+        else System.out.println("Input : "+inputString+" _ Is not Palindrome.");
     }
-
 }
