@@ -132,7 +132,7 @@ public class ProductService implements IProductService {
     /*
      * cập nhật thông tin sản phẩm mới
      *
-     * @return sản phâm có thông tin mới or (null)
+     * trả về sản phâm có thông tin mới or (null)
      */
     public Product updateInfoProduct(String id) {
         for (int i = 0; i < arrProduct.size(); i++) {
@@ -152,7 +152,7 @@ public class ProductService implements IProductService {
     /*
      * nhập ID và kiểm tra ID
      *
-     * @return sản phẩm(vùng nhớ) ở vị trí thứ i or (null)
+     * trả về vùng nhớ ở vị trí thứ i or (null)
      */
     public Product inputID(String notification) {
         System.out.print(notification);
@@ -167,14 +167,11 @@ public class ProductService implements IProductService {
 
     /*
      * kiểm tra id nhập vào dã có chưa
-     *
-     * @param tam1
-     * @param tam
-     * @return có or không
+     * có or không
      */
-    public boolean check(String tam1, Product tam) {
+    public boolean check(String valueinput, Product valuecheck) {
         for (int i = 0; i < arrProduct.size(); i++) {
-            if (arrProduct.get(i).getId().equals(tam1)) {
+            if (arrProduct.get(i).getId().equals(valueinput)) {
                 return true;
             }
         }

@@ -9,7 +9,7 @@ class CheckPalindrome {
         System.out.print("Nhập vào chuỗi cần kiểm tra:");
         Scanner in = new Scanner(System.in);
         String inputString = in.nextLine();
-        Queue queue = new LinkedList();
+        Queue<Character> queue = new LinkedList<>();
 
         for (int i = inputString.length() - 1; i >= 0; i--) {
             queue.add(inputString.charAt(i));
@@ -20,7 +20,8 @@ class CheckPalindrome {
             reverseString = reverseString + queue.remove();
         }
 
-        if (inputString.equals(reverseString)) System.out.println("Input : "+inputString+" _ Is a Palindrome.");
+        if (inputString.equals(reverseString))
+            System.out.println("Input : "+inputString+" _ Is a Palindrome.");
         else System.out.println("Input : "+inputString+" _ Is not Palindrome.");
     }
 }

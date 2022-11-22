@@ -20,7 +20,7 @@ public class ProductManagerController {
             System.out.println("5. Tìm kiếm ");
             System.out.println("6. Sắp xếp theo giá ");
             System.out.println("7. Exit");
-            System.out.print("Mời bạn nhập chức năng 1->5: ");
+            System.out.print("Mời bạn nhập chức năng : ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
