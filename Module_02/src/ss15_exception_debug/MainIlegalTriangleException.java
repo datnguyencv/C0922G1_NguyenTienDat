@@ -15,9 +15,9 @@ public class MainIlegalTriangleException {
         int c = Integer.parseInt(scanner.nextLine());
         if (a <= 0 | b <= 0 | c <= 0 | a + b < c || a + c < b || b + c < a) {
             try {
-                throw new CheckSideTriangle("Input is not side of triangle");
-            } catch (CheckSideTriangle checkSideTriangle) {
-                System.err.println(checkSideTriangle.getMessage());
+                throw new ShowException("Input is not side of triangle");
+            } catch (ShowException showException) {
+                System.err.println(showException.getMessage());
             }
         }
     }
