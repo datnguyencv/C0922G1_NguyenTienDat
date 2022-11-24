@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class DisplayInsertionSort {
     public static void main(String[] args) {
-        int[] list = new int[]{7, 8, 9, 1, 2, 3, 6, 5, 4};
+        int[] list = new int[]{7,3,8,5,4};
         System.out.println("Input list: "+Arrays.toString(list));
         System.out.println("Action InsertionSort \nStart from index 1:");
         InsertionSort(list);
