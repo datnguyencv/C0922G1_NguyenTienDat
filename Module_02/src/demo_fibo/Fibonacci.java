@@ -26,7 +26,7 @@ class InputCheck
 
         Fibonacci fibonacci = new Fibonacci();
         Fi = fibonacci.CheckFibo(n);
-
         System.out.println("Fi(" + n + ") = " + Fi);
+
     }
 }
