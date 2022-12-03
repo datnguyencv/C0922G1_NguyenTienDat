@@ -1,7 +1,7 @@
 package ss17_io_binaryfile_serialization.product_iteam_mvc.view;
 
-import ss17_io_binaryfile_serialization.product_iteam_manager.controller.ProductController;
-import ss17_io_binaryfile_serialization.product_iteam_manager.model.Product;
+import ss17_io_binaryfile_serialization.product_iteam_mvc.controller.ProductController;
+import ss17_io_binaryfile_serialization.product_iteam_mvc.model.Product;
 
 import java.util.List;
 import java.util.Scanner;

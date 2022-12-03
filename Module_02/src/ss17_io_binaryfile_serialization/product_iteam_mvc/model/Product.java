@@ -58,9 +58,6 @@ public class Product implements Serializable {
         this.otherDescriptions = otherDescriptions;
     }
 
-//    public String formatCSVForStudent() {
-//        return this.id + "," + this.name + "," + this.manufacture + "," + this.price + "," +this.getOtherDescriptions();
-//    }
     @Override
     public String toString() {
         return String.format("|%-3s|%-10S|%-10s|%-8.2f|%-20s|", id, name, manufacture, price,otherDescriptions);

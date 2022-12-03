@@ -1,15 +1,15 @@
 package ss17_io_binaryfile_serialization.product_iteam_mvc.controller;
 
-import ss17_io_binaryfile_serialization.product_iteam_manager.model.Product;
-import ss17_io_binaryfile_serialization.product_iteam_manager.service.IProductService;
-import ss17_io_binaryfile_serialization.product_iteam_manager.service.impl.ProductServiceImpl;
+import ss17_io_binaryfile_serialization.product_iteam_mvc.model.Product;
+import ss17_io_binaryfile_serialization.product_iteam_mvc.service.IProductService;
+import ss17_io_binaryfile_serialization.product_iteam_mvc.service.impl.ProductServiceImpl;
 
 import java.util.List;
 
 public class ProductController {
     private final IProductService productService = new ProductServiceImpl();
 
-    public void add(Product product) {
+    public void add(Product product){
         this.productService.addProduct(product);
     }
 
