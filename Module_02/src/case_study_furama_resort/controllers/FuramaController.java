@@ -140,10 +140,7 @@ public class FuramaController {
             System.out.println("Chào mừng bạn đến với Booking");
             System.out.println("1. Add new booking");
             System.out.println("2. Display list booking");
-            System.out.println("3. Create new constracts");
-            System.out.println("4. Display list contracts");
-            System.out.println("5. Edit contracts");
-            System.out.println("6 Return main menu");
+            System.out.println("3 Return main menu");
             switch (choice()) {
                 case 1:
                     bookingService.addBooking();
@@ -153,17 +150,6 @@ public class FuramaController {
 
                     break;
                 case 3:
-                    bookingService.createContract();
-
-                    break;
-                case 4:
-                    bookingService.displayContract();
-
-                    break;
-                case 5:
-                    bookingService.editContract();
-                    break;
-                case 6:
                     return;
                 default:
                     System.out.println("Lựa chọn bạn nhập không đúng!");
