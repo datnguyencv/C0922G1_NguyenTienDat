@@ -196,20 +196,16 @@ public class FuramaController {
         while (true) {
             System.out.println("---------------------------------------------");
             System.out.println("1.\tAdd New Villa\n" +
-                    "2.\tAdd New House\n" +
-                    "3.\tAdd New Room\n" +
-                    "4.\tBack to menu\n");
+                    "2.\tAdd New Room\n" +
+                    "3.\tBack to menu\n");
             switch (choice()) {
                 case 1:
                     facilityService.addVilla();
                     break;
                 case 2:
-                    facilityService.addHouse();
-                    break;
-                case 3:
                     facilityService.addRoom();
                     break;
-                case 4:
+                case 3:
                     return;
                 default:
                     System.out.println("Lựa chọn bạn nhập không đúng!");

@@ -1,13 +1,11 @@
 package case_study_furama_resort.services.impl.person;
 
 import case_study_furama_resort.models.person.Employee;
-import case_study_furama_resort.models.person.Person;
 import case_study_furama_resort.services.IEmployeeService;
 import case_study_furama_resort.utils.read_write_file.exception.InvalidStringException;
 import case_study_furama_resort.utils.read_write_file.ReadFileUtil;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -56,13 +54,13 @@ public class EmployeeServiceImpl implements IEmployeeService {
         }
     }
 
-    public void sort() {
-        employeeList = this.readFileEmployee();
-        employeeList.sort(Comparator.comparing(Person::getName));
-        for (Employee x : employeeList) {
-            System.out.println(x.toString());
-        }
-    }
+//    public void sort() {
+//        employeeList = this.readFileEmployee();
+//        employeeList.sort(Comparator.comparing(Person::getName));
+//        for (Employee x : employeeList) {
+//            System.out.println(x.toString());
+//        }
+//    }
 
 
     /*

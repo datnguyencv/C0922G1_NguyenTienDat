@@ -1,7 +1,6 @@
 package case_study_furama_resort.services.impl.facility;
 
 import case_study_furama_resort.models.facility.Facility;
-import case_study_furama_resort.models.facility.House;
 import case_study_furama_resort.models.facility.Room;
 import case_study_furama_resort.models.facility.Villa;
 import case_study_furama_resort.services.IFacilityService;
@@ -16,7 +15,6 @@ import static case_study_furama_resort.utils.read_write_file.WriteFileUtil.write
 
 public class FacilityServiceImpl implements IFacilityService {
     public static final String VILLA_CSV = "src/case_study_furama_resort/data_libs/villa.csv";
-    public static final String HOUSE_CSV = "src/case_study_furama_resort/data_libs/house.csv";
     public static final String ROOM_CSV = "src/case_study_furama_resort/data_libs/room.csv";
     public static final String FACILITY_CSV = "src/case_study_furama_resort/data_libs/facility.csv";
     Scanner scanner = new Scanner(System.in);
@@ -24,17 +22,6 @@ public class FacilityServiceImpl implements IFacilityService {
     private Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
     private ConvertListToListString convertListToListString = new ConvertListToListString();
 
-
-    @Override
-    public void addHouse() {
-        House house = this.infoFacilityHouse();
-        this.facilityIntegerMap.put(house, 4);
-        writeFile(FACILITY_CSV, true, convertListToListString.listFacilityToString(this.facilityIntegerMap));
-        Map<House, Integer> houseIntegerMap = new LinkedHashMap<>();
-        houseIntegerMap.put(house, 1);
-        writeFile(HOUSE_CSV, true, convertListToListString.listHouseToListString(houseIntegerMap));
-        System.out.println("Thêm mới thành công");
-    }
 
     @Override
     public void addRoom() {
@@ -83,18 +70,6 @@ public class FacilityServiceImpl implements IFacilityService {
         } else {
             System.out.print("Facilities under maintenance: " + maintainingList);
         }
-    }
-
-    public House infoFacilityHouse() {
-        String infoRoomStandard = infoRoomStandard();
-        int infoNumberFloors = infoNumberFloors();
-        return new House(inputInfoFacility.infoId("House", "ID House"),
-                inputInfoFacility.infoName(),
-                inputInfoFacility.infoUsableArea(),
-                inputInfoFacility.infoCost(),
-                inputInfoFacility.infoMaximumPeople(),
-                inputInfoFacility.infoRentType(),
-                infoRoomStandard, infoNumberFloors);
     }
 
     public Room infoFacilityRoom() {
@@ -168,7 +143,7 @@ public class FacilityServiceImpl implements IFacilityService {
     }
 
     /*
-     * check giá trị nhập (inputValue) vào không đc để rỗng
+     * check giá trị nhập
      */
     private String inputString(String inputString) {
         String inputValue;
@@ -199,12 +174,7 @@ public class FacilityServiceImpl implements IFacilityService {
             }
             for (int i = 0; i < facilityArrString.size(); i++) {
                 String[] strings = facilityArrString.get(i).split("=");
-                if (strings[0].contains("SVHO")) {
-                    facilityIntegerMap.put(new House(strings[0], strings[1], Double.parseDouble(strings[2]),
-                                    Double.parseDouble(strings[3]), Integer.parseInt(strings[4]), strings[5],
-                                    strings[6], Integer.parseInt(strings[7])),
-                            Integer.parseInt(strings[strings.length - 1]));
-                } else if (strings[0].contains("SVRO")) {
+                if  (strings[0].contains("SVRO")) {
                     facilityIntegerMap.put(new Room(strings[0], strings[1], Double.parseDouble(strings[2]),
                                     Double.parseDouble(strings[3]), Integer.parseInt(strings[4]), strings[5],
                                     strings[6]),

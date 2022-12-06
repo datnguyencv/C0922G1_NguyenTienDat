@@ -1,7 +1,6 @@
 package case_study_furama_resort.utils.read_write_file;
 
 import case_study_furama_resort.models.facility.Facility;
-import case_study_furama_resort.models.facility.House;
 import case_study_furama_resort.models.facility.Room;
 import case_study_furama_resort.models.facility.Villa;
 
@@ -19,15 +18,6 @@ public class ConvertListToListString {
             stringFacilityList.add(facility.toString() + facilityIntegerMap.get(facility));
         }
         return stringFacilityList;
-    }
-
-    public List<String> listHouseToListString(Map<House, Integer> houseIntegerMap) {
-        Set<House> houseSet = houseIntegerMap.keySet();
-        List<String> stringHouseList = new ArrayList<>();
-        for (House house : houseSet) {
-            stringHouseList.add(house.toString() + houseIntegerMap.get(house));
-        }
-        return stringHouseList;
     }
 
     public List<String> listRoomToListString(Map<Room, Integer> roomIntegerMap) {
