@@ -3,7 +3,7 @@ package case_study_furama_resort.models.facility;
 public class Room extends Facility {
     String freeServiceIncluded;
 
-    public Room(int idService, String nameService,
+    public Room(String idService, String nameService,
                 double usableArea, double cost, int maximumPeople,
                 String rentType, String freeServiceIncluded) {
         super(idService, nameService, usableArea, cost, maximumPeople, rentType);

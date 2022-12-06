@@ -4,8 +4,8 @@ public class Customer extends  Person{
     String guestType;
     String address;
 
-    public Customer(int iD, String name, String dateOfBirth,
-                    String gender, int numberIdentity, int numberPhone,
+    public Customer(String iD, String name, String dateOfBirth,
+                    String gender, String numberIdentity, String numberPhone,
                     String email, String guestType, String address) {
         super(iD, name, dateOfBirth, gender, numberIdentity,
                 numberPhone, email);
@@ -29,10 +29,6 @@ public class Customer extends  Person{
         this.address = address;
     }
 
-    @Override
-    public String toÌno() {
-        return null;
-    }
 
     @Override
     public String toString() {

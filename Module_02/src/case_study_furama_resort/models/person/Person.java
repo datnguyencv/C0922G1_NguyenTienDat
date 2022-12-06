@@ -1,17 +1,17 @@
 package case_study_furama_resort.models.person;
 
 public abstract class Person {
-    int iD;
+    String iD;
     String name;
     String dateOfBirth;
     String gender;
-    int numberIdentity;
-    int numberPhone;
+    String numberIdentity;
+    String numberPhone;
     String email;
 
-    public Person(int id, String name,
+    public Person(String id, String name,
                   String dateOfBirth, String gender,
-                  int numberIdentity, int numberPhone,
+                  String numberIdentity, String numberPhone,
                   String email) {
         this.iD = id;
         this.name = name;
@@ -22,11 +22,11 @@ public abstract class Person {
         this.email = email;
     }
 
-    public int getId() {
+    public String getId() {
         return iD;
     }
 
-    public void setId(int iD) {
+    public void setId(String iD) {
         this.iD = iD;
     }
 
@@ -54,19 +54,19 @@ public abstract class Person {
         this.gender = gender;
     }
 
-    public int getNumberIdentity() {
+    public String getNumberIdentity() {
         return numberIdentity;
     }
 
-    public void setNumberIdentity(int numberIdentity) {
+    public void setNumberIdentity(String numberIdentity) {
         this.numberIdentity = numberIdentity;
     }
 
-    public int getNumberPhone() {
+    public String getNumberPhone() {
         return numberPhone;
     }
 
-    public void setNumberPhone(int numberPhone) {
+    public void setNumberPhone(String numberPhone) {
         this.numberPhone = numberPhone;
     }
 
@@ -77,8 +77,6 @@ public abstract class Person {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public abstract String toÌno();
 
     @Override
     public String toString() {

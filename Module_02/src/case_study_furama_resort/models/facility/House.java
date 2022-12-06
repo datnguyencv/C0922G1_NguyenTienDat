@@ -4,7 +4,7 @@ public class House extends Facility {
     String roomStandard;
     int numberFloors;
 
-    public House(int idService, String nameService,
+    public House(String idService, String nameService,
                  double usableArea, double cost, int maximumPeople,
                  String rentType, String roomStandard, int numberFloors) {
         super(idService, nameService, usableArea, cost, maximumPeople, rentType);

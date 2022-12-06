@@ -5,8 +5,8 @@ public class Employee extends Person {
     String location;
     double salary;
 
-    public Employee(int employeeId, String name, String dateOfBirth,
-                    String gender, int numberIdentity, int numberPhone,
+    public Employee(String employeeId, String name, String dateOfBirth,
+                    String gender, String numberIdentity, String numberPhone,
                     String email, String level, String location,
                     double salary) {
         super(employeeId, name, dateOfBirth, gender,
@@ -38,11 +38,6 @@ public class Employee extends Person {
 
     public void setSalary(double salary) {
         this.salary = salary;
-    }
-
-    @Override
-    public String toÌno() {
-        return null;
     }
 
     @Override

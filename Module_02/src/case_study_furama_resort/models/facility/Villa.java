@@ -5,7 +5,7 @@ public class Villa extends Facility {
     double poolArea;
     int numberFloors;
 
-    public Villa(int idService, String nameService, double usableArea,
+    public Villa(String idService, String nameService, double usableArea,
                  double cost, int maximumPeople, String rentType,
                  String roomStandard, double poolArea, int numberFloors) {
         super(idService, nameService, usableArea, cost, maximumPeople, rentType);

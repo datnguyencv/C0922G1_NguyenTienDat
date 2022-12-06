@@ -1,14 +1,14 @@
 package case_study_furama_resort.models.facility;
 
 public abstract class Facility {
-    int idService;
+    String idService;
     String nameService;
     double usableArea;
     double cost;
     int maximumPeople;
     String rentType;
 
-    public Facility(int idService, String nameService,
+    public Facility(String idService, String nameService,
                     double usableArea, double cost,
                     int maximumPeople,
                     String rentType) {
@@ -24,11 +24,11 @@ public abstract class Facility {
                     double cost, String maximumPeople, String rentType) {
     }
 
-    public int getIdService() {
+    public String getIdService() {
         return idService;
     }
 
-    public void setIdService(int idService) {
+    public void setIdService(String idService) {
         this.idService = idService;
     }
 
