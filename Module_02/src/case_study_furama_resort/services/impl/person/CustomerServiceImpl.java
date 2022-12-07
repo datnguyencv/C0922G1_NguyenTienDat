@@ -20,7 +20,12 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public void add() {
-        Customer customerAdd = this.infoCustomer("info");
+        Customer customerAdd = checkId(inputString("ID"));
+        if (customerAdd != null) {
+            System.out.println("Id đã tồn tại vui lòng nhập lại");
+            return ;
+        }
+        customerAdd = this.infoCustomer("info");
         List<Customer> customerList = new LinkedList<>();
         customerList.add(customerAdd);
         writeFile(CUSTOMER_CSV, true, convertListCustomerToListString(customerList));
@@ -106,13 +111,13 @@ public class CustomerServiceImpl implements ICustomerService {
         customerList = this.readFileCustomer();
         for (int i = 0; i < customerList.size(); i++) {
             if (what.equals("ID") && customerList.get(i).getId().equals(Value)) {
-                return customerList.get(i);
+                return null;
             }
             if (what.equals("NumberIdentity") && customerList.get(i).getNumberIdentity().equals(Value)) {
-                return customerList.get(i);
+                return null;
             }
             if (what.equals("NumberPhone") && customerList.get(i).getNumberPhone().equals(Value)) {
-                return customerList.get(i);
+                return null;
             }
         }
         return null;
@@ -207,7 +212,7 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     /*
-     * chuyển mảng sudent có dữ liệu Student thành dữ liệu String
+     * chuyển mảng có dữ liệu thành dữ liệu String
      */
     private List<String> convertListCustomerToListString(List<Customer> customerList) {
         List<String> stringsEmployeeList = new ArrayList<>();

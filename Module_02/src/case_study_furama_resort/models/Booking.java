@@ -6,19 +6,17 @@ public class Booking {
     private String endDate;
     private int customerCode;
     private int serviceCode;
-    private String serviceType;
 
     public Booking() {
     }
 
     public Booking(int bookingCode, String startDate,
-                   String endDate, int customerCode, int serviceCode, String serviceType) {
+                   String endDate, int customerCode, int serviceCode) {
         this.bookingCode = bookingCode;
         this.startDate = startDate;
         this.endDate = endDate;
         this.customerCode = customerCode;
         this.serviceCode = serviceCode;
-        this.serviceType = serviceType;
     }
 
     public int getBookingCode() {
@@ -61,14 +59,6 @@ public class Booking {
         this.serviceCode = serviceCode;
     }
 
-    public String getServiceType() {
-        return serviceType;
-    }
-
-    public void setServiceType(String serviceType) {
-        this.serviceType = serviceType;
-    }
-
     @Override
     public String toString() {
         return "Booking{" +
@@ -77,11 +67,10 @@ public class Booking {
                 ", endDate='" + endDate + '\'' +
                 ", customerCode='" + customerCode + '\'' +
                 ", serviceCode='" + serviceCode + '\'' +
-                ", serviceType='" + serviceType + '\'' +
                 '}';
     }
     public String getInfo(){
-        return String.format("%s,%s,%s,%s,%s,%s",
-                bookingCode,startDate,endDate,customerCode,serviceCode,serviceType);
+        return String.format("%s,%s,%s,%s,%s",
+                bookingCode,startDate,endDate,customerCode,serviceCode);
     }
 }
