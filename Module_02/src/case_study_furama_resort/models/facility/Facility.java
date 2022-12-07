@@ -8,7 +8,10 @@ public abstract class Facility {
     int maximumPeople;
     String rentType;
 
-    public Facility(String idService, String nameService,
+    protected Facility() {
+    }
+
+    protected Facility(String idService, String nameService,
                     double usableArea, double cost,
                     int maximumPeople,
                     String rentType) {
@@ -20,9 +23,7 @@ public abstract class Facility {
         this.rentType = rentType;
     }
 
-    public Facility(String nameService, double usableArea,
-                    double cost, String maximumPeople, String rentType) {
-    }
+
 
     public String getIdService() {
         return idService;
