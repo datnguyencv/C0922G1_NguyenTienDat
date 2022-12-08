@@ -2,8 +2,8 @@ package case_study_furama_resort.services.impl.facility;
 
 import case_study_furama_resort.utils.read_write_file.exception.InvalidException;
 import case_study_furama_resort.utils.read_write_file.exception.InvalidStringException;
-import case_study_furama_resort.utils.read_write_file.exception.ValidateId;
-import case_study_furama_resort.utils.read_write_file.exception.ValidateNameFacility;
+import case_study_furama_resort.utils.read_write_file.regex.facility.ValidateId;
+import case_study_furama_resort.utils.read_write_file.regex.facility.ValidateNameFacility;
 
 import java.util.Scanner;
 
@@ -18,9 +18,7 @@ public class InputInfoFacility {
             if (iD.equals("")) {
                 continue;
             }
-            if (facility.equals("House") && validateId.validateHouse(iD)) {
-                return iD;
-            } else if (facility.equals("Villa") && validateId.validateVilla(iD)) {
+            if (facility.equals("Villa") && validateId.validateVilla(iD)) {
                 return iD;
             } else if (facility.equals("Room") && validateId.validateRoom(iD)) {
                 return iD;
@@ -136,6 +134,5 @@ public class InputInfoFacility {
             return inputValue;
         }
     }
-
 
 }

@@ -1,13 +1,13 @@
 package case_study_furama_resort.models.person;
 
-public abstract class Person {
-    String iD;
-    String name;
-    String dateOfBirth;
-    String gender;
-    String numberIdentity;
-    String numberPhone;
-    String email;
+ abstract class Person {
+     private String iD;
+     private String name;
+     private String dateOfBirth;
+     private String gender;
+     private String numberIdentity;
+     private String numberPhone;
+     private String email;
 
     protected Person() {
     }
@@ -83,7 +83,7 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return String.format("%s=%s=%s=%s=%s=%s=%s",
+        return String.format("%s,%s,%s,%s,%s,%s,%s",
                 iD, name, dateOfBirth, gender,
                 numberIdentity, numberPhone, email);
 

@@ -1,9 +1,9 @@
 package case_study_furama_resort.models.person;
 
 public class Employee extends Person {
-    String level;
-    String location;
-    double salary;
+    private String level;
+    private String location;
+    private double salary;
 
     public Employee(String employeeId, String name, String dateOfBirth,
                     String gender, String numberIdentity, String numberPhone,
@@ -42,7 +42,7 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + String.format("=%s=%s=%.2f",
+        return super.toString() + String.format(",%s,%s,%.2f",
                 level, location, salary);
 
     }

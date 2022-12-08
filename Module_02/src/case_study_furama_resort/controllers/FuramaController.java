@@ -49,9 +49,6 @@ public class FuramaController {
 
     }
 
-    /**
-     * Management cho phép cọn các chức năng CRUD cho Employee
-     */
     public void employeeManagement() {
         while (true) {
             System.out.println("---------------------------------------------");
@@ -78,9 +75,6 @@ public class FuramaController {
         }
     }
 
-    /**
-     * Management cho phép cọn các chức năng CRUD cho Customer
-     */
     public void customerManagement() {
         while (true) {
             System.out.println("---------------------------------------------");
@@ -155,7 +149,6 @@ public class FuramaController {
                     System.out.println("Lựa chọn bạn nhập không đúng!");
             }
         }
-
     }
 
     public void promotionManagement() {
@@ -211,5 +204,4 @@ public class FuramaController {
             }
         }
     }
-
 }

@@ -18,9 +18,21 @@ public class FacilityServiceImpl implements IFacilityService {
     public static final String ROOM_CSV = "src/case_study_furama_resort/data_libs/room.csv";
     public static final String FACILITY_CSV = "src/case_study_furama_resort/data_libs/facility.csv";
     Scanner scanner = new Scanner(System.in);
-    private InputInfoFacility inputInfoFacility = new InputInfoFacility();
-    private Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
-    private ConvertListToListString convertListToListString = new ConvertListToListString();
+    private final InputInfoFacility inputInfoFacility = new InputInfoFacility();
+    private final Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
+    private final ConvertListToListString convertListToListString = new ConvertListToListString();
+
+
+    @Override
+    public void addVilla() {
+        Villa villa = this.infoFacilityVilla();
+        this.facilityIntegerMap.put(villa, 4);
+        writeFile(FACILITY_CSV, true, convertListToListString.listFacilityToString(this.facilityIntegerMap));
+        Map<Villa, Integer> villaIntegerMap = new LinkedHashMap<>();
+        villaIntegerMap.put(villa, 1);
+        writeFile(VILLA_CSV, true, convertListToListString.listVillaToListString(villaIntegerMap));
+        System.out.println("Thêm mới thành công");
+    }
 
 
     @Override
@@ -34,16 +46,7 @@ public class FacilityServiceImpl implements IFacilityService {
         System.out.println("Thêm mới thành công");
     }
 
-    @Override
-    public void addVilla() {
-        Villa villa = this.infoFacilityVilla();
-        this.facilityIntegerMap.put(villa, 4);
-        writeFile(FACILITY_CSV, true, convertListToListString.listFacilityToString(this.facilityIntegerMap));
-        Map<Villa, Integer> villaIntegerMap = new LinkedHashMap<>();
-        villaIntegerMap.put(villa, 1);
-        writeFile(VILLA_CSV, true, convertListToListString.listVillaToListString(villaIntegerMap));
-        System.out.println("Thêm mới thành công");
-    }
+
 
     @Override
     public void displayFacility() {
@@ -72,17 +75,6 @@ public class FacilityServiceImpl implements IFacilityService {
         }
     }
 
-    public Room infoFacilityRoom() {
-        String infoFreeServiceIncluded = infoFreeServiceIncluded();
-        return new Room(inputInfoFacility.infoId("Room", "ID Room"),
-                inputInfoFacility.infoName(),
-                inputInfoFacility.infoUsableArea(),
-                inputInfoFacility.infoCost(),
-                inputInfoFacility.infoMaximumPeople(),
-                inputInfoFacility.infoRentType(),
-                infoFreeServiceIncluded);
-    }
-
     public Villa infoFacilityVilla() {
         String infoRoomStandard = infoRoomStandard();
         int infoPoolArea = infoPoolArea();
@@ -94,6 +86,17 @@ public class FacilityServiceImpl implements IFacilityService {
                 inputInfoFacility.infoMaximumPeople(),
                 inputInfoFacility.infoRentType(),
                 infoRoomStandard, infoPoolArea, infoNumberFloors);
+    }
+
+    public Room infoFacilityRoom() {
+        String infoFreeServiceIncluded = infoFreeServiceIncluded();
+        return new Room(inputInfoFacility.infoId("Room", "ID Room"),
+                inputInfoFacility.infoName(),
+                inputInfoFacility.infoUsableArea(),
+                inputInfoFacility.infoCost(),
+                inputInfoFacility.infoMaximumPeople(),
+                inputInfoFacility.infoRentType(),
+                infoFreeServiceIncluded);
     }
 
     public int infoPoolArea() {
@@ -162,7 +165,7 @@ public class FacilityServiceImpl implements IFacilityService {
     }
 
     /*
-     * đọc file danh sách Facility
+     * đọc file danh sách Facility VL- RO
      */
     public Map<Facility, Integer> readFileFacility() {
         List<String> facilityArrString = null;
@@ -173,7 +176,7 @@ public class FacilityServiceImpl implements IFacilityService {
                 System.out.println("Dữ liệu trong file không có");
             }
             for (int i = 0; i < facilityArrString.size(); i++) {
-                String[] strings = facilityArrString.get(i).split("=");
+                String[] strings = facilityArrString.get(i).split(",");
                 if  (strings[0].contains("SVRO")) {
                     facilityIntegerMap.put(new Room(strings[0], strings[1], Double.parseDouble(strings[2]),
                                     Double.parseDouble(strings[3]), Integer.parseInt(strings[4]), strings[5],

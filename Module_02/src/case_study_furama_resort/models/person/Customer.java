@@ -1,8 +1,8 @@
 package case_study_furama_resort.models.person;
 
 public class Customer extends  Person{
-    String guestType;
-    String address;
+    private String guestType;
+    private String address;
 
     public Customer(String iD, String name, String dateOfBirth,
                     String gender, String numberIdentity, String numberPhone,
@@ -32,6 +32,6 @@ public class Customer extends  Person{
 
     @Override
     public String toString() {
-        return super.toString() + String.format("=%s=%s", guestType, address);
+        return super.toString() + String.format(",%s,%s", guestType, address);
     }
 }

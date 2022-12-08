@@ -1,12 +1,12 @@
 package case_study_furama_resort.models.facility;
 
 public abstract class Facility {
-    String idService;
-    String nameService;
-    double usableArea;
-    double cost;
-    int maximumPeople;
-    String rentType;
+    private String idService;
+    private String nameService;
+    private double usableArea;
+    private double cost;
+    private int maximumPeople;
+    private String rentType;
 
     protected Facility() {
     }
@@ -75,7 +75,7 @@ public abstract class Facility {
 
     @Override
     public String toString() {
-        return String.format("%s=%s=%.2f=%.2f=%s=%s",
+        return String.format("%s,%s,%.2f,%.2f,%s,%s",
                 idService, nameService, usableArea, cost, maximumPeople,rentType);
 
     }

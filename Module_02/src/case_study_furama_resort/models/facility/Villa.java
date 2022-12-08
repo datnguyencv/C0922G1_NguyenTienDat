@@ -1,9 +1,9 @@
 package case_study_furama_resort.models.facility;
 
 public class Villa extends Facility {
-    String roomStandard;
-    double poolArea;
-    int numberFloors;
+    private String roomStandard;
+    private double poolArea;
+    private int numberFloors;
 
     public Villa(String idService, String nameService, double usableArea,
                  double cost, int maximumPeople, String rentType,
@@ -40,7 +40,7 @@ public class Villa extends Facility {
 
     @Override
     public String toString() {
-        return super.toString() + String.format("=%s=%.2f=%d=", roomStandard, poolArea, numberFloors);
+        return super.toString() + String.format("%s,%.2f,%d,", roomStandard, poolArea, numberFloors);
 
     }
 }

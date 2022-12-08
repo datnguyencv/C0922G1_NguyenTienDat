@@ -1,7 +1,7 @@
 package case_study_furama_resort.models.facility;
 
 public class Room extends Facility {
-    String freeServiceIncluded;
+    private String freeServiceIncluded;
 
     public Room(String idService, String nameService,
                 double usableArea, double cost, int maximumPeople,
@@ -20,7 +20,7 @@ public class Room extends Facility {
     }
     @Override
     public String toString() {
-        return super.toString() + String.format("=%s=", freeServiceIncluded);
+        return super.toString() + String.format(",%s,", freeServiceIncluded);
 
     }
 }

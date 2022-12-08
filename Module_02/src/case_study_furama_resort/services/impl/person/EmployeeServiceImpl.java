@@ -14,12 +14,17 @@ import static case_study_furama_resort.utils.read_write_file.WriteFileUtil.write
 public class EmployeeServiceImpl implements IEmployeeService {
     public static final String EMPLOYEE_CSV = "src/case_study_furama_resort/data_libs/employee.csv";
     Scanner scanner = new Scanner(System.in);
-    private List<Employee> employeeList = new ArrayList<>();
-    private InputInfoPeronServiceImpl inputInfoPeronService = new InputInfoPeronServiceImpl();
+    private static List<Employee> employeeList = new ArrayList<>();
+    private static final InputInfoPeronServiceImpl inputInfoPeronService = new InputInfoPeronServiceImpl();
 
     @Override
     public void add() {
-        Employee employeeAdd = this.infoEmployee("info");
+        Employee employeeAdd = check(inputString("ID"), "ID");
+        if (employeeAdd != null) {
+            System.out.println("Id đã tồn tại vui lòng kiêm tra thao tác lại");
+            return;
+        }
+        employeeAdd = this.infoEmployee("info");
         List<Employee> employeeListNew = new ArrayList<>();
         employeeListNew.add(employeeAdd);
         writeFile(EMPLOYEE_CSV, true, convertListEmployeeToListString(employeeListNew));
@@ -54,15 +59,6 @@ public class EmployeeServiceImpl implements IEmployeeService {
         }
     }
 
-//    public void sort() {
-//        employeeList = this.readFileEmployee();
-//        employeeList.sort(Comparator.comparing(Person::getName));
-//        for (Employee x : employeeList) {
-//            System.out.println(x.toString());
-//        }
-//    }
-
-
     /*
      * Nhập thông tin nhân viên
      */
@@ -73,15 +69,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         } else {
             infoID = booleanId;
         }
-        return new Employee(
-                infoID,
-                inputInfoPeronService.infoName(),
-                inputInfoPeronService.infoGender(),
-                inputInfoPeronService.infoDateOfBirth(),
-                infoNumberPhone(),
-                infoNumberIdentity(),
-                inputInfoPeronService.infoEmail(),
-                infoLevel(), infoLocation(), infoSalary());
+        return new Employee(infoID, inputInfoPeronService.infoName(), inputInfoPeronService.infoGender(), inputInfoPeronService.infoDateOfBirth(), infoNumberPhone(), infoNumberIdentity(), inputInfoPeronService.infoEmail(), infoLevel(), infoLocation(), infoSalary());
     }
 
     /*
@@ -90,11 +78,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
     public String infoLevel() {
         while (true) {
             String level;
-            System.out.println("Mời bạn chọn level\n" +
-                    "1.\tTrung cấp\n" +
-                    "2.\tCao đẳng\n" +
-                    "3.\tĐại học\n" +
-                    "4.\tSau Đại học\n");
+            System.out.println("Mời bạn chọn level\n" + "1.\tTrung cấp\n" + "2.\tCao đẳng\n" + "3.\tĐại học\n" + "4.\tSau Đại học\n");
             switch (choice()) {
                 case 1:
                     return level = "Trung cấp";
@@ -111,18 +95,12 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     /*
-     * nhập tông tin vị trí
+     * nhập thông tin vị trí
      */
     public String infoLocation() {
         while (true) {
             String location;
-            System.out.println("Mời bạn chọn location\n" +
-                    "1.\tLễ tân\n" +
-                    "2.\tPhục vụ\n" +
-                    "3.\tChuyên viên\n" +
-                    "4.\tGiám sát\n" +
-                    "5.\tQuản lý\n" +
-                    "6.\tGiám đốc\n");
+            System.out.println("Mời bạn chọn location\n" + "1.\tLễ tân\n" + "2.\tPhục vụ\n" + "3.\tChuyên viên\n" + "4.\tGiám sát\n" + "5.\tQuản lý\n" + "6.\tGiám đốc\n");
             switch (choice()) {
                 case 1:
                     return location = "Lễ tân";
@@ -145,7 +123,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
     /*
      * nhập thông tin lương
      */
-    public double infoSalary() {
+    protected double infoSalary() {
         double salary;
         while (true) {
             try {
@@ -262,9 +240,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
             System.out.println("Dữ liệu trong file không có");
         }
         for (int i = 0; i < employeeArrString.size(); i++) {
-            String[] infoEmployee = employeeArrString.get(i).split("=");
-            Employee employee = new Employee(infoEmployee[0], infoEmployee[1], infoEmployee[2], infoEmployee[3], infoEmployee[4],
-                    infoEmployee[5], infoEmployee[6], infoEmployee[7], infoEmployee[8], Double.parseDouble(infoEmployee[9]));
+            String[] infoEmployee = employeeArrString.get(i).split(",");
+            Employee employee = new Employee(infoEmployee[0], infoEmployee[1], infoEmployee[2], infoEmployee[3], infoEmployee[4], infoEmployee[5], infoEmployee[6], infoEmployee[7], infoEmployee[8], Double.parseDouble(infoEmployee[9]));
             employeeArr.add(employee);
         }
         return employeeArr;

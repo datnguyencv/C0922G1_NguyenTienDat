@@ -15,14 +15,14 @@ import static case_study_furama_resort.utils.read_write_file.WriteFileUtil.write
 public class CustomerServiceImpl implements ICustomerService {
     public static final String CUSTOMER_CSV = "src/case_study_furama_resort/data_libs/customer.csv";
     Scanner scanner = new Scanner(System.in);
-    InputInfoPeronServiceImpl inputInfoPeronService = new InputInfoPeronServiceImpl();
-    List<Customer> customerList = new LinkedList<>();
+    private static final InputInfoPeronServiceImpl inputInfoPeronService = new InputInfoPeronServiceImpl();
+    private static List<Customer> customerList = new LinkedList<>();
 
     @Override
     public void add() {
         Customer customerAdd = checkId(inputString("ID"));
         if (customerAdd != null) {
-            System.out.println("Id đã tồn tại vui lòng nhập lại");
+            System.out.println("Id đã tồn tại vui lòng kiểm tra thao tác lại");
             return ;
         }
         customerAdd = this.infoCustomer("info");
@@ -237,7 +237,7 @@ public class CustomerServiceImpl implements ICustomerService {
             System.out.println("Dữ liệu trong file không có");
         }
         for (int i = 0; i < customerArrString.size(); i++) {
-            String[] infoCustomer = customerArrString.get(i).split("=");
+            String[] infoCustomer = customerArrString.get(i).split(",");
             Customer customer = new Customer(infoCustomer[0], infoCustomer[1], infoCustomer[2],
                     infoCustomer[3], infoCustomer[4],
                     (infoCustomer[5]), infoCustomer[6],
