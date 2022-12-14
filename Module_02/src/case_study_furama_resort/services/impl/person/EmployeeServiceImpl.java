@@ -226,7 +226,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     /*
-     * đọc file danh sách student
+     * đọc file danh sách model
      */
     public List<Employee> readFileEmployee() {
         List<String> employeeArrString = null;
