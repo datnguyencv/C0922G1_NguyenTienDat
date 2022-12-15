@@ -1,5 +1,6 @@
 package student_manager.controller_view;
 
+import ss12_java_collection_framework.model.Product;
 import student_manager.io_library.ReadFileStudent;
 import student_manager.io_library.WriteFileStudent;
 import student_manager.model.Student;
@@ -45,9 +46,9 @@ public class StudentManagement {
                     int phoneNumber = Integer.parseInt(scanner.nextLine());
 
                     System.out.print("Enter address: ");
-                    String className = scanner.nextLine();
+                    String address = scanner.nextLine();
 
-                    Student student = new Student(studentID,studentName,yearOld,phoneNumber,className);
+                    Student student = new Student(studentID,studentName,yearOld,phoneNumber,address);
 
                     students.add(student);
                     try {
@@ -60,6 +61,16 @@ public class StudentManagement {
                     displayListStudent();
                     break;
                 case "3":
+                    System.out.print("Enter student id you want delete: ");
+                    String idStudentDelete = scanner.nextLine();
+
+                    List<Student> students1 = deleteStudent(idStudentDelete);
+                    try {
+                        WriteFileStudent.writeFileStudent(students1);
+                    } catch (IOException e) {
+                        System.err.println(e.getMessage());
+                    }
+                    displayListStudent();
 
                     break;
                 case "4":
@@ -111,5 +122,22 @@ public class StudentManagement {
                 }
             }
         return studentsFind;
+    }
+
+    private static List<Student> deleteStudent(String id){
+        List<Student> students1 = null;
+
+        try {
+            students1 = ReadFileStudent.readFileStudent();
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+
+        for (Student student1: students1) {
+            if (student1.getStudentID().contains(id)) {
+                students1.remove(student1);
+                break;
+            }
+        }return students1;
     }
 }
