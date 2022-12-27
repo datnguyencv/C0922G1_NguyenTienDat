@@ -1,6 +1,6 @@
 package student_manager.controller_view;
 
-import ss12_java_collection_framework.model.Product;
+
 import student_manager.io_library.ReadFileStudent;
 import student_manager.io_library.WriteFileStudent;
 import student_manager.model.Student;
@@ -16,15 +16,15 @@ public class StudentManagement {
         String choice;
 
         do {
-            System.out.print("=============StudentManager=============\n" +
-                    "1.Add new student.\n" +
-                    "2.Display list students.\n" +
-                    "3.Delete Student.\n" +
-                    "4.Find student's name.\n" +
-                    "5.Exit.\n" +
-                    "Enter your choice: ");
+            System.out.print("=============StudentManager=============\n"
+                    + "1.Add new student.\n"
+                    + "2.Display list students.\n"
+                    + "3.Delete Student.\n"
+                    + "4.Find student's name.\n"
+                    + "5.Exit.\n"
+                    + "Enter your choice: ");
             choice = scanner.nextLine();
-            switch (choice){
+            switch (choice) {
                 case "1":
                     List<Student> students = null;
                     try {
@@ -40,7 +40,7 @@ public class StudentManagement {
                     String studentName = scanner.nextLine();
 
                     System.out.print("Enter student yearold: ");
-                    String yearOld= scanner.nextLine();
+                    String yearOld = scanner.nextLine();
 
                     System.out.print("Enter student phone number: ");
                     int phoneNumber = Integer.parseInt(scanner.nextLine());
@@ -48,7 +48,7 @@ public class StudentManagement {
                     System.out.print("Enter address: ");
                     String address = scanner.nextLine();
 
-                    Student student = new Student(studentID,studentName,yearOld,phoneNumber,address);
+                    Student student = new Student(studentID, studentName, yearOld, phoneNumber, address);
 
                     students.add(student);
                     try {
@@ -79,11 +79,20 @@ public class StudentManagement {
 
                     List<Student> studentList = findStudent(nameStudentFind);
 
-                    for (Student student1: studentList) {
+                    for (Student student1 : studentList) {
                         System.out.println(student1);
                     }
                     break;
                 case "5":
+                    System.out.print("Sort by Address - Optional + Name: ");
+
+//                    List<Student> studentList1 = findStudent(nameStudentFind);
+//
+//                    for (Student student1 : studentList1) {
+//                        System.out.println(student1);
+//                    }
+                    break;
+                case "6":
                     System.exit(1);
                 default:
                     System.out.println("Your choice not valid!");
@@ -91,7 +100,7 @@ public class StudentManagement {
         } while (true);
     }
 
-    private static void displayListStudent(){
+    private static void displayListStudent() {
         List<Student> students1 = null;
         try {
             students1 = ReadFileStudent.readFileStudent();
@@ -99,13 +108,12 @@ public class StudentManagement {
             System.err.println(e.getMessage());
         }
 
-        assert students1 != null;
-        for (Student student1: students1) {
+        for (Student student1 : students1) {
             System.out.println(student1);
         }
     }
 
-    private static List<Student> findStudent(String name){
+    private static List<Student> findStudent(String name) {
         List<Student> students1 = null;
         List<Student> studentsFind = new LinkedList<>();
 
@@ -115,16 +123,15 @@ public class StudentManagement {
             System.err.println(e.getMessage());
         }
 
-        assert students1 != null;
-        for (Student student1: students1) {
-                if (student1.getStudentName().contains(name)) {
-                    studentsFind.add(student1);
-                }
+        for (Student element : students1) {
+            if (element.getStudentName().toLowerCase().contains(name)) {
+                studentsFind.add(element);
             }
+        }
         return studentsFind;
     }
 
-    private static List<Student> deleteStudent(String id){
+    private static List<Student> deleteStudent(String id) {
         List<Student> students1 = null;
 
         try {
@@ -133,11 +140,16 @@ public class StudentManagement {
             System.err.println(e.getMessage());
         }
 
-        for (Student student1: students1) {
-            if (student1.getStudentID().contains(id)) {
-                students1.remove(student1);
+        for (Student element : students1) {
+            if (element.getStudentID().contains(id)) {
+                students1.remove(element);
                 break;
             }
-        }return students1;
+        }
+        return students1;
+    }
+
+    private static void sortOptional(){
+        List<Student> students1=null;
     }
 }

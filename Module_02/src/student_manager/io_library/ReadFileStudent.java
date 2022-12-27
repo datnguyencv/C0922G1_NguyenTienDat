@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadFileStudent {
-    private static final String PATH_FILE = "src/student_manager/repository/list_student.csv";
+    private static final String PATH_FILE = "src/student_manager/datas/list_student.csv";
 
     public static List<Student> readFileStudent() throws IOException {
         List<Student> students = new ArrayList<>();

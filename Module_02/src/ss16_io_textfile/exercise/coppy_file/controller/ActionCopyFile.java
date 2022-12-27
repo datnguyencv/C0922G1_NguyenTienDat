@@ -5,8 +5,8 @@ import java.io.IOException;
 
 public class ActionCopyFile {
     public static void main(String[] args) {
-        String readPath = "src/ss16_io_textfile/exercise/coppy_file/repository/first_text";
-        String writePath = "src/ss16_io_textfile/exercise/coppy_file/repository/copy_text";
+        String readPath = "src/ss16_io_textfile/exercise/coppy_file/datas/first_text";
+        String writePath = "src/ss16_io_textfile/exercise/coppy_file/datas/copy_text";
 
         String data = "";
 

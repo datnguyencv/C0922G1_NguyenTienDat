@@ -16,7 +16,7 @@ import static case_study_furama_resort.utils.read_write_file.WriteFileUtil.write
 public class FacilityServiceImpl implements IFacilityService {
     public static final String VILLA_CSV = "src/case_study_furama_resort/data_libs/villa.csv";
     public static final String ROOM_CSV = "src/case_study_furama_resort/data_libs/room.csv";
-    public static final String FACILITY_CSV = "src/case_study_furama_resort/data_libs/facility.csv";
+    public static final String FACILITY_CSV = "src/case_study_furama_resort/data_libs/read_and_write_file_facility.csv";
     Scanner scanner = new Scanner(System.in);
     private final InputInfoFacility inputInfoFacility = new InputInfoFacility();
     private final Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();

@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class WriteFileStudent {
-    private static final String PATH_FILE = "src/student_manager/repository/list_student.csv";
+    private static final String PATH_FILE = "src/student_manager/datas/list_student.csv";
     public static void writeFileStudent(List<Student> students) throws IOException {
         File file = new File(PATH_FILE);
 
@@ -20,6 +20,7 @@ public class WriteFileStudent {
             bufferedWriter.newLine();
         }
 
+        bufferedWriter.flush();
         bufferedWriter.close();
     }
 }

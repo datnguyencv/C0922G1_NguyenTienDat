@@ -1,3 +1,5 @@
+package module2_test.src;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +24,7 @@ public class Beautiful {
     }
 
     public static void main(String[] args) {
+
         int[] arr={1,4};
         if(isBeautifulArray(arr))
             System.out.println("Beautifull");

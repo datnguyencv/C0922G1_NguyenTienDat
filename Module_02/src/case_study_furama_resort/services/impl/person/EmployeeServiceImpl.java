@@ -176,16 +176,19 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     public String infoNumberPhone() {
-        while (true) {
+        boolean aa= true;
+        while (aa) {
             try {
                 if (check(inputInfoPeronService.infoNumberPhone(), "NumberPhone") != null) {
                     throw new NumberFormatException();
                 }
+                aa=false;
                 return inputInfoPeronService.infoNumberPhone();
             } catch (NumberFormatException e) {
                 System.out.println("Bạn nhập bị trùng số điện thoại. Yêu cầu nhập lại.");
             }
         }
+        return null;
     }
 
     public String infoNumberIdentity() {

@@ -106,9 +106,9 @@ public class FuramaController {
         while (true) {
             System.out.println("---------------------------------------------");
             System.out.println("Chào mừng bạn đến với FacilityManagement");
-            System.out.println("1\tDisplay list facility\n" +
-                    "2\tAdd new facility\n" +
-                    "3\tDisplay list facility maintenance\n" +
+            System.out.println("1\tDisplay list read_and_write_file_facility\n" +
+                    "2\tAdd new read_and_write_file_facility\n" +
+                    "3\tDisplay list read_and_write_file_facility maintenance\n" +
                     "4\tReturn main menu\n");
             switch (choice()) {
                 case 1:

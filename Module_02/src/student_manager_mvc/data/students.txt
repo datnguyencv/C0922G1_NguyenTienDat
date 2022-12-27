@@ -1,0 +1,3 @@
+1,Nguyễn Tiến Đạt,01/01/1993,nam,1.0,Da Nang
+2,Trần Văn Anh Quân,30/03/1995,NAM,9.0,Quang Nam
+3,Lê Đình Hậu ,30/03/1995,NAM,10.0,Da Nang

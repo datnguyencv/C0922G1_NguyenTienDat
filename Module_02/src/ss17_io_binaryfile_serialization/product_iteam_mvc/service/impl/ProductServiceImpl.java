@@ -10,7 +10,7 @@ import java.util.List;
 public class ProductServiceImpl implements IProductService {
 
     public static final String PATH_FILE =
-            "src/ss17_io_binaryfile_serialization/product_iteam_mvc/repository/product.csv";
+            "src/ss17_io_binaryfile_serialization/product_iteam_mvc/datas/product.csv";
 
     public static List<Product> arrProduct = new ArrayList<>();
     @Override
