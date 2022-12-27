@@ -1,4 +1,18 @@
 package case_study_furama_resort_part_two.services.impl.facility;
 
-public class BookingServiceImpl {
+import case_study_furama_resort_part_two.models.booking.Booking;
+import case_study_furama_resort_part_two.services.IBookingService;
+
+import java.util.List;
+
+public class BookingServiceImpl implements IBookingService {
+    @Override
+    public List<Booking> getList() {
+        return null;
+    }
+
+    @Override
+    public void addElement(Booking o) {
+
+    }
 }

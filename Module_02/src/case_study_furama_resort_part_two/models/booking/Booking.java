@@ -1,4 +1,4 @@
-package case_study_furama_resort_part_two.models;
+package case_study_furama_resort_part_two.models.booking;
 
 public class Booking {
     private String bookingID;
