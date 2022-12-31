@@ -17,12 +17,12 @@ public class CustomerServiceImpl implements ICustomerService {
         customerLinkedList = ReadFileCustomer.readFile(CUSTOMER_PATH_NAME);
 
         if (customerLinkedList.isEmpty()){
-            System.out.println("nothing in the list");
+            System.out.println("Nothing in the list");
             return;
         }
 
         if (!customerExisted(customerEditedID)){
-            System.out.println("not existed");
+            System.out.println("Not existed");
             return;
         }
 
@@ -119,13 +119,13 @@ public class CustomerServiceImpl implements ICustomerService {
 
         for (Customer cus : customerLinkedList) {
             if (cus.getCustomerID() == customer.getCustomerID()) {
-                System.out.println("already existed");
+                System.out.println("Already existed");
                 return;
             }
         }
         customerLinkedList.add(customer);
         WriteFileCustomer.writeFile(CUSTOMER_PATH_NAME,customerLinkedList);
-        System.out.println("successful added!");
+        System.out.println("Successful added!");
     }
 
 }
