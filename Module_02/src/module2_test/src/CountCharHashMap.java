@@ -1,12 +1,10 @@
-package module2_test.src;
-
 import java.util.*;
 
 public class CountCharHashMap {
     static void characterCount(String str){
         HashMap <Character,Integer> charCount = new HashMap<>();
 
-        for (int i = str.length() - 1; i >= 0; i--)
+for (int i = str.length() - 1; i >= 0; i--)
         {
             if(charCount.containsKey(str.charAt(i)))
             {

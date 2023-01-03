@@ -1,5 +1,3 @@
-package module2_test.src;
-
 import java.util.ArrayList;
 import java.util.List;
 

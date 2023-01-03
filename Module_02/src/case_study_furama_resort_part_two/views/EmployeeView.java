@@ -216,7 +216,7 @@ public class EmployeeView {
                 break;
             } catch (NumberFormatException e) {
                 System.err.println(e.getMessage());
-                System.out.println("Please enter again a number: ");
+                System.out.println("Please enter again a number Ex 0.0: ");
             }
         }
         Employee employee = new Employee(name, dateOfBirth, gender, identification, phoneNumber,

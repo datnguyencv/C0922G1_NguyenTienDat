@@ -49,7 +49,16 @@ public class CustomerView {
                     break;
                 case 3:
                     System.out.println("Please enter the customer's id:");
-                    int customerEditedID = Integer.parseInt(input.nextLine());
+                    int customerEditedID ;
+                    while (true) {
+                        try {
+                            customerEditedID = Integer.parseInt(input.nextLine());
+                            break;
+                        } catch (NumberFormatException e) {
+                            System.err.println(e.getMessage());
+                            System.out.println("Please enter a number again");
+                        }
+                    }
                     if (customerController.customerExisted(customerEditedID)) {
                         System.out.println("what do you want to edit:");
                         System.out.println("1. Name");

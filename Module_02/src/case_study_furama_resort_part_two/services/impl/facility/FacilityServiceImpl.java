@@ -6,6 +6,7 @@ import case_study_furama_resort_part_two.models.facility.Facility;
 import case_study_furama_resort_part_two.services.IFacilityService;
 
 
+
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +28,7 @@ public class FacilityServiceImpl implements IFacilityService {
                 map.remove(facility);
             }
         }
+
         return map;
     }
 
