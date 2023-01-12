@@ -168,10 +168,6 @@ public class EmployeeServiceImpl implements IEmployeeService {
         return employeeList;
     }
 
-    @Override
-    public void addElement(Object o) {
-
-    }
 
     @Override
     public void addElement(Employee e) {

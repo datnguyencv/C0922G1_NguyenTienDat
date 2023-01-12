@@ -42,10 +42,6 @@ public class FacilityServiceImpl implements IFacilityService {
         return map;
     }
 
-    @Override
-    public void addElement(Facility o) {
-
-    }
 
 
     public void addFacility(Facility facility, int usedTimes) {

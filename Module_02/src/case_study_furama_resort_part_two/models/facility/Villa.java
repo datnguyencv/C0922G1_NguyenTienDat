@@ -1,5 +1,8 @@
 package case_study_furama_resort_part_two.models.facility;
 
+import case_study_furama_resort_part_two.models.person.Customer;
+import case_study_furama_resort_part_two.models.person.Person;
+
 import java.util.Objects;
 
 public class Villa extends Facility {
@@ -67,5 +70,6 @@ public class Villa extends Facility {
                 "roomStandard='" + roomStandard + '\'' +
                 ", poolSquare=" + poolSquare +
                 ", floorNumber=" + numberOfStories + ", " +  super.toString();
+
     }
 }

@@ -8,27 +8,16 @@ public class StringNumberNotConsecutive {
         for (int i  = 1; i < size; i++) {
             for (String str: numberList){
                 if(str.equals(i)){
-                    System.out.println(str.toString());
+                    System.out.print(i);
                 }
             }
-
         }
-
-
-
-
-
-        System.out.println(numberList);
     }
-
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String inputNum = scanner.nextLine();
         String[] number = inputNum.split(" ");
         ResurtCheck(number);
-
-
-
     }
 }

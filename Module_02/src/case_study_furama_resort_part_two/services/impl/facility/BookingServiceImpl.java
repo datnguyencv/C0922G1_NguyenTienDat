@@ -10,9 +10,4 @@ public class BookingServiceImpl implements IBookingService {
     public List<Booking> getList() {
         return null;
     }
-
-    @Override
-    public void addElement(Booking o) {
-
-    }
 }

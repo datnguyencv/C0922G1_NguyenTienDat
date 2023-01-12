@@ -109,11 +109,6 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public void addElement(Object o) {
-
-    }
-
-    @Override
     public void addElement(Customer customer) {
         customerLinkedList = ReadFileCustomer.readFile(CUSTOMER_PATH_NAME);
 
