@@ -2,18 +2,16 @@ create database students_management;
 
 use students_management;
 
-create table class
-(
-	id int,
-    name varchar(45)
+CREATE TABLE class (
+    id INT,
+    name VARCHAR(45)
 );
 
-create table teacher
-(
-	id	int,
-    name varchar(45),
-    age int,
-    country	varchar(45)
+CREATE TABLE teacher (
+    id INT,
+    name VARCHAR(45),
+    age INT,
+    country VARCHAR(45)
 );
 
 insert into class(id, name)
@@ -31,6 +29,6 @@ values	(1, 'Quang Nguyen', 24, 'Da Nang'),
         (5, 'Son Nguyen', 27, 'Da Nang'),
         (6, 'Trung Dang', 33, 'Da Nang');
         
-select * from class;
+SELECT * FROM class;
 
-select * from teacher;
+SELECT * FROM teacher;
