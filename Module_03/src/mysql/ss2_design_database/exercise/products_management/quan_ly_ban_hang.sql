@@ -5,7 +5,7 @@ use quan_ly_ban_hang_ss2;
 CREATE TABLE custormer (
     c_id INT PRIMARY KEY,
     c_name VARCHAR(50),
-    c_age VARCHAR(50)
+    c_age int
 );
 
 CREATE TABLE `order` (
