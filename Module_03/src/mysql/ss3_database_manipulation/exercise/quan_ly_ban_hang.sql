@@ -2,19 +2,19 @@ create database quan_ly_ban_hang_ss2;
 
 use quan_ly_ban_hang_ss2;
 
-CREATE TABLE custormer (
-    custormer_id INT PRIMARY KEY,
-    custormer_name VARCHAR(50),
-    custormer_age int
+CREATE TABLE customer (
+    customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(50),
+    customer_age TINYINT
 );
 
 CREATE TABLE `order` (
     order_id INT PRIMARY KEY,
-    custormer_id INT,
+    customer_id INT,
     order_date DATETIME,
     order_total_price INT,
-    FOREIGN KEY (custormer_id)
-	REFERENCES custormer (custormer_id)
+    FOREIGN KEY (customer_id)
+	REFERENCES customer (customer_id)
 );
     
 CREATE TABLE product (
