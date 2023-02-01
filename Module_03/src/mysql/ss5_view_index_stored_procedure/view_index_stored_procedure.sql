@@ -4,15 +4,14 @@ use demo;
 
 -- Tạo bảng products với các trường dữ liệu sau:
 
-create table products
-(
-	id int auto_increment primary key,
-    product_code int,
-    product_name varchar(50),
-    product_price double,
-    product_amount int,
-    product_description text,
-    product_status varchar(50)
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_code INT,
+    product_name VARCHAR(50),
+    product_price DOUBLE,
+    product_amount INT,
+    product_description TEXT,
+    product_status VARCHAR(50)
 );
 
 -- Chèn một số dữ liệu mẫu cho bảng Products.
@@ -50,15 +49,18 @@ WHERE product_code = 1;
 -- Tạo view lấy về các thông tin: productCode, productName, productPrice, productStatus từ bảng products.
 
 CREATE VIEW products_view AS
-SELECT product_code, product_name, product_price, product_status
-FROM products;
+    SELECT 
+        product_code, product_name, product_price, product_status
+    FROM
+        products;
 
 -- Tiến hành sửa đổi view.
 
-CREATE
-OR REPLACE VIEW products_view AS
-SELECT id, product_name, product_amount, product_description
-FROM products;
+CREATE OR REPLACE VIEW products_view AS
+    SELECT 
+        id, product_name, product_amount, product_description
+    FROM
+        products;
 
 -- Tiến hành xoá view.
 
