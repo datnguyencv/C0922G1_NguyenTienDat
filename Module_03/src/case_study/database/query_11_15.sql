@@ -29,15 +29,31 @@ from contract ct
         join employee e on e.id = ct.employee_id
         join facility f on f.id = ct.facility_id
         left join contract_detail ctd on ctd.contract_id = ct.id
-where ct.id in (select ct.id from ct where quarter(ct.start_date) = 4 and year ct year(ct.start_date) = 2020)
-and ct.id not in (select ct.id where quarter(ct.start_date) in (1,2) and year (ct.start_date) = 2021)	
+where ct.id in (select ct.id from contract ct where quarter(ct.start_date) = 4 and year(ct.start_date) = 2020)
+and ct.id not in (select ct.id where quarter(ct.start_date) in (1,2) and year(ct.start_date) = 2021)	
 group by ct.id;
 -- 13.	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng 
 -- đã đặt phòng. (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).
 
+select attach_facility.id, attach_facility.name, sum(ifnull(contract_detail.quantity, 0)) As quantity_facility from attach_facility
+join contract_detail on attach_facility.id = contract_detail.attach_facility_id
+group by contract_detail.attach_facility_id
+having sum((ifnull(contract_detail.quantity, 0)) = (select max(quantity_facility) from contract_detail);
+
 -- 14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
 -- Thông tin hiển thị bao gồm ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung 
 -- (được tính dựa trên việc count các ma_dich_vu_di_kem).
+
+set sql_mode=(select replace(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+select ct.id, ft.name, atf.name, count(ifnull(ctd.quantity, 0)) as number_use
+from facility_type ft
+join facility f on ft.id = f.facility_type_id
+join contract ct on f.id = ct.facility_id
+join contract_detail ctd on ct.id = ctd.contract_id
+join attach_facility atf on ctd.attach_facility_id = atf.id
+group by ctd.attach_facility_id, atf.name
+having count(ifnull(ctd.quantity, 0)) = 1
+order by ct.id;
 
 -- 15.	Hiển thi thông tin của tất cả nhân viên bao gồm ma_nhan_vien, ho_ten, ten_trinh_do, 
 -- ten_bo_phan, so_dien_thoai, dia_chi mới chỉ lập được tối đa 3 hợp đồng từ năm 2020 đến 2021.
