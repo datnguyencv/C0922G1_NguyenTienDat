@@ -11,20 +11,23 @@ select * from employee;
 -- chỉ cập nhật những khách hàng đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021
 -- là lớn hơn 10.000.000 VNĐ.
 
-UPDATE customer cc
-SET cc.id = 1
-WHERE cc.id IN(SELECT * FROM (
-	SELECT c.id FROM customer c
-		JOIN contract ct ON c.id = ct.customer_id
-        JOIN facility f ON f.id = ct.facility_id
-        JOIN contract_detail ctd ON ctd.contract_id = ct.id
-        JOIN attach_facility atf ON ctd.attach_facility_id = atf.id
-        WHERE year(ct.start_date) = 2021 AND c.customer_type_id = 2
-        GROUP BY ct.customer_id
-        HAVING SUM(f.cost + ctd.quantity * atf.cost) > 10000000) AS custormer_demo);
-        
--- Tắt ràng buộc khoá ngoại
-SET FOREIGN_KEY_CHECKS = 0;
+UPDATE customer c
+SET c.customer_type_id = 1
+WHERE c.id IN (
+  SELECT customer_demo.id
+  FROM (
+    SELECT c.id
+    FROM customer c
+    JOIN contract ct ON c.id = ct.customer_id
+    JOIN facility f ON f.id = ct.facility_id
+    JOIN contract_detail ctd ON ctd.contract_id = ct.id
+    JOIN attach_facility atf ON ctd.attach_facility_id = atf.id
+    WHERE YEAR(ct.start_date) = 2021
+    AND c.customer_type_id = 2
+    GROUP BY ct.customer_id
+    HAVING SUM(f.cost + ctd.quantity * atf.cost) > 10000000
+  ) AS customer_demo
+);
 
 -- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
 
@@ -32,9 +35,6 @@ SELECT * FROM customer;
 DELETE FROM customer c
 WHERE c.id IN (SELECT ct.customer_id FROM contract ct
 		WHERE year(start_date) < 2021 );
-
--- Tắt ràng buộc khoá ngoại
-SET FOREIGN_KEY_CHECKS = 0;
 
 -- 19.	Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
 
