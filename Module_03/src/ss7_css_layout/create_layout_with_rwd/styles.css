@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen {
+    .col-2 {
+        width: 16.66667%;
+    }
+
+    .col-8 {
+        width: 66.66667%;
+    }
+}
+
+li {
+    /* Bỏ đi các ký hiệu đánh dấu đầu mỗi phần tử của danh sách */
+    list-style: none;
+    padding-bottom: 20px;
+}
+
+/* Bỏ đi dấu gạch dưới của danh sách */
+a {
+    text-decoration: none;
+}
+
+#menu li {
+    position: relative;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    background-color: #222222;
+    color: white;
+}
+
+#menu li:hover {
+    background-color: #080808;
+}
+
+p {
+    text-align: center;
+}
+
+.col-2 {
+    text-align: center;
+    background-color: #F1F1F1;
+}
+.col-8{
+    height: 50px;
+    margin: 1px auto;
+    width: 60%;
+    background-color: #F5F5F5;
+    text-align: left;
+    justify-content: center;
+}
+
+.row {
+    /*cho thẻ div nổi lên trên*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content {
+    height: 80%;
+    background-color: white;
+
+}
+
+.body-content {
+    height: 80%;
+    background-color: white;
+}
+
+.box-text{
+    line-height: 50px;
+    height: 50px;
+    margin: 10px auto;
+    width: 80%;
+    background-color: #F5F5F5;
+    text-align: center;
+    justify-content: center;
+}
+
+.row-footer{
+    background-color: #555555;
+    color: white;
+    text-align: center;
+    margin-bottom: auto;
+    padding: 15px;
+}
