@@ -1,0 +1,52 @@
+.menu {
+    background-color: #F5F5F5;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo {
+    background-color: #F5F5F5;
+    padding-bottom: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.row::after{
+    display: block;
+    clear: both;
+    content: "";
+}
+.row{
+    display: flex;
+}
+
+    .col-4 {
+        width: 33.33333%;
+    }
+
+    .col-8 {
+        width: 66.66667%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+
+
+.text-2{
+    color: #555555;
+}
+
+.text-mini{
+    font-size: small;
+
+}
+.row-test{
+    width: 700px;
+    text-align: left;
+}
+
+
