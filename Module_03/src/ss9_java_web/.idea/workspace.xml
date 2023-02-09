@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4d6124ab-a76f-4a60-86c4-1ebd77d4ffbc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/src/main/java/com/example/demo/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demoo/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demoo/src/main/java/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/src/main/java/com/example/demo/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/src/main/java/com/example/demo/HelloResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src__tomcat/src/main/resources/META-INF/beans.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2LUSsfp6iVaB0dOlacSgToMafT1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Code/CODEGYM/Module_03/src/ss9_java_web"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4d6124ab-a76f-4a60-86c4-1ebd77d4ffbc" name="Changes" comment="" />
+      <created>1675924376204</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675924376204</updated>
+      <workItem from="1675924377749" duration="72000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
