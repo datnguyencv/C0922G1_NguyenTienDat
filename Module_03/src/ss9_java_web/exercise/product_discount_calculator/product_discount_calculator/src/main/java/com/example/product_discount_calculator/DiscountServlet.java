@@ -14,11 +14,11 @@ public class DiscountServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String description = request.getParameter("description");
-        double numberFisrt = Double.parseDouble(request.getParameter("list_price"));
-        double numberSecond = Double.parseDouble(request.getParameter("discount_price"));
+        double listPrice = Double.parseDouble(request.getParameter("list_price"));
+        double discountPercent = Double.parseDouble(request.getParameter("discount_percent"));
 
-        double discountAmount = numberFisrt * numberSecond * 0.01;
-        double discountPrice = numberFisrt - discountAmount;
+        double discountAmount = listPrice * discountPercent * 0.01;
+        double discountPrice = listPrice - discountAmount;
 
 //        In ra kết quả
         request.setAttribute("description", description);

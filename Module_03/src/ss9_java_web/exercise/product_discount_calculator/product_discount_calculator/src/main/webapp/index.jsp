@@ -27,7 +27,7 @@
 <div class="form-group2">
     <label for="price2">Discount Percent</label>
     <input type="text"
-           class="form-control" name="discount_price" id="price2" aria-describedby="helpId" placeholder="Input Discount Price">
+           class="form-control" name="discount_percent" id="price2" aria-describedby="helpId" placeholder="Input Discount Percent">
     <small id="helpId2" class="form-text text-muted">Enter number % Exp 10 == 10%  </small>
 </div>
 <button type="submit" class="btn btn-outline-primary" >Resurt</button>
