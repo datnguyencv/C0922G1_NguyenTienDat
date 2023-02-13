@@ -17,11 +17,9 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String action = request.getParameter("action");
-
         if (action == null) {
             action = "";
         }
-
         switch (action) {
             case "create":
                 showCreateForm(request, response);
@@ -44,7 +42,6 @@ public class ProductServlet extends HttpServlet {
     private void findProduct(HttpServletRequest request, HttpServletResponse response) {
         String nameProduct = request.getParameter("nameProduct");
         List<Product> products = this.productService.findByName(nameProduct);
-
         if (products == null) {
             try {
                 request.getRequestDispatcher("error-404.jsp").forward(request, response);
@@ -64,7 +61,6 @@ public class ProductServlet extends HttpServlet {
     private void viewProduct(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = this.productService.findById(id);
-
         if (product == null) {
             try {
                 request.getRequestDispatcher("error-404.jsp").forward(request, response);
@@ -84,7 +80,6 @@ public class ProductServlet extends HttpServlet {
     private void showDeleteForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = this.productService.findById(id);
-
         if (product == null) {
             try {
                 request.getRequestDispatcher("error-404.jsp").forward(request, response);
@@ -104,7 +99,6 @@ public class ProductServlet extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = this.productService.findById(id);
-
         if (product == null) {
             try {
                 request.getRequestDispatcher("error-404.jsp").forward(request, response);
@@ -132,11 +126,9 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         String action = request.getParameter("action");
-
         if (action == null) {
             action = "";
         }
-
         switch (action) {
             case "create":
                 createProduct(request, response);
@@ -159,7 +151,6 @@ public class ProductServlet extends HttpServlet {
     private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = this.productService.findById(id);
-
         if (product == null) {
             try {
                 request.getRequestDispatcher("error-404.jsp").forward(request, response);
@@ -183,7 +174,6 @@ public class ProductServlet extends HttpServlet {
         String describe = request.getParameter("describe");
         String brand = request.getParameter("brand");
         Product product = this.productService.findById(id);
-
         if (product == null) {
             try {
                 request.getRequestDispatcher("product/error-404.jsp").forward(request, response);
@@ -212,7 +202,6 @@ public class ProductServlet extends HttpServlet {
         double prices = Double.parseDouble(request.getParameter("prices"));
         String describe = request.getParameter("describe");
         String brand = request.getParameter("brand");
-
         this.productService.saveProduct(new Product(id, nameProduct, prices, describe, brand));
         request.setAttribute("message", "New customer was created");
         try {
@@ -220,7 +209,6 @@ public class ProductServlet extends HttpServlet {
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private void listProduct(HttpServletRequest request, HttpServletResponse response) {
