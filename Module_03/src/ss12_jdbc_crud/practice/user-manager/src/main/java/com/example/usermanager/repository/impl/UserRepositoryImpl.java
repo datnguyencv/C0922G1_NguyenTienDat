@@ -16,31 +16,16 @@ public class UserRepositoryImpl implements IUserRepository {
     private static final String SELECT_USER_BY_COUNTRY = "SELECT id,name,email,country FROM users WHERE country =?";
     private static final String SORT_BY_NAME_USER = "SELECT * FROM users ORDER BY name";
 
-    private static String jdbcURL = "jdbc:mysql://localhost:3306/demo12";
-    private static String jdbcUsername = "root";
-    private static String jdbcPassword = "123456";
-    private static Connection connection;
 
-    public static Connection getConnection() {
-        if (connection == null) {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-        return connection;
-    }
     @Override
     public boolean insertUser(User user) {
-        try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)){
-            preparedStatement.setString(1, user.getName());
-            preparedStatement.setString(2, user.getEmail());
-            preparedStatement.setString(3, user.getCountry());
-            preparedStatement.executeUpdate();
-
+        Connection connection = BaseRepository.getConnection();
+        try {
+             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
+                preparedStatement.setString(1, user.getName());
+                preparedStatement.setString(2, user.getEmail());
+                preparedStatement.setString(3, user.getCountry());
+                preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -50,6 +35,8 @@ public class UserRepositoryImpl implements IUserRepository {
     @Override
     public User selectUser(int id) {
         User user = null;
+        Connection connection = BaseRepository.getConnection();
+
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID);
             preparedStatement.setInt(1,id);
@@ -69,6 +56,8 @@ public class UserRepositoryImpl implements IUserRepository {
     @Override
     public List<User> selectAllUser() {
         List<User> users = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -88,6 +77,8 @@ public class UserRepositoryImpl implements IUserRepository {
 
     @Override
     public boolean deleteUser(int id) throws SQLException {
+        Connection connection = BaseRepository.getConnection();
+
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_USERS_SQL);
             preparedStatement.setInt(1, id);
@@ -100,6 +91,8 @@ public class UserRepositoryImpl implements IUserRepository {
 
     @Override
     public boolean updateUser(User user) throws SQLException {
+        Connection connection = BaseRepository.getConnection();
+
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USERS_SQL);
             preparedStatement.setString(1, user.getName());
@@ -116,6 +109,8 @@ public class UserRepositoryImpl implements IUserRepository {
     @Override
     public List<User> selectUserByCountry(String country) {
         List<User> users = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_COUNTRY);
             preparedStatement.setString(1, country);
@@ -136,6 +131,8 @@ public class UserRepositoryImpl implements IUserRepository {
         @Override
     public List<User> sortByNameUser() {
             List<User> users = new ArrayList<>();
+            Connection connection = BaseRepository.getConnection();
+
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement(SORT_BY_NAME_USER);
                 ResultSet resultSet = preparedStatement.executeQuery();

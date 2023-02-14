@@ -22,29 +22,48 @@
 <body>
 <div>
     <h1>User Managment</h1>
-    <h2>
-        <a href="/user?action=create">Add New User</a>
-    </h2>
-</div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="btn btn-primary nav-link active" aria-current="page" href="user?action=create">Create
+                            new user</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" method="post" action="user?action=sort">
+                    <button class="btn btn-outline-success" type="submit">Sort by name user</button>
+                </form>
+                <form class="d-flex" role="search" method="post" action="user?action=find">
+                    <input class="form-control me-2" type="text" placeholder="Search country"
+                           name="country" id="country">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 <table class="table table-bordered table-inverse table-responsive">
     <thead class="thead-inverse">
     <tr>
+        <th>STT</th>
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
         <th>Country</th>
-        <th>Actions</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="user" items="${listUser}">
+    <c:forEach items='${requestScope["users"]}' var="user" varStatus="stt">
         <tr>
-            <td><c:out value="${user.id}"/></td>
-            <td><c:out value="${user.name}"/></td>
-            <td><c:out value="${user.email}"/></td>
-            <td><c:out value="${user.country}"/></td>
-            <td><a href="/user?action=edit&id=${user.id}">Edit</a></td>
-            <td><a href="/user?action=delete&id=${user.id}">Delete</a></td>
+            <td>${stt.count}</td>
+            <td>${user.getId()}"/></td>
+            <td><<a href="user?action=view&id=${user.getId()}">${user.getName()}</a></td>
+            <td>${user.getEmail()}</td>
+            <td>${user.getCountry()}</td>
+            <td><a href="user?action=edit&id=${user.getid}">Edit</a></td>
+            <td><a href="user?action=delete&id=${user.getid}">Delete</a></td>
         </tr>
     </c:forEach>
     </tbody>

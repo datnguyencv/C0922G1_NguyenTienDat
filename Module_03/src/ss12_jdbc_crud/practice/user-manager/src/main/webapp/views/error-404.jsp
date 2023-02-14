@@ -11,6 +11,6 @@
     <title>Error 404</title>
 </head>
 <body>
-<h1>Đã xảy ra lỗi vui lòng thử lại sau</h1>
+<h1>NOT FOUND</h1>
 </body>
 </html>
