@@ -38,12 +38,12 @@
         <tr>
             <td>${stt.count}</td>
             <td>${product.getId()}</td>
-            <td><a href="product?action=view&id=${product.getId()}">${product.getNameProduct()}</a></td>
+            <td><a href="view?action=view&id=${product.getId()}">${product.getNameProduct()}</a></td>
             <td>${product.getPrices()}</td>
             <td>${product.getDescribe()}</td>
             <td>${product.getBrand()}</td>
-            <td><a href="product?action=edit&id=${product.getId()}">edit</a></td>
-            <td><a href="product?action=delete&id=${product.getId()}">delete</a></td>
+            <td><a href="view?action=edit&id=${product.getId()}">edit</a></td>
+            <td><a href="view?action=delete&id=${product.getId()}">delete</a></td>
         </tr>
     </c:forEach>
 </table>

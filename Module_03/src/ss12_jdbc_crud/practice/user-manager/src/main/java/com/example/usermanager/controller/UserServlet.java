@@ -112,7 +112,7 @@ public class UserServlet extends HttpServlet {
 
     private void sortByNameUser(HttpServletRequest request, HttpServletResponse response) {
         List<User> users = this.userService.sortByNameUser();
-        request.setAttribute("users", users);
+        request.setAttribute("user", users);
         if (users == null) {
             try {
                 request.getRequestDispatcher("views/error-404.jsp").forward(request, response);
@@ -131,7 +131,7 @@ public class UserServlet extends HttpServlet {
     private void findUser(HttpServletRequest request, HttpServletResponse response) {
         String country = request.getParameter("country");
         List<User> users = this.userService.selectUserByCountry(country);
-        request.setAttribute("users", users);
+        request.setAttribute("user", users);
         if (users == null) {
             try {
                 request.getRequestDispatcher("views/error-404.jsp").forward(request, response);
@@ -168,7 +168,6 @@ public class UserServlet extends HttpServlet {
         request.setAttribute("message", "User update successful!");
         try {
             request.getRequestDispatcher("views/edit.jsp").forward(request, response);
-
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
@@ -182,7 +181,6 @@ public class UserServlet extends HttpServlet {
         request.setAttribute("message", "New user was created!");
         try {
             request.getRequestDispatcher("views/create.jsp").forward(request, response);
-
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
@@ -190,7 +188,7 @@ public class UserServlet extends HttpServlet {
 
     private void listUser(HttpServletRequest request, HttpServletResponse response){
         List<User> users = this.userService.selectAllUser();
-        request.setAttribute("users", users);
+        request.setAttribute("user", users);
         try {
             request.getRequestDispatcher("views/list.jsp").forward(request, response);
         } catch (ServletException | IOException e) {

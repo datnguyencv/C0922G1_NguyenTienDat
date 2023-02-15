@@ -10,7 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ProductServlet", value = "/product")
+@WebServlet(name = "ProductServlet", value = "/view")
 public class ProductServlet extends HttpServlet {
     private final IProductService productService = new ProductService();
 
@@ -51,7 +51,7 @@ public class ProductServlet extends HttpServlet {
         } else {
             request.setAttribute("products", products);
             try {
-                request.getRequestDispatcher("product/find.jsp").forward(request, response);
+                request.getRequestDispatcher("view/find.jsp").forward(request, response);
             } catch (ServletException | IOException e) {
                 e.printStackTrace();
             }
@@ -70,7 +70,7 @@ public class ProductServlet extends HttpServlet {
         } else {
             request.setAttribute("product", product);
             try {
-                request.getRequestDispatcher("product/view.jsp").forward(request, response);
+                request.getRequestDispatcher("view/view.jsp").forward(request, response);
             } catch (ServletException | IOException e) {
                 e.printStackTrace();
             }
@@ -89,7 +89,7 @@ public class ProductServlet extends HttpServlet {
         } else {
             request.setAttribute("product", product);
             try {
-                request.getRequestDispatcher("product/delete.jsp").forward(request, response);
+                request.getRequestDispatcher("view/delete.jsp").forward(request, response);
             } catch (ServletException | IOException e) {
                 e.printStackTrace();
             }
@@ -108,7 +108,7 @@ public class ProductServlet extends HttpServlet {
         } else {
             request.setAttribute("product", product);
             try {
-                request.getRequestDispatcher("product/edit.jsp").forward(request, response);
+                request.getRequestDispatcher("view/edit.jsp").forward(request, response);
             } catch (ServletException | IOException e) {
                 e.printStackTrace();
             }
@@ -117,7 +117,7 @@ public class ProductServlet extends HttpServlet {
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
         try {
-            request.getRequestDispatcher("product/create.jsp").forward(request, response);
+            request.getRequestDispatcher("view/create.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
@@ -142,9 +142,6 @@ public class ProductServlet extends HttpServlet {
             case "find":
                 findProduct(request, response);
                 break;
-            default:
-                listProduct(request, response);
-                break;
         }
     }
 
@@ -160,7 +157,7 @@ public class ProductServlet extends HttpServlet {
         } else {
             this.productService.removeProduct(id);
             try {
-                response.sendRedirect("product");
+                response.sendRedirect("view");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -176,7 +173,7 @@ public class ProductServlet extends HttpServlet {
         Product product = this.productService.findById(id);
         if (product == null) {
             try {
-                request.getRequestDispatcher("product/error-404.jsp").forward(request, response);
+                request.getRequestDispatcher("view/error-404.jsp").forward(request, response);
             } catch (ServletException | IOException e) {
                 e.printStackTrace();
             }
@@ -189,7 +186,7 @@ public class ProductServlet extends HttpServlet {
             request.setAttribute("message", "Product information was updated");
             try {
                 request.setAttribute("product", product);
-                request.getRequestDispatcher("product/edit.jsp").forward(request, response);
+                request.getRequestDispatcher("view/edit.jsp").forward(request, response);
             } catch (ServletException | IOException e) {
                 e.printStackTrace();
             }
@@ -205,7 +202,7 @@ public class ProductServlet extends HttpServlet {
         this.productService.saveProduct(new Product(id, nameProduct, prices, describe, brand));
         request.setAttribute("message", "New customer was created");
         try {
-            request.getRequestDispatcher("product/create.jsp").forward(request, response);
+            request.getRequestDispatcher("view/create.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
@@ -215,7 +212,7 @@ public class ProductServlet extends HttpServlet {
         List<Product> products = this.productService.findAllProduct();
         request.setAttribute("products", products);
         try {
-            request.getRequestDispatcher("product/list.jsp").forward(request, response);
+            request.getRequestDispatcher("view/list.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }

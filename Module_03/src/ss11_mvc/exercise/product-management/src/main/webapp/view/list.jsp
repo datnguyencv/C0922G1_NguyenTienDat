@@ -28,11 +28,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="btn btn-primary nav-link active" aria-current="page" href="product?action=create">Create
+                    <a class="btn btn-primary nav-link active" aria-current="page" href="view?action=create">Create
                         new product</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search" method="post" action="product?action=find">
+            <form class="d-flex" role="search" method="post" action="view?action=find">
                 <input class="form-control me-2" type="text" placeholder="Search product"
                        name="nameProduct" id="nameProduct">
                 <button class="btn btn-outline-success" type="submit">Search</button>
@@ -55,12 +55,12 @@
         <tr>
             <td>${stt.count}</td>
             <td>${product.getId()}</td>
-            <td><a href="product?action=view&id=${product.getId()}">${product.getNameProduct()}</a></td>
+            <td><a href="view?action=view&id=${product.getId()}">${product.getNameProduct()}</a></td>
             <td>${product.getPrices()}</td>
             <td>${product.getDescribe()}</td>
             <td>${product.getBrand()}</td>
-            <td><a href="product?action=edit&id=${product.getId()}">edit</a></td>
-            <td><a href="product?action=delete&id=${product.getId()}">delete</a></td>
+            <td><a href="view?action=edit&id=${product.getId()}">edit</a></td>
+            <td><a href="view?action=delete&id=${product.getId()}">delete</a></td>
         </tr>
     </c:forEach>
 </table>

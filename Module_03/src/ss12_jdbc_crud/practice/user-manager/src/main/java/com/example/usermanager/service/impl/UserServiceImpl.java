@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements IUserService {
-    private final IUserRepository userRepository = new UserRepositoryImpl();
+     IUserRepository userRepository = new UserRepositoryImpl();
 
     @Override
     public boolean insertUser(User user) {
@@ -29,7 +29,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public List<User> selectAllUser() {
-        return this.userRepository.selectAllUser();
+        return userRepository.selectAllUser();
     }
 
     @Override

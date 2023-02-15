@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Edit product</title>
+    <title>Delete product</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -22,13 +22,8 @@
     </style>
 </head>
 <body>
-<h1>Edit product</h1>
-<button type="button" class="btn btn-primary"><a href="product">List product</a></button>
-<p>
-    <c:if test="${requestScope['message'] != null}">
-        <span class="message">${requestScope["message"]}</span>
-    </c:if>
-</p>
+<h1>Delete product</h1>
+<button type="button" class="btn btn-primary"><a href="view">List product</a></button>
 <form method="post">
     <div class="mb-3">
         <label for="id" class="form-label">ID</label>
@@ -53,7 +48,7 @@
         <label for="brand" class="form-label">Brand</label>
         <input type="text" class="form-control" id="brand" name="brand" value="${product.getBrand()}">
     </div>
-    <button type="submit" class="btn btn-primary">Update product</button>
+    <button type="submit" class="btn btn-primary">Delete product</button>
 </form>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

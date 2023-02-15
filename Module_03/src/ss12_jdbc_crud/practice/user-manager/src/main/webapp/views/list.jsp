@@ -20,7 +20,6 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div>
     <h1>User Managment</h1>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -55,15 +54,15 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items='${requestScope["users"]}' var="user" varStatus="stt">
+    <c:forEach items='${user}' var="user" varStatus="stt">
         <tr>
             <td>${stt.count}</td>
-            <td>${user.getId()}"/></td>
-            <td><<a href="user?action=view&id=${user.getId()}">${user.getName()}</a></td>
+            <td>${user.getId()}</td>
+            <td>${user.getName()}</td>
             <td>${user.getEmail()}</td>
             <td>${user.getCountry()}</td>
-            <td><a href="user?action=edit&id=${user.getid}">Edit</a></td>
-            <td><a href="user?action=delete&id=${user.getid}">Delete</a></td>
+            <td><a href="user?action=edit&id=${user.getId}">Edit</a></td>
+            <td><a href="user?action=delete&id=${user.getId}">Delete</a></td>
         </tr>
     </c:forEach>
     </tbody>
