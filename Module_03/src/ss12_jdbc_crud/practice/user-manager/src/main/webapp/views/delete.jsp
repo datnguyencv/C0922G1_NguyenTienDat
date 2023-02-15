@@ -42,6 +42,8 @@
         <input type="hidden" class="form-control" id="country" name="country" aria-describedby="emailHelp"
                value="${user.getCountry()}">
     </div>
+    <button type="submit" class="btn btn-primary">Delete user</button>
+</form>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -53,7 +55,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <button type="submit" class="btn btn-primary">Delete user</button>
+<button type="submit" class="btn btn-primary">Delete user</button>
 </form>
 </body>
 </html>

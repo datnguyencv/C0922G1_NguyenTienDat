@@ -2,7 +2,6 @@ package com.example.usermanager.service;
 
 import com.example.usermanager.model.User;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface IUserService {

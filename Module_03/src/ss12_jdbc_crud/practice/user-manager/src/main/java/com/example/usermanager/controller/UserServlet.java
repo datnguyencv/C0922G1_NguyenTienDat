@@ -90,18 +90,23 @@ public class UserServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
+                createUser(request, response);
                 break;
             case "edit":
+                editUser(request, response);
                 break;
             case "delete":
+                deleteUser(request, response);
                 break;
             case "find":
+                findUser(request, response);
                 break;
             case "sort":
+                sortByNameUser(request, response);
                 break;
             default:
+                listUser(request, response);
                 break;
-
         }
     }
 
