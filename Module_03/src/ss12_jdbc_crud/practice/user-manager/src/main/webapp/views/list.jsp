@@ -26,14 +26,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="btn btn-primary nav-link active" aria-current="page" href="user?action=create">Create
+                        <a class="btn btn-primary nav-link active" aria-current="page" href="/user?action=create">Create
                             new user</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search" method="post" action="user?action=sort">
+                <form class="d-flex" role="search" method="post" action="/user?action=sort">
                     <button class="btn btn-outline-success" type="submit">Sort by name user</button>
                 </form>
-                <form class="d-flex" role="search" method="post" action="user?action=find">
+                <form class="d-flex" role="search" method="post" action="/user?action=find">
                     <input class="form-control me-2" type="text" placeholder="Search country"
                            name="country" id="country">
                     <button class="btn btn-outline-success" type="submit">Search</button>
@@ -61,8 +61,8 @@
             <td>${user.getName()}</td>
             <td>${user.getEmail()}</td>
             <td>${user.getCountry()}</td>
-            <td><a href="user?action=edit&id=${user.getId}">Edit</a></td>
-            <td><a href="user?action=delete&id=${user.getId}">Delete</a></td>
+            <td><a href="/user?action=edit&id=${user.getId()}">Edit</a></td>
+            <td><a href="/user?action=delete&id=${user.getId()}">Delete</a></td>
         </tr>
     </c:forEach>
     </tbody>

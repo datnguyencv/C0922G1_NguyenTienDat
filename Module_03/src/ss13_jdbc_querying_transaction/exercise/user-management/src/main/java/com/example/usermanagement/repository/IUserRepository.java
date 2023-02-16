@@ -5,6 +5,8 @@ import com.example.usermanagement.model.User;
 import java.util.List;
 
 public interface IUserRepository {
+    String addUserTransaction(User user);
+
     void addUser(User user);
 
     User selectUser(int id);

@@ -56,7 +56,7 @@ public class UserServlet extends HttpServlet {
         List<User> userList = userService.searchByCountry(country);
         request.setAttribute("userList", userList);
         try {
-            request.getRequestDispatcher("view/find_by_country.jsp").forward(request, response);
+            request.getRequestDispatcher("view/search.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
@@ -85,7 +85,7 @@ public class UserServlet extends HttpServlet {
     }
 
     private void showAddForm(HttpServletRequest request, HttpServletResponse response) {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/add.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/create.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
@@ -157,7 +157,7 @@ public class UserServlet extends HttpServlet {
         userService.addUser(user);
         try {
             request.setAttribute("mess", "Add new user success");
-            request.getRequestDispatcher("view/add.jsp").forward(request, response);
+            request.getRequestDispatcher("view/create.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }

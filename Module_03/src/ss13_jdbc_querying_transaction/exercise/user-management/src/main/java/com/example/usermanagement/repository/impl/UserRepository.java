@@ -11,10 +11,35 @@ public class UserRepository implements IUserRepository {
     private static final String INSERT_USERS_SQL = "insert into users (name, email, country) values (?, ?, ?);";
     private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
     private static final String SELECT_USER_BY_COUNTRY = "select id,name,email,country from users where country =?";
-    private static final String SELECT_ALL_USERS = "call select_all_user();";
+    private static final String SELECT_ALL_USERS = "call select_all_users();";
     private static final String DELETE_USERS_SQL = "call delete_user(?);";
-    private static final String UPDATE_USERS_SQL = "call update_user_by_id(?,?,?,?);";
+    private static final String UPDATE_USERS_SQL = "call update_users_by_id(?,?,?,?);";
     private static final String SELECT_USERS_SORTED_BY_NAME = " select * from users order by name;";
+
+    @Override
+    public String addUserTransaction(User user) {
+        String mess = "";
+        Connection connection = BaseRepository.getConnection();
+        try {
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
+            preparedStatement.setString(1, user.getName());
+            preparedStatement.setString(2, user.getEmail());
+            preparedStatement.setString(3, user.getCountry());
+            int rowAdd = preparedStatement.executeUpdate();
+            if (rowAdd > 0) {
+                connection.commit();
+                mess = "Add transaction success!!!!";
+            } else {
+                connection.rollback();
+                mess = "Add transaction failed";
+            }
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return mess;
+    }
 
     @Override
     public void addUser(User user) {

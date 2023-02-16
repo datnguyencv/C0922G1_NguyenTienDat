@@ -1,15 +1,16 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Test
-  Date: 02/15/2023
-  Time: 10:00 PM
+  Date: 02/14/2023
+  Time: 3:18 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
 <head>
-    <title>User Manager</title>
+    <title>User Management</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,42 +20,50 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1>LIST USER</h1>
-<button type="submit" class="btn-outline-info m-2"><a href="view?action=create">ADD NEW USER</a></button>
-<br>
-<button type="submit" class="btn-outline-warning m-2"><a href="view?action=sort">SORT BY NAME</a></button>
-<br>
-<form action="/User">
-    <input type="text" name="country" value="country">
-    <button type="submit" class="btn-outline-success m-2" name="action" value="search"><a>SEARCH USER</a></button>
-    <br>
-</form>
-<table class="table table-active">
-    <tr class="table-dark">
-        <td>ID</td>
-        <td>Name User</td>
-        <td>Email</td>
-        <td>Country</td>
-        <td>Edit</td>
-        <td>Delete</td>
+<h1>User Managment</h1>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="btn btn-primary nav-link active" aria-current="page" href="/user?action=create">Create
+                        new user</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search" method="post" action="/user?action=sort">
+                <button class="btn btn-outline-success" type="submit">Sort by name user</button>
+            </form>
+            <form class="d-flex" role="search" method="post" action="/user?action=find">
+                <input class="form-control me-2" type="text" placeholder="Search country"
+                       name="country" id="country">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<table class="table table-bordered table-inverse table-responsive">
+    <tr>
+        <th>STT</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Country</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
-    <c:forEach var="user" items="${userList}">
+    <c:forEach items='${requestScope["userList"]}' var="user" varStatus="stt">
         <tr>
-            <td>${user.getId}</td>
-            <td>${user.getName}</td>
-            <td>${user.getEmail}</td>
-            <td>${user.getCountry}</td>
-            <td>
-                <button><a href="/view?action=edit&id=${user.getId}">edit</a></button>
-            </td>
-            <td>
-                <button><a href="/view?action=delete&id=${user.getId}">delete</a></button>
-            </td>
-
+            <td>${stt.count}</td>
+            <td>${user.getId()}</td>
+            <td>${user.getName()}</td>
+            <td>${user.getEmail()}</td>
+            <td>${user.getCountry()}</td>
+            <td><a href="view?action=edit&id=${user.getId()}">Edit</a></td>
+            <td><a href="view?action=delete&id=${user.getId()}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
-<a href="/view?action=select"><h3>List user</h3></a>
+</body>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -66,5 +75,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-</body>
+
 </html>

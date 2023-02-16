@@ -1,15 +1,16 @@
+u<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Test
-  Date: 02/15/2023
-  Time: 10:00 PM
+  Date: 02/14/2023
+  Time: 3:18 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Create User</title>
+    <title>Add New Users</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,22 +20,34 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1>ADD NEW USER</h1>
-<h3 style="color: red">${mess}</h3>
-<a href="/User">Come back list user page</a>
-<form action="/User" method="post">
-    <p>ID user</p>
-    <input type="number" name="id"><br>
-    <p>Name user</p>
-    <input type="text" name="name"><br>
-    <p>Email</p>
-    <input type="text" name="email"><br>
-    <p>Country</p>
-    <input type="text" name="country"><br><br>
-
-    <button type="submit" name="action" value="add">ADD</button>
+<div>
+    <h1>User Management</h1>
+    <button type="button" class="btn btn-outline-primary"><a href="user">List User</a></button>
+    <p>
+        <c:if test="${requestScope['message'] != null}">
+            <span class="message">${requestScope["message"]}</span>
+        </c:if>
+    </p>
+</div>
+<form method="post">
+    <div class="mb-3">
+        <label for="id" class="form-label">ID</label>
+        <input type="text" class="form-control" id="id" name="id" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name User</label>
+        <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input type="text" class="form-control" id="country" name="country">
+    </div>
+    <button type="submit" class="btn btn-primary">Create user</button>
 </form>
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
