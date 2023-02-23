@@ -2,33 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d6124ab-a76f-4a60-86c4-1ebd77d4ffbc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/src/main/java/com/example/demo/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demo/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demoo/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Module_02/src/demoo/src/main/java/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/src/main/java/com/example/demo/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/src/main/java/com/example/demo/HelloResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src__tomcat/src/main/resources/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/demo1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/demo1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/demo1/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/demo1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/demo1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/demo1/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/demo1/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/demo1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/demo1/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/demo1/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/demo1/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/Repository/Customer/ICustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/Repository/Customer/impl/BaseRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/Repository/Customer/impl/CustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/Repository/Idol/IIdolRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/Repository/Idol/impl/BaseRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/Repository/Idol/impl/IdolRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/Service/Customer/ICustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/Service/Customer/impl/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/Service/Idol/IIdolService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/Service/Idol/impl/IdolService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/controller/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/controller/CustomerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/controller/IdolServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/controller/IdolServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/model/Idol.class" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/build/classes/java/main/model/Idol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/build/libs/idol_manager-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/build/libs/idol_manager-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/database_idol.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/database_idol.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/Repository/Customer/ICustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/Repository/Customer/impl/BaseRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/Repository/Customer/impl/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/Repository/Idol/IIdolRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/Repository/Idol/impl/BaseRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/Repository/Idol/impl/IdolRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/Service/Customer/ICustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/Service/Customer/impl/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/Service/Idol/IIdolService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/Service/Idol/impl/IdolService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/controller/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/controller/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/controller/IdolServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/controller/IdolServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/java/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/webapp/view/customer/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/webapp/view/customer/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/webapp/view/customer/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/webapp/view/customer/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/webapp/view/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../idol_manager/idol_manager/src/main/webapp/view/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss13_jdbc_querying_transaction/exercise/user-management/src/main/webapp/WEB-INF/viewsss/create.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss13_jdbc_querying_transaction/exercise/user-management/src/main/webapp/WEB-INF/viewsss/delete.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss13_jdbc_querying_transaction/exercise/user-management/src/main/webapp/WEB-INF/viewsss/edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss13_jdbc_querying_transaction/exercise/user-management/src/main/webapp/WEB-INF/viewsss/find.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss13_jdbc_querying_transaction/exercise/user-management/src/main/webapp/WEB-INF/viewsss/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss13_jdbc_querying_transaction/exercise/user-management/src/main/webapp/WEB-INF/viewsss/sort.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8_bootstrap/building_landing_page/building_landing_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8_bootstrap/building_landing_page/building_landing_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +87,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Code/CODEGYM/Module_03/src/ss9_java_web"
+    "last_opened_file_path": "D:/Code/CODEGYM/Module_03/src/ss6_css_cascading_style_sheets/exercise/embedding_css_in_an_html_page/bai2.html"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -61,6 +99,9 @@
       <option name="presentableId" value="Default" />
       <updated>1675924376204</updated>
       <workItem from="1675924377749" duration="72000" />
+      <workItem from="1676764938326" duration="44000" />
+      <workItem from="1676945482247" duration="12000" />
+      <workItem from="1677119775986" duration="1615000" />
     </task>
     <servers />
   </component>
