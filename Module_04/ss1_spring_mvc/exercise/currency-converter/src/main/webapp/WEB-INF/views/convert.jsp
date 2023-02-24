@@ -20,7 +20,7 @@
 <body>
 <form class="center-pill" action="convert" method="get">
     <fieldset>
-        <h1> Chuyển đổi tiền tệ</h1>
+        <h4> Chuyển đổi tiền tệ</h4>
         <table class="table table-striped table-inverse table-responsive">
             <tr>
                 <th><label>Nhập số tiền USD</label></th>

@@ -9,36 +9,35 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Dictionary</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dictionary</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <form class="html-editor-align-center" action="translate" method="get">
-  <fieldset>
-    <h1> Dictionary ENGLISH - VIETNAMESE</h1>
-    <table class="table table-striped table-inverse table-responsive">
-      <tr>
-        <th><label>Input English</label></th>
-        <th><input type="text" name="english" value="${english}"></th>
-      </tr>
-      <tr>
-        <th></th>
-        <th>
-          <button type="submit" class="btn btn-outline-primary">Translate</button>
-        </th>
-      </tr>
-      <tr>
-        <th colspan="2">Kết quả:  <span style="color: darkblue; font-size: large"> ${result} </span> </th>
-      </tr>
-    </table>
-
-  </fieldset>
+    <fieldset>
+        <h4> Dictionary ENGLISH - VIETNAMESE</h4>
+        <table class="table table-striped table-inverse table-responsive">
+            <tr>
+                <th><label>Input English</label></th>
+                <th><input type="text" name="english" value="${english}"></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>
+                    <button type="submit" class="btn btn-outline-primary">Translate</button>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">Kết quả: <span style="color: darkblue; font-size: large"> ${result} </span></th>
+            </tr>
+        </table>
+    </fieldset>
 </form>
 
 <!-- Optional JavaScript -->
