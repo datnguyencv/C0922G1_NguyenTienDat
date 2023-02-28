@@ -1,20 +1,23 @@
 package com.example.email.model;
 
+import java.util.List;
+
 public class Email {
     private int id;
     private String languages;
     private int pageSize;
-    private boolean spamsFiller;
+//    private List<Integer> pageSize;
+    private boolean spamsFilter;
     private String signature;
 
     public Email() {
     }
 
-    public Email(int id, String languages, int pageSize, boolean spamsFiller, String signature) {
+    public Email(int id, String languages, int pageSize, boolean spamsFilter, String signature) {
         this.id = id;
         this.languages = languages;
         this.pageSize = pageSize;
-        this.spamsFiller = spamsFiller;
+        this.spamsFilter = spamsFilter;
         this.signature = signature;
     }
 
@@ -42,12 +45,12 @@ public class Email {
         this.pageSize = pageSize;
     }
 
-    public boolean isSpamsFiller() {
-        return spamsFiller;
+    public boolean isSpamsFilter() {
+        return spamsFilter;
     }
 
-    public void setSpamsFiller(boolean spamsFiller) {
-        this.spamsFiller = spamsFiller;
+    public void setSpamsFilter(boolean spamsFilter) {
+        this.spamsFilter = spamsFilter;
     }
 
     public String getSignature() {
