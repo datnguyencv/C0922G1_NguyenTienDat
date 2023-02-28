@@ -20,7 +20,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<form:form action="/update" method="post" modelAttribute="newEmails">
+<form:form action="/update-email" method="post" modelAttribute="newEmails">
     <fieldset>
         <legend>Settings</legend>
         <table>
@@ -66,7 +66,8 @@
             <tr>
                 <td></td>
                 <td>
-                    <form:button>Update</form:button>
+                        <%--                    <form:button>Update</form:button>--%>
+                    <button type="submit" class="btn btn-outline-primary">Update</button>
                 </td>
                 <td>
                     <form:button><a href="/email">Cancel</a></form:button>
