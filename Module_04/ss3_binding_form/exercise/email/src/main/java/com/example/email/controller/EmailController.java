@@ -28,6 +28,4 @@ public class EmailController {
         emailService.updateEmail(email.getId(),email);
         return ("redirect:/email");
     }
-
-
 }

@@ -23,7 +23,7 @@
 <form:form action="/update-email" method="post" modelAttribute="newEmails">
     <fieldset>
         <legend>Settings</legend>
-        <table>
+        <table class="table table-striped table-inverse table-responsive">
             <tr><form:hidden path="id" value="${email.getId()}"></form:hidden></tr>
             <tr>
                 <td>Languages:</td>
@@ -54,7 +54,7 @@
             <tr>
                 <td>Spams filter</td>
                 <td>
-                    <form:radiobutton path="spamsFilter" value="true"></form:radiobutton>Enable spams filter
+                    <form:radiobutton path="spamsFilter" value="true"></form:radiobutton> Enable spams filter
                 </td>
             </tr>
             <tr>
@@ -66,11 +66,10 @@
             <tr>
                 <td></td>
                 <td>
-                        <%--                    <form:button>Update</form:button>--%>
                     <button type="submit" class="btn btn-outline-primary">Update</button>
                 </td>
                 <td>
-                    <form:button><a href="/email">Cancel</a></form:button>
+                    <a name="" id="" class="btn btn-danger" href="/email" role="button">Cancel</a>
                 </td>
             </tr>
         </table>
