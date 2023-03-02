@@ -38,7 +38,7 @@
         <td th:text="${smartphone.getName()}"></td>
         <td th:text="${smartphone.getBrand()}"></td>
         <td th:text="${smartphone.getPrice()}"></td>
-        <td th:text="${smartphone.getDescription()()}"></td>
+        <td th:text="${smartphone.getDescription()}"></td>
         <td>
             <a th:href="@{/smartphone/edit/{id}(id=${smartphone.getId()})}">
                 <button type="submit" class="btn btn-warning">
@@ -130,20 +130,6 @@
         </div>
     </div>
 </div>
-<!--Phân trang-->
-<script src="library/jquery/jquery-3.5.1.min.js"></script>
-<script src="library/datatables/js/jquery.dataTables.min.js"></script>
-<script src="library/datatables/js/dataTables.bootstrap5.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#table').dataTable({
-                "dom": 'lrtip',
-                "lengthChange": false,
-                "pageLength": 7
-            }
-        )
-    })
-</script>
 <script>
     function info(id, name) {
         document.getElementById("idDelete").value = id;

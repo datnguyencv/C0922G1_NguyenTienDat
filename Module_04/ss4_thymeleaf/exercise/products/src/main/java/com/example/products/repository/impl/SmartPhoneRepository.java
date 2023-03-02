@@ -2,60 +2,121 @@ package com.example.products.repository.impl;
 
 import com.example.products.model.SmartPhone;
 import com.example.products.repository.ISmartPhoneRepository;
-import org.springframework.stereotype.Component;
+import com.example.products.repository.SessionUtil;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import javax.persistence.TypedQuery;
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public class SmartPhoneRepository implements ISmartPhoneRepository {
-    private static final Map<Integer, SmartPhone> smartphones = new HashMap<>();
-
-    static {
-        smartphones.put(1, new SmartPhone(1, "I Phone 13", "Apple","New 2021", 1300));
-        smartphones.put(2, new SmartPhone(2, "I Phone 14", "Apple","New 2022", 1900));
-        smartphones.put(3, new SmartPhone(3, "Nokia X", "Microsoft","New 2023", 1300));
-        smartphones.put(4, new SmartPhone(4, "Nokia XX", "Microsoft", "New 2025",1990));
-        smartphones.put(5, new SmartPhone(5, "Sony N1", "Sony","New 2025", 1220));
-    }
 
     @Override
     public List<SmartPhone> findAll() {
-        return new ArrayList<>(smartphones.values());
+        List<SmartPhone> smartphones = null;
+        Session session = SessionUtil.sessionFactory.openSession();
+        smartphones = session.createQuery("FROM SmartPhone ").getResultList();
+        session.close();
+        return smartphones;
     }
 
     @Override
-    public void save(SmartPhone smartPhone) {
-        smartphones.put(smartPhone.getId(), smartPhone);
+    public boolean save(SmartPhone smartPhone) {
+        Transaction transaction = null;
+        Session session = SessionUtil.sessionFactory.openSession();
+        try {
+            transaction = session.beginTransaction();
+            session.persist(smartPhone);
+            return true;
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+                return false;
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean update(SmartPhone smartPhone) {
+        SmartPhone smartPhone1 = findById(smartPhone.getId());
+        Session session = SessionUtil.sessionFactory.openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            smartPhone1.setName(smartPhone.getName());
+            smartPhone1.setBrand(smartPhone.getBrand());
+            smartPhone1.setPrice(smartPhone.getPrice());
+            session.update(smartPhone1);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+                return false;
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean remove(int id) {
+        SmartPhone smartPhone = findById(id);
+        Session session = SessionUtil.sessionFactory.openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.remove(smartPhone);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            if (transaction != null || smartPhone == null) {
+                assert transaction != null;
+                transaction.rollback();
+                return false;
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return true;
     }
 
     @Override
     public SmartPhone findById(int id) {
-        return smartphones.get(id);
-    }
-
-    @Override
-    public void update(SmartPhone smartPhone) {
-        smartphones.put(smartPhone.getId(), smartPhone);
-    }
-
-    @Override
-    public void delete(int id) {
-        smartphones.remove(id);
+        SmartPhone smartPhone;
+        Session session = SessionUtil.sessionFactory.openSession();
+        smartPhone = (SmartPhone) session.createQuery("FROM SmartPhone " +
+                "WHERE id = :id").setParameter("id", id).getSingleResult();
+        session.close();
+        return smartPhone;
     }
 
     @Override
     public List<SmartPhone> findByName(String name) {
-        List<SmartPhone> phones = new ArrayList<>(smartphones.values());
-        List<SmartPhone> phoneList = new ArrayList<>();
-        for (SmartPhone phone : phones) {
-            if (phone.getName().contains(name)) {
-                phoneList.add(phone);
+        List<SmartPhone> phones = null;
+        Session session = SessionUtil.sessionFactory.openSession();
+        try {
+            TypedQuery<SmartPhone> query
+                    = session.createQuery("SELECT s FROM SmartPhone s " +
+                    "WHERE s.name LIKE :name").setParameter("name", "%" + name + "%");
+            phones = query.getResultList();
+        } catch (Exception e) {
+            if (session != null) {
+                session.close();
             }
         }
-        return phoneList;
+        return phones;
     }
 }

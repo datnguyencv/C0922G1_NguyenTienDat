@@ -4,13 +4,9 @@ import com.example.products.model.SmartPhone;
 import com.example.products.repository.ISmartPhoneRepository;
 import com.example.products.service.ISmartPhoneService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class SmartPhoneService implements ISmartPhoneService {
@@ -23,8 +19,8 @@ public class SmartPhoneService implements ISmartPhoneService {
     }
 
     @Override
-    public void save(SmartPhone smartPhone) {
-        this.smartPhoneRepository.save(smartPhone);
+    public boolean save(SmartPhone smartPhone) {
+        return this.smartPhoneRepository.save(smartPhone);
     }
 
     @Override
@@ -33,13 +29,13 @@ public class SmartPhoneService implements ISmartPhoneService {
     }
 
     @Override
-    public void update(SmartPhone smartPhone) {
-        this.smartPhoneRepository.update(smartPhone);
+    public boolean update(SmartPhone smartPhone) {
+        return this.smartPhoneRepository.update(smartPhone);
     }
 
     @Override
-    public void delete(int id) {
-        this.smartPhoneRepository.delete(id);
+    public boolean remove(int id) {
+        return this.smartPhoneRepository.remove(id);
     }
 
     @Override
