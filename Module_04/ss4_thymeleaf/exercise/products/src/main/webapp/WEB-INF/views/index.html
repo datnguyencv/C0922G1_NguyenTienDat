@@ -25,6 +25,7 @@
         <th>Name smartphone</th>
         <th>Brand</th>
         <th>Prices</th>
+        <th>Description</th>
         <th>Edit</th>
         <th>Delete</th>
         <th>View</th>
@@ -37,6 +38,7 @@
         <td th:text="${smartphone.getName()}"></td>
         <td th:text="${smartphone.getBrand()}"></td>
         <td th:text="${smartphone.getPrice()}"></td>
+        <td th:text="${smartphone.getDescription()()}"></td>
         <td>
             <a th:href="@{/smartphone/edit/{id}(id=${smartphone.getId()})}">
                 <button type="submit" class="btn btn-warning">
@@ -46,7 +48,7 @@
         </td>
         <td>
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal1"
-                    th:onclick="|info('${smartphone.getId()}','${smartphone.getName()}')|">
+                    th:attr="onclick=|info('${smartphone.getId()}','${smartphone.getName()}')|">
                 Delete
             </button>
         </td>
@@ -70,24 +72,29 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form th:action="@{/smartphone/create}" th:object="${smartphone}" method="post">
+                <form th:action="@{/smartphone/create}" th:object="${smartphones}" method="post">
                     <div class="mb-3">
-                        <input type="hidden" th:field="*{id}" class="form-control" id="exampleInputEmail1"
+                        <input type="hidden" th:field="*{smartphones.id}" class="form-control" id="exampleInputEmail1"
                                aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Name smartphone</label>
-                        <input type="text" th:field="*{name}" class="form-control" id="exampleInputEmail2"
+                        <input type="text" th:field="*{smartphones.name}" class="form-control" id="exampleInputEmail2"
                                aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Brand</label>
-                        <input type="text" th:field="*{brand}" class="form-control" id="exampleInputEmail3"
+                        <input type="text" th:field="*{smartphones.brand}" class="form-control" id="exampleInputEmail3"
                                aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Prices</label>
-                        <input type="text" th:field="*{price}" class="form-control" id="exampleInputEmail0"
+                        <input type="text" th:field="*{smartphones.price}" class="form-control" id="exampleInputEmail0"
+                               aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail4" class="form-label">Prices</label>
+                        <input type="text" th:field="*{smartphones.description}" class="form-control" id="exampleInputEmail4"
                                aria-describedby="emailHelp">
                     </div>
                     <div class="modal-footer">
@@ -123,7 +130,20 @@
         </div>
     </div>
 </div>
-
+<!--Phân trang-->
+<script src="library/jquery/jquery-3.5.1.min.js"></script>
+<script src="library/datatables/js/jquery.dataTables.min.js"></script>
+<script src="library/datatables/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#table').dataTable({
+                "dom": 'lrtip',
+                "lengthChange": false,
+                "pageLength": 7
+            }
+        )
+    })
+</script>
 <script>
     function info(id, name) {
         document.getElementById("idDelete").value = id;

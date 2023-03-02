@@ -1,4 +1,4 @@
-package com.example.configuration;
+package com.example.products.configuration;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

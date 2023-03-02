@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/smartphone")
 public class SmartPhoneController {
@@ -16,8 +18,7 @@ public class SmartPhoneController {
 
     @GetMapping("")
     public String getHomePage(Model model){
-        model.addAttribute("smartphone", smartPhoneService.findAll());
-        model.addAttribute("smartphone",new SmartPhone());
+        model.addAttribute("smartphones", smartPhoneService.findAll());
         return "/index";
     }
 
@@ -25,38 +26,39 @@ public class SmartPhoneController {
     public String create(@ModelAttribute("smartphone") SmartPhone smartPhone, RedirectAttributes attributes) {
         smartPhone.setId((int) (Math.random() * 10000));
         smartPhoneService.save(smartPhone);
+        attributes.addFlashAttribute("mess", "Create successful!");
         return "redirect: /smartphone";
     }
 
     @GetMapping("/edit/{id}")
     public String edit(Model model, @PathVariable("id") int id) {
-        model.addAttribute("smartphone", smartPhoneService.findById(id));
+        model.addAttribute("smartphone", this.smartPhoneService.findById(id));
         return "/edit";
     }
 
     @PostMapping("/update")
     public String update(Model model, @ModelAttribute("smartphone") SmartPhone smartPhone) {
-        smartPhoneService.update(smartPhone);
-        model.addAttribute("message", "Update successful!");
+        this.smartPhoneService.update(smartPhone);
+        model.addAttribute("mess", "Update successful!");
         return "/edit";
     }
 
     @GetMapping("/delete")
     public String delete(@RequestParam("idDelete") int id, RedirectAttributes attributes) {
-        smartPhoneService.delete(id);
+        this.smartPhoneService.delete(id);
         attributes.addFlashAttribute("mess", "Delete successful!");
         return "redirect: /smartphone";
     }
 
     @GetMapping("/view/{id}")
     public String view(@PathVariable("id") int id, Model model) {
-        model.addAttribute("smartphone", smartPhoneService.findById(id));
+        model.addAttribute("smartphone", this.smartPhoneService.findById(id));
         return "/view";
     }
 
     @GetMapping("/search")
     public String search(@RequestParam("search") String name, Model model) {
-        model.addAttribute("smartphones", smartPhoneService.findByName(name));
+        model.addAttribute("smartphones", this.smartPhoneService.findByName(name) );
         return "/index";
     }
 

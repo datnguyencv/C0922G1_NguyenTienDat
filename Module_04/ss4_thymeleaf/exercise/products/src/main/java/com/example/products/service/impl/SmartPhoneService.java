@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-@Component
 public class SmartPhoneService implements ISmartPhoneService {
-    @Autowired private ISmartPhoneRepository smartPhoneRepository;
+    @Autowired
+    private ISmartPhoneRepository smartPhoneRepository;
 
     @Override
     public List<SmartPhone> findAll() {

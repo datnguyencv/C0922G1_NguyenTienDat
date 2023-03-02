@@ -4,15 +4,17 @@ public class SmartPhone {
     private int id;
     private String name;
     private String brand;
+    private String description;
     private double price;
 
     public SmartPhone() {
     }
 
-    public SmartPhone(int id, String name, String brand, double price) {
+    public SmartPhone(int id, String name, String brand, String description, double price) {
         this.id = id;
         this.name = name;
         this.brand = brand;
+        this.description = description;
         this.price = price;
     }
 
@@ -40,6 +42,14 @@ public class SmartPhone {
         this.brand = brand;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -48,3 +58,4 @@ public class SmartPhone {
         this.price = price;
     }
 }
+

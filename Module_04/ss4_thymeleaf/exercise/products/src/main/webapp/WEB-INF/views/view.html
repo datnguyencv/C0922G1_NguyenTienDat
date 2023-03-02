@@ -13,24 +13,32 @@
 <body>
 <navbar th:replace="/layout :: navbar"></navbar>
 <h1>Information smartphone</h1>
-<div>
-    <div>
-        <label>Id:</label>
-        <label th:text="${smartphone.getId()}"></label>
-    </div>
-    <div>
-        <label>Name:</label>
-        <label th:text="${smartphone.getName()}"></label>
-    </div>
-    <div>
-        <label>Brand:</label>
-        <label th:text="${smartphone.getBrand()}"></label>
-    </div>
-    <div>
-        <label>Price:</label>
-        <label th:text="${smartphone.getPrice()}"></label>
-    </div>
-</div>
+
+<table class="table table-bordered table-inverse table-responsive">
+    <thead class="thead-inverse">
+    <tr>
+        <th>Id:</th>
+        <td th:text="${smartphone.getId()}"></td>
+    </tr>
+    <tr>
+        <th>Name:</th>
+        <td th:text="${smartphone.getName()}"></td>
+    </tr>
+    <tr>
+        <th>Brand:</th>
+        <td th:text="${smartphone.getBrand()}"></td>
+    </tr>
+    <tr>
+        <th>Price:</th>
+        <td th:text="${smartphone.getPrice()}"></td>
+    </tr>
+    <tr>
+        <th>Description:</th>
+        <td th:text="${smartphone.getDescription()}"></td>
+    </tr>
+    </thead>
+</table>
+
 <footer th:replace="/layout :: footer"></footer>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
