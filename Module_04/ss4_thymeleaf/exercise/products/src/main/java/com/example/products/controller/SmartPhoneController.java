@@ -17,6 +17,7 @@ class SmartPhoneController {
     @GetMapping("")
     private String getHomePage(Model model){
         model.addAttribute("smartphones", smartPhoneService.findAll());
+        model.addAttribute("smartphone", new SmartPhone());
         return "/index";
     }
 
