@@ -27,13 +27,11 @@ public class BlogService implements IBlogService {
     @Override
     public void save(Blog blog) {
         this.blogRepository.save(blog);
-
     }
 
     @Override
     public void remove(Blog blog) {
         this.blogRepository.delete(blog);
-
     }
 
     @Override
@@ -42,7 +40,8 @@ public class BlogService implements IBlogService {
     }
 
     @Override
-    public Optional<Blog> findByName(String name) {
-        return this.blogRepository.findBy(name);
+    public List<Blog> findByName(String name) {
+        return null;
     }
+
 }

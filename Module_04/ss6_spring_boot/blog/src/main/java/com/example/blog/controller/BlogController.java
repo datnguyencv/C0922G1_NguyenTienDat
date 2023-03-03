@@ -1,11 +1,12 @@
 package com.example.blog.controller;
 
+import com.example.blog.model.Blog;
 import com.example.blog.service.IBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/blog")
@@ -19,9 +20,37 @@ public class BlogController {
         return "index";
     }
 
-    @GetMapping("/")
-    public String createBlog(Model model){
-        model.addAttribute("blogList",blogService.save());
+    @GetMapping("/list-blog")
+    public String listBlog(Model model){
+        model.addAttribute("blogList",blogService.findAll());
+        model.addAttribute("blogLists",new Blog());
+        return "/list";
+    }
+
+    @GetMapping("/edit/id")
+    public String editBlog(@PathVariable("id") Integer id, Model model){
+        model.addAttribute("blog", blogService.findById(id));
+        return "/edit";
+    }
+
+    @GetMapping("/view/id")
+    public String viewBlog(@PathVariable("id") Integer id, Model model){
+        model.addAttribute("blog", blogService.findById(id));
+        return "/view";
+    }
+
+    @PostMapping("/update")
+    public String viewBlog(@ModelAttribute ("blog") Blog blog, Model model){
+        blogService.save(blog);
+        model.addAttribute("mess", "Update Successfully");
+        return "/edit";
+    }
+
+    @PostMapping("/create")
+    public String createBlog(@ModelAttribute ("blogs") Blog blog, RedirectAttributes redirectAttributes){
+        blogService.save(blog);
+        redirectAttributes.addAttribute("mess", "Update Successfully");
+        return "redirect:/list-blog";
     }
 
 
