@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head">
-  <title>List Blog</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,9 +33,9 @@
   <tr th:each="blog, iState : ${blogList}">
     <td th:text="${iState.count}"></td>
     <td th:text="${blog.getId()}"></td>
-    <td th:text="${blog.getTitle()()}"></td>
-    <td th:text="${blog.getContent()()}"></td>
-    <td th:text="${blog.getAuthor()()}"></td>
+    <td th:text="${blog.getTitle()}"></td>
+    <td th:text="${blog.getContent()}"></td>
+    <td th:text="${blog.getAuthor()}"></td>
     <td>
       <a th:href="@{/edit/{id}(id=${blog.getId()})}">
         <button type="submit" class="btn btn-warning">
@@ -51,7 +50,7 @@
       </button>
     </td>
     <td>
-      <a th:href="@{view/{id}(id=${blog.getId()})}">
+      <a th:href="@{/view/{id}(id=${blog.getId()})}">
         <button type="submit" class="btn btn-success">
           View
         </button>
@@ -72,27 +71,22 @@
       <div class="modal-body">
         <form th:action="@{/create}" th:object="${blog}" method="post">
           <div class="mb-3">
-            <input type="hidden" th:field="*{blog.id}" class="form-control" id="exampleInputEmail1"
+            <input type="hidden" th:field="*{id}" class="form-control" id="exampleInputEmail1"
                    aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name blog</label>
-            <input type="text" th:field="*{blog.name}" class="form-control" id="exampleInputEmail2"
+            <input type="text" th:field="*{title}" class="form-control" id="exampleInputEmail2"
                    aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Brand</label>
-            <input type="text" th:field="*{blog.brand}" class="form-control" id="exampleInputEmail3"
+            <label for="exampleInputEmail1" class="form-label">Content</label>
+            <input type="text" th:field="*{content}" class="form-control" id="exampleInputEmail3"
                    aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Prices</label>
-            <input type="text" th:field="*{blog.price}" class="form-control" id="exampleInputEmail0"
-                   aria-describedby="emailHelp">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail4" class="form-label">Prices</label>
-            <input type="text" th:field="*{blog.description}" class="form-control" id="exampleInputEmail4"
+            <label for="exampleInputEmail1" class="form-label">Author</label>
+            <input type="text" th:field="*{author}" class="form-control" id="exampleInputEmail0"
                    aria-describedby="emailHelp">
           </div>
           <div class="modal-footer">
@@ -114,10 +108,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="/blog/delete" method="get">
+        <form action="/delete" method="get">
           <input hidden type="number" id="idDelete" name="idDelete">
           <span>
-                        Bạn có chắc chắn muốn xóa <span style="color: red" id="nameDelete"></span>
+                        You want delete <span style="color: red" id="nameDelete"></span>
                     </span>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
