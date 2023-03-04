@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-@RequestMapping("/blog")
+//@RequestMapping("/blog")
 public class BlogController {
     @Autowired
     IBlogService blogService;
@@ -23,17 +23,17 @@ public class BlogController {
     @GetMapping("/list-blog")
     public String listBlog(Model model){
         model.addAttribute("blogList",blogService.findAll());
-        model.addAttribute("blogLists",new Blog());
+        model.addAttribute("blog",new Blog());
         return "/list";
     }
 
-    @GetMapping("/edit/id")
+    @GetMapping("/edit/{id}")
     public String editBlog(@PathVariable("id") Integer id, Model model){
         model.addAttribute("blog", blogService.findById(id));
         return "/edit";
     }
 
-    @GetMapping("/view/id")
+    @GetMapping("/view/{id}")
     public String viewBlog(@PathVariable("id") Integer id, Model model){
         model.addAttribute("blog", blogService.findById(id));
         return "/view";
@@ -47,11 +47,16 @@ public class BlogController {
     }
 
     @PostMapping("/create")
-    public String createBlog(@ModelAttribute ("blogs") Blog blog, RedirectAttributes redirectAttributes){
+    public String createBlog(@ModelAttribute ("blog") Blog blog, RedirectAttributes redirectAttributes){
         blogService.save(blog);
-        redirectAttributes.addAttribute("mess", "Update Successfully");
+        redirectAttributes.addAttribute("mess", "Create Successfully");
         return "redirect:/list-blog";
     }
 
-
+    @GetMapping("/delete")
+    public String deleteBlog(@RequestParam("idDelete") Integer id, RedirectAttributes redirectAttributes) {
+        blogService.remove(id);
+        redirectAttributes.addFlashAttribute("mess", "Delete successful!");
+        return "redirect:/list-blog";
+    }
 }
