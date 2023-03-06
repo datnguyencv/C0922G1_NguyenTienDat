@@ -36,4 +36,18 @@ public class CategoryController {
         model.addAttribute("category", categoryService.findById(id));
         return "/category/edit";
     }
+
+    @PostMapping("/update-category")
+    public String updateCategory(Model model, @ModelAttribute Category category){
+        categoryService.updateCategory(category);
+        model.addAttribute("mess","Update successful!");
+        return "/category/edit";
+    }
+
+    @GetMapping("/delete-category")
+    public String deleteBlog(@RequestParam("idDelete") Integer id, RedirectAttributes redirectAttributes) {
+        categoryService.deleteCategory(id);
+        redirectAttributes.addFlashAttribute("mess", "Delete successful!");
+        return "redirect:/list-category";
+    }
 }
