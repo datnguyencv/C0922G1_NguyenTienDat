@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="head">
+</head>
+<body>
+<nav th:replace="navbar"></nav>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId"
+        th:attr="onclick=|getDate()|">
+    Add New Blog
+</button>
+<form th:action="@{/blog-list-by-category}" method="get"></form>
+<div class="form-group mb-3">
+    <label for="form-cate">Category</label>
+    <select th:value="${categoryTemp}" name="idSearch" class="custom-select" id="form-cate"
+        onchange="document.getElementById('submit').submit()">
+        <option selected>Select one</option>
+        <option th:value="0">Category</option>
+        <option th:each="category: ${category}" th:text="${category.getName}"
+        th:value="${category.getId()}" th:selected="${category == category.getId()}"></option>
+    </select>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Blog</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/delete-blog" method="get">
+                    Do you want delete <span style="color: red" id="nameDelete"></span>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function info(id, name) {
+            document.getElementById("idDelete").value = id;
+            document.getElementById("nameDelete").innerText = title;
+        }
+
+        function getdate(){
+            var today = new Date();
+            var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + " " +
+                today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            document.getElementById("current-date").value = date;
+
+        }
+    </script>
+
+    <form class="form-inline">
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Help text</small>
+        </div>
+    </form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+</html>
