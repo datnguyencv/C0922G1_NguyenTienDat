@@ -12,27 +12,30 @@
           crossorigin="anonymous"></script>
 </head>
 <body>
-<nav th:fragment="navbar" class="navbar navbar-expand-sm navbar-dark" style="background-color: #e3f2fd;">
-  <a class="navbar-brand" href="#">Blog</a>
-  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-          aria-controls="collapsibleNavId"
-          aria-expanded="false" aria-label="Toggle navigation"></button>
-  <div class="collapse navbar-collapse" id="collapsibleNavId">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#blog-list">Blog-Manager</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#category-list">Category-Manager</a>
-      </li>
-    </ul>
-    <form action="/blog-list" class="form-inline my-2 my-lg-0">
-      <input th:value="${nameSearch}" class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+<nav th:fragment="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Blog</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/list-blog">List blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/list-category">List category</a>
+        </li>
+      </ul>
+      <form action="/list-blog" class="d-flex" role="search">
+        <input th:value="${nameSearch}" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="nameSearch">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
   </div>
 </nav>
 

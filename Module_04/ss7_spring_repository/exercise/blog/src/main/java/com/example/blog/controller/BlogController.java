@@ -6,6 +6,8 @@ import com.example.blog.service.category.ICCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,31 +23,33 @@ public class BlogController {
     @GetMapping("")
     public String showBlog(Model model,
                            @RequestParam(required = false, defaultValue = "")
-                           String nameSearch, Pageable pageable) {
-        model.addAttribute("blog", blogService.findAll(nameSearch, pageable));
+                           @PageableDefault(sort = "localDate", direction = Sort.Direction.ASC) String nameSearch, Pageable pageable) {
+        model.addAttribute("blogSet", blogService.findAll(nameSearch, pageable));
+        model.addAttribute("nameSearch", nameSearch);
         return "/blog/index";
     }
 
-    @GetMapping("/blog-list")
+    @GetMapping("/list-blog")
     String blogList(Model model,
                     @RequestParam(required = false, defaultValue = "")
+                    @PageableDefault(size = 5, page = 0, sort = "localDate", direction = Sort.Direction.ASC)
                     String nameSearch, Pageable pageable) {
-        Page<Blog> blogsTemp = blogService.findAll(nameSearch.trim(), pageable);
-        model.addAttribute("blogTemp", blogsTemp);
+        Page<Blog> blogSet = blogService.findAll(nameSearch.trim(), pageable);
+        model.addAttribute("blogSet", blogSet);
         model.addAttribute("blogNew", new Blog());
         model.addAttribute("nameSearch", nameSearch);
-        model.addAttribute("category", categoryService.findALLCategory());
+        model.addAttribute("categories", categoryService.findALLCategory());
         return "/blog/list";
     }
 
-    @GetMapping("/blog-list-by-category")
+    @GetMapping("/list-blog-by-category")
     String findByCategoryBlog(Model model,
                               @RequestParam(required = false, defaultValue = "")
                               Integer idSearch, Pageable pageable) {
-        model.addAttribute("blogTemp", blogService.findCategory(idSearch, pageable));
+        model.addAttribute("blogSet", blogService.findCategory(idSearch, pageable));
         model.addAttribute("blogNew", new Blog());
-        model.addAttribute("id", idSearch);
-        model.addAttribute("category", categoryService.findALLCategory());
+        model.addAttribute("categories", idSearch);
+        model.addAttribute("categories", categoryService.findALLCategory());
         return "/blog/list";
     }
 

@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="head">
+<head th:replace="/layout::head">
 </head>
 <body>
-<nav th:replace="navbar"></nav>
+<nav th:replace="/layout::navbar"></nav>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId"
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
         th:attr="onclick=|getDate()|">
     Add New Blog
 </button>
-<form th:action="@{/blog-list-by-category}" method="get">
+<form th:action="@{/list-blog-by-category}" method="get">
     <div class="form-group mb-3">
         <label for="form-cate">Category</label>
         <select th:value="${categoryTemp}" name="idSearch" class="custom-select" id="form-cate"
@@ -17,7 +17,7 @@
             <option selected>Select one</option>
             <option th:value="0">Category</option>
             <option th:each="category: ${categories}" th:text="${category.getName}"
-                    th:value="${category.getId()}" th:selected="${category == category.getId()}"></option>
+                    th:value="${category.getId()}" th:selected="${categoryTemp == category.getId()}"></option>
         </select>
     </div>
 </form>
@@ -38,7 +38,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="blog, iState : ${blogTemp}">
+    <tr th:each="blog, iState : ${blogSet}">
         <td th:text="${iState.count}"></td>
         <td th:text="${blog.getId()}"></td>
         <td th:text="${blog.getLocalDate()}"></td>
@@ -73,21 +73,22 @@
 <nav aria-label="Page navigation example">
     <ul class="pagination">
         <li class="page-item">
-            <a class="page-link" th:if="${blogTemp.hasPrevious()}"
-               th:href="@{/list-blog(page=${blogTemp.number -1},nameSearch=${nameSearch},idSearch=${category1})}">Previous</a>
+            <a class="page-link" th:if="${blogSet.hasPrevious()}"
+               th:href="@{/list-blog(page=${blogSet.number -1},nameSearch=${nameSearch},idSearch=${categoryTemp})}">Previous</a>
         </li>
         <li class="page-item"><a class="page-link"
-                                 th:href="@{/list-blog(page=0,nameSearch=${nameSearch},idSearch=${category1})}">1</a>
+                                 th:href="@{/list-blog(page=0,nameSearch=${nameSearch},idSearch=${categoryTemp})}">1</a>
         </li>
         <li class="page-item"><a class="page-link"
-                                 th:href="@{/list-blog(page=1,nameSearch=${nameSearch},idSearch=${category1})}">2</a>
+                                 th:href="@{/list-blog(page=1,nameSearch=${nameSearch},idSearch=${categoryTemp})}">2</a>
         </li>
         <li class="page-item">
-            <a class="page-link" th:if="${blogTemp.hasNext()}"
-               th:href="@{/list-blog(page=${blogTemp.number +1},nameSearch=${nameSearch},idSearch=${category1})}">Next</a>
+            <a class="page-link" th:if="${blogSet.hasNext()}"
+               th:href="@{/list-blog(page=${blogSet.number +1},nameSearch=${nameSearch},idSearch=${categoryTemp})}">Next</a>
         </li>
     </ul>
 </nav>
+<footer th:replace="/layout::footer"></footer>
 
 <!--Modal create-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,30 +141,32 @@
     </div>
 </div>
 
-<!-- Modal Delete-->
-<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<!--Modal delete-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Delete Blog</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h1 class="modal-title fs-5" id="exampleModalLabel1">Delete blog</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="/delete-blog" method="get">
-                    Do you want delete <span style="color: red" id="nameDelete"></span>
+                    <input hidden type="number" id="idDelete" name="idDelete">
+                    <span>
+                        Bạn có chắc chắn muốn xóa <span style="color: red" id="nameDelete"></span>
+                    </span>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Delete</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+</div>
 
     <script>
-        function info(id, name) {
+        function info(id, title) {
             document.getElementById("idDelete").value = id;
             document.getElementById("nameDelete").innerText = title;
         }
@@ -176,14 +179,6 @@
 
         }
     </script>
-
-    <form class="form-inline">
-        <div class="form-group">
-            <label for=""></label>
-            <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-            <small id="helpId" class="text-muted">Help text</small>
-        </div>
-    </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
