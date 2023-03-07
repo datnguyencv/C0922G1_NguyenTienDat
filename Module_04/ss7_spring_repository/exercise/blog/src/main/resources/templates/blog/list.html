@@ -9,8 +9,8 @@
         th:attr="onclick=|getDate()|">
     Add New Blog
 </button>
-<form th:action="@{/list-blog-by-category}" method="get">
-    <div class="form-group mb-3">
+<form th:action="@{/list-blog-by-category}" id="submit" method="get">
+    <div class="form-group mb-3 m-2">
         <label for="form-cate">Category</label>
         <select th:value="${categoryTemp}" name="idSearch" class="custom-select" id="form-cate"
                 onchange="document.getElementById('submit').submit()">
