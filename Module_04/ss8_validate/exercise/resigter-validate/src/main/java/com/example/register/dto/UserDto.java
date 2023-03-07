@@ -13,7 +13,17 @@ public class UserDto implements Validator {
     private String email;
     private Integer age;
 
+    public UserDto(Integer id, String firstName, String lastName, String phoneNumber, String email, Integer age) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.age = age;
+    }
 
+    public UserDto() {
+    }
 
     public Integer getId() {
         return id;

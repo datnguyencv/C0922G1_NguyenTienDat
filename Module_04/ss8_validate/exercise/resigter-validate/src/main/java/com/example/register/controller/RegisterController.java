@@ -22,7 +22,7 @@ public class RegisterController {
 
     @GetMapping("")
     public String getHome(Model model){
-        model.addAttribute("userDto",new UserDto());
+        model.addAttribute("userDto",registerService.getAll());
         return ("/form");
     }
 
