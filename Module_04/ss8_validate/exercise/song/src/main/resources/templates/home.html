@@ -15,6 +15,7 @@
         class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
     Thêm mới bài hát
 </button>
+<a href="/create"></a>
 <p th:text="${mess}"></p>
 <table class="table table-success table-striped" id="table">
     <thead>
@@ -161,5 +162,23 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<script>
+    function editSong(id, name, artist, genre) {
+        document.getElementById("id-edit").value = id;
+        document.getElementById("name-edit").value = name;
+        document.getElementById("artist-edit").value = artist;
+        document.getElementById("genre-edit").value = genre;
+    }
+
+    function onCloseModal() {
+        document.getElementById('createModal').style.display = 'none';
+        window.location.href = "/";
+    }
+
+    function onCloseModal1() {
+        document.getElementById('createModal1').style.display = 'none';
+        window.location.href = "/";
+    }
+</script>
 </body>
 </html>

@@ -16,7 +16,7 @@ public class SongApplication {
 	@Bean
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-		messageSource.setBasenames("message");
+		messageSource.setBasenames("messages");
 		messageSource.setDefaultEncoding("UTF-8");
 		return messageSource;
 	}

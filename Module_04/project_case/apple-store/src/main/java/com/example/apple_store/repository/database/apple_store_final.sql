@@ -66,3 +66,16 @@ CREATE TABLE bill_type
     id INT PRIMARY KEY,
     name VARCHAR(50)
 );
+
+CREATE TABLE bill_detail
+(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_employee INT,
+    id_customer INT,
+    id_bill INT UNIQUE,
+    id_apple Int,
+    FOREIGN KEY (id_employee) REFERENCES employee(id),
+    FOREIGN KEY (id_customer) REFERENCES customer(id),
+    FOREIGN KEY (id_bill) REFERENCES bill(id),
+    FOREIGN KEY (id_apple) REFERENCES apple_phone(id)
+)
