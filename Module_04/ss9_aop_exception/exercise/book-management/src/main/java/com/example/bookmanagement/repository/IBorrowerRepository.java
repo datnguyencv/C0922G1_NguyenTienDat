@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IBorrowerRepository extends JpaRepository<Borrower, Integer> {
 
-    @Query(value = "select * from borrower where code= code1", nativeQuery = true)
+    @Query(value = "select * from borrower where code= :code1", nativeQuery = true)
     Borrower findByCode(@Param("code1") String code);
 }
