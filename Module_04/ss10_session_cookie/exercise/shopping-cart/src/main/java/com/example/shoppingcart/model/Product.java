@@ -12,7 +12,7 @@ public class Product {
     private Integer id;
     private String name;
     private Double price;
-    private Integer description;
+    private String description;
 
     public Product() {
     }
@@ -41,11 +41,11 @@ public class Product {
         this.price = price;
     }
 
-    public Integer getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(Integer description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 }

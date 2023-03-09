@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @Controller
-@SessionAttributes
+@SessionAttributes("cart")
 public class ProductController {
     @Autowired
     IProductService productService;
@@ -35,7 +35,7 @@ public class ProductController {
     public String addToCart(@PathVariable Integer id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
         Optional<Product> productOptional = productService.findById(id);
         if (!productOptional.isPresent()) {
-            return "/error.404";
+            return "/error404";
         }
         if (action.equals("show")) {
             cart.addProduct(productOptional.get());
@@ -57,7 +57,7 @@ public class ProductController {
                                @RequestParam(value = "action", required = false, defaultValue = "") String action) {
         Optional<Product> product = productService.findById(id);
         if (!product.isPresent()) {
-            return "/error.404";
+            return "/error404";
         }
 
         Map.Entry<Product, Integer> itemEntry = cart.selectItemInCart(product.get());
