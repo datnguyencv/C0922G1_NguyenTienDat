@@ -14,11 +14,11 @@ public class BorrowerService implements IBorrowerService {
     IBorrowerRepository borrowerRepository;
     @Override
     public List<Borrower> findAllBorrower() {
-        return null;
+        return borrowerRepository.findAll();
     }
 
     @Override
     public String setCodeBorrower() {
-        return null;
+        return String.format("%05d", (int) (Math.random() * 100000));
     }
 }
