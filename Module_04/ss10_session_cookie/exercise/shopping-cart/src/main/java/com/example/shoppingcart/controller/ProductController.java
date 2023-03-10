@@ -32,16 +32,12 @@ public class ProductController {
     }
 
     @GetMapping("/add/{id}")
-    public String addToCart(@PathVariable Integer id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
-        Optional<Product> productOptional = productService.findById(id);
-        if (!productOptional.isPresent()) {
+    public String addToCart(@PathVariable Integer id, @ModelAttribute Cart cart) {
+        Optional<Product> product = productService.findById(id);
+        if (!product.isPresent()) {
             return "/error404";
         }
-        if (action.equals("show")) {
-            cart.addProduct(productOptional.get());
-            return "redirect:/shopping-cart";
-        }
-        cart.addProduct(productOptional.get());
+        cart.addProduct(product.get());
         return "redirect:/shop";
     }
 
