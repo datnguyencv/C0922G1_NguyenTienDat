@@ -2,49 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d01984f2-ec0c-4b8d-9584-67dd18f1429a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/module2_test/src/CountCharFor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/module2_test/src/CountCharHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/module2_test/src/CountChart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/module2_test/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager/io_library/exception/IsExitPhoneNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager/io_library/validate/StudentInputValidate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/controller/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/controller/TeacherController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/data/students.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/data/teachers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/model/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/model/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/IStudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/ITeacherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/imlp/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/imlp/TeacherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/read_and_write/ReadFileUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/read_and_write/WriteFileUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/utils/exception/ClassNameException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/utils/exception/DayBirthDayException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/utils/exception/GenderException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/utils/exception/IdException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/utils/exception/MonthBirthDayException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/utils/exception/NameException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/utils/exception/PointException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/utils/exception/SearchException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/utils/exception/SpecializeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/utils/exception/YearBirthDayException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/service/utils/validate/Validate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module_02/src/student_manager_mvc/view/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module_02/out/production/module2/Beautiful.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module_02/out/production/module2/case_study_furama_resort/services/impl/person/EmployeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_02/out/production/module2/case_study_furama_resort/services/impl/person/EmployeeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module_02/out/production/module2/student_manager/controller_view/StudentManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_02/out/production/module2/student_manager/controller_view/StudentManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module_02/out/production/module2/student_manager/io_library/WriteFileStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_02/out/production/module2/student_manager/io_library/WriteFileStudent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module_02/out/production/module2/student_manager/repository/list_student.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_02/out/production/module2/student_manager/repository/list_student.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module_02/src/case_study_furama_resort/services/impl/person/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_02/src/case_study_furama_resort/services/impl/person/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module_02/src/module2_test/out/production/module2_test/Beautiful.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module_02/src/module2_test/out/production/module2_test/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module_02/src/module2_test/src/Beautiful.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_02/src/module2_test/src/Beautiful.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module_02/src/student_manager/controller_view/StudentManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_02/src/student_manager/controller_view/StudentManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module_02/src/student_manager/io_library/WriteFileStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_02/src/student_manager/io_library/WriteFileStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/C1022G1-Repo-CS-Team6" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/C1022G1-Repo-CS-Team6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +22,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Module_04/ss12_ajax_jquery/exercise/blog/src/main/resources/templates/index.js" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -76,10 +35,17 @@
       <option name="presentableId" value="Default" />
       <updated>1671525279201</updated>
       <workItem from="1671525293252" duration="653000" />
+      <workItem from="1678709370608" duration="311000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1678709453300">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1678709453300" />
   </component>
 </project>
