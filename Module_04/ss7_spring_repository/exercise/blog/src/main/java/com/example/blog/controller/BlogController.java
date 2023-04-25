@@ -34,7 +34,7 @@ public class BlogController {
                     @RequestParam(required = false, defaultValue = "")
                     @PageableDefault(size = 5, page = 0, sort = "localDate", direction = Sort.Direction.ASC)
                     String nameSearch, Pageable pageable) {
-        Page<Blog> blogSet = blogService.findAll(nameSearch.trim(), pageable);
+        Page<Blog>  blogSet = blogService.findAll(nameSearch.trim(), pageable);
         model.addAttribute("blogSet", blogSet);
         model.addAttribute("blogNew", new Blog());
         model.addAttribute("nameSearch", nameSearch);

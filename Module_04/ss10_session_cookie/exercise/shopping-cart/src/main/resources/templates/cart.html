@@ -35,7 +35,7 @@
                                 th:text="${product.getKey().getName()}"></a>
             </td>
             <td>
-                <a th:href="@{/remove/{id}(id=${product.getKey().getId()})}" th:text="${'-'}"></a>
+                <a th:href="@{/re   move/{id}(id=${product.getKey().getId()})}" th:text="${'-'}"></a>
                 <span th:text="${product.getValue()}"></span>
                 <a th:href="@{/add/{id}(id=${product.getKey().getId()})}" th:text="${'+'}"></a>
             </td>

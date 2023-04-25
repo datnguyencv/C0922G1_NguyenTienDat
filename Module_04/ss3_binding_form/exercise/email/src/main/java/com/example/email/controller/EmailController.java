@@ -24,7 +24,7 @@ public class EmailController {
     }
 
     @PostMapping("/update-email")
-    public String updateEmail(@ModelAttribute("newEmail") Email email){
+        public String updateEmail(@ModelAttribute("newEmail") Email email){
         emailService.updateEmail(email.getId(),email);
         return ("redirect:/email");
     }
