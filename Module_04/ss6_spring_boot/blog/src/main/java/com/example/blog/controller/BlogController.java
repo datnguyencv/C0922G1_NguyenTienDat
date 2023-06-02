@@ -11,7 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class BlogController {
     @Autowired
-    IBlogService blogService;
+    private IBlogService blogService;
 
     @GetMapping("")
     public String showBlogList(Model model){
@@ -20,8 +20,8 @@ public class BlogController {
     }
 
     @GetMapping("/list-blog")
-    public String listBlog(Model model){
-        model.addAttribute("blogList",blogService.findAll());
+    public String listBlog(@RequestParam(name = "search",defaultValue = "") String search, Model model){
+        model.addAttribute("blogList",blogService.findByName(search));
         model.addAttribute("blog",new Blog());
         return "/list";
     }
@@ -40,7 +40,7 @@ public class BlogController {
 
     @PostMapping("/update")
     public String viewBlog(@ModelAttribute ("blog") Blog blog, Model model){
-        blogService.save(blog);
+        blogService.update(blog);
         model.addAttribute("mess", "Update Successfully");
         return "/edit";
     }
@@ -48,7 +48,7 @@ public class BlogController {
     @PostMapping("/create")
     public String createBlog(@ModelAttribute ("blog") Blog blog, RedirectAttributes redirectAttributes){
         blogService.save(blog);
-        redirectAttributes.addAttribute("mess", "Create Successfully");
+        redirectAttributes.addFlashAttribute("mess", "Create Successfully");
         return "redirect:/list-blog";
     }
 

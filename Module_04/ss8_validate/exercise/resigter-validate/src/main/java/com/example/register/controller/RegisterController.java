@@ -18,11 +18,11 @@ import javax.validation.Valid;
 @Controller
 public class RegisterController {
     @Autowired
-    IRegisterService registerService;
+    private IRegisterService registerService;
 
     @GetMapping("")
     public String getHome(Model model){
-        model.addAttribute("userDto",registerService.getAll());
+        model.addAttribute("userDto", new UserDto());
         return ("/form");
     }
 
@@ -39,6 +39,6 @@ public class RegisterController {
         BeanUtils.copyProperties(userDto, user);
         this.registerService.create(user);
         redirectAttributes.addFlashAttribute("msg", "messages");
-        return "redirect:/form";
+        return "redirect:/index";
     }
 }

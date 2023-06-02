@@ -4,22 +4,37 @@ package com.example.register.dto;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import javax.validation.constraints.*;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 public class UserDto implements Validator {
 
     private Integer id;
+    @NotBlank
+    @Size(min = 5, max = 45,message = "Bạn phải nhập độ dài từ 5 đến 45 ký tự")
     private String firstName;
+    @NotBlank
+    @Size(min = 5, max = 45,message = "Bạn phải nhập độ dài từ 5 đến 45 ký tự")
     private String lastName;
+    @NotBlank
+    @Pattern(regexp ="^(098|097|093|091|094)\\d{7}$", message="Số điện thoại phải bắt đầu 098|097|093|091|094 và tổng 10 số")
     private String phoneNumber;
+    @NotBlank
+    @Email(message="email chưa đúng định dạng. VD: abc@email.com")
     private String email;
-    private Integer age;
+    @NotBlank
+    private String dateOfBirth;
 
-    public UserDto(Integer id, String firstName, String lastName, String phoneNumber, String email, Integer age) {
+    public UserDto(Integer id, String firstName, String lastName, String phoneNumber, String email, String dateOfBirth) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public UserDto() {
@@ -41,13 +56,6 @@ public class UserDto implements Validator {
         this.email = email;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -73,6 +81,13 @@ public class UserDto implements Validator {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
     @Override
     public boolean supports(Class<?> clazz) {
         return false;
@@ -80,7 +95,19 @@ public class UserDto implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-
-
+        UserDto user = (UserDto) target;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        try {
+            LocalDate dateOfBirth = LocalDate.parse(user.getDateOfBirth(), formatter);
+            LocalDate now = LocalDate.now();
+            int yearOld = Period.between(dateOfBirth, now).getYears();
+            if (yearOld < 18) {
+                errors.rejectValue("dateOfBirth", "Tuổi tối thiểu là 18 vui lòng kiểm tra lại");
+            }
+        } catch (DateTimeParseException e) {
+            errors.rejectValue("dateOfBirth", "Định dạng ngày không hợp lệ, vui lòng kiểm tra lại");
+        }
     }
 }
+
+

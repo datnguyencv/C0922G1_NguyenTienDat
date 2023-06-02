@@ -29,8 +29,8 @@
           <a class="nav-link active" aria-current="page" href="/list-blog">Manager</a>
         </li>
       </ul>
-      <form action="/search" class="d-flex ml-auto p-3" role="search">
-        <input class="form-control me-2 ml-auto" type="search" placeholder="Search" aria-label="Search" name="search">
+      <form action="/list-blog" class="d-flex ml-auto p-3" role="search">
+        <input th:text="${search}" class="form-control me-2 ml-auto" type="search" placeholder="Search" aria-label="Search" name="search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>

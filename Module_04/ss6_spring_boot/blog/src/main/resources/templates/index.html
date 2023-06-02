@@ -16,9 +16,9 @@
 <nav th:replace="/layout::navbar"></nav>
 <div class="row mt-3 p-2">
     <th:block th:each="blog : ${blogList}">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="card mb-3">
-                <img src="https://www.toponseek.com/blogs/wp-content/uploads/2019/12/blog-2-1agqwuw-2c4299e-3.jpg"
+                <img src="https://cdn.ttgtmedia.com/rms/onlineimages/what_is_a_blog_used_for-f_mobile.png"
                      class="card-img-top" alt="${blog.name}">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${blog.getTitle()}"></h5>

@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class BlogService implements IBlogService {
     @Autowired
-    IBlogRepository blogRepository;
+    private IBlogRepository blogRepository;
 
     @Override
     public List<Blog> findAll() {
@@ -41,7 +41,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public List<Blog> findByName(String name) {
-        return null;
+        return this.blogRepository.findAllByTitleContaining(name);
     }
 
 }
