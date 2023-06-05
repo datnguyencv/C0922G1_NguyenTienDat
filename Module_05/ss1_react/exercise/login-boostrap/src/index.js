@@ -10,8 +10,8 @@ root.render(
      <div className="container d-flex align-items-center text-center">
     <div className="form-signin">
       <form>
-        <img className="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" alt="" width="72" height="57" />
-        <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+        <img className="mb-4" src="https://cdn.codegym.vn/wp-content/uploads/2017/03/CodeGym-3-02-copy.jpg" alt="" height="57" />
+        <h1 className="h3 mb-3 fw-normal">Welcome CodeGym</h1>
         <div className="form-floating">
           <input type="email" className="form-control email" id="floatingInput" placeholder="name@example.com" />
           <label>Email address</label>
