@@ -50,10 +50,13 @@ const addedCourses = downFourCourses.map(
 console.log(addedCourses);
 
 // Nối 
-let courseMerged = [
-    ...courses,...addedCourses,
-]
-console.log(courseMerged);
+let mergedArray = (arr1,arr2) => {
+  let courseMerged = [
+    ...arr1,...arr2,]
+    return courseMerged;
+}
+
+console.log(mergedArray(courses,addedCourses));
 </script>
 <body>
   
