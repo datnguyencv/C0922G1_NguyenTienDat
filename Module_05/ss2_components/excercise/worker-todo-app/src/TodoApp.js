@@ -5,7 +5,7 @@ export class TodoApp extends Component {
     super();
     this.state = {
       item: "",
-      list: ['Làm bài tập','Học bài mới'],
+      list: ["Làm bài tập", "Học bài mới"],
     };
   }
 
@@ -18,7 +18,7 @@ export class TodoApp extends Component {
   handleAddItem = () => {
     this.setState({
       item: "",
-      list: [this.state.item,...this.state.list],
+      list: [this.state.item, ...this.state.list],
     });
   };
 
@@ -26,7 +26,7 @@ export class TodoApp extends Component {
     return (
       <>
         <div style={{ textAlign: "center" }}>
-            <h2> To do list </h2>
+          <h2> To do list </h2>
           <input
             value={this.state.item}
             onChange={(event) => this.handleChange(event.target.value)}
@@ -34,7 +34,10 @@ export class TodoApp extends Component {
           <button onClick={() => this.handleAddItem()}> Add</button>
           <ul>
             {this.state.list.map((item, index) => (
-              <li style={{listStyle : "none"}} key={index}> * {item}</li>
+              <li style={{ listStyle: "none" }} key={index}>
+                {" "}
+                * {item}
+              </li>
             ))}
           </ul>
         </div>

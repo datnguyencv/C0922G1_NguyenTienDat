@@ -49,11 +49,11 @@ root.render(
   <tbody>
     {students.map(student => (
           <tr key={student.id}>
+            <td>{student.id}</td>
             <td>{student.company}</td>
             <td>{student.contact}</td>
             <td>{student.country}</td>
           </tr>
-          
         ))}
         </tbody>
         </table>
