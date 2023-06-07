@@ -1,14 +1,15 @@
 import React from "react";
 
+const students = [
+  { id: 1, name: "Tiến Đạt", age: 20, address: "Đà Nẵng" },
+  { id: 2, name: "Minh Thông", age: 22, address: "Quảng Nam" },
+  { id: 3, name: "Văn Trí", age: 21, address: "Quảng Trị" },
+];
 export class StudentInfoComponent extends React.Component {
+  
   render() {
     // Dữ liệu danh sách sinh viên
-    const students = [
-      { id: 1, name: "Tiến Đạt", age: 20, address: "Đà Nẵng" },
-      { id: 2, name: "Minh Thông", age: 22, address: "Quảng Nam" },
-      { id: 3, name: "Văn Trí", age: 21, address: "Quảng Trị" },
-    ];
-
+  
     return (
       <div id="student-list">
         <div className="table-responsive">

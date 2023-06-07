@@ -9,13 +9,13 @@ export class TodoApp extends Component {
     };
   }
 
-  handleChange = (value) => {
+  handleChange (value) {
     this.setState({
       item: value,
     });
   };
 
-  handleAddItem = () => {
+  handleAddItem () {
     this.setState({
       item: "",
       list: [this.state.item, ...this.state.list],
