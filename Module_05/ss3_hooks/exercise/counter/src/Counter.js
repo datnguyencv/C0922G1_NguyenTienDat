@@ -1,25 +1,27 @@
 import { useState } from "react";
 
 export function Counter() {
-  const [counter, setCounter] = useState(0);
-  const [counterTwo, setCounterTwo] = useState(0);
-  const handleAdd = () => {
-    setCounter(counter + 1);
-  };
+  function useIncrement(addAmount) {
+    const [count, setCount] = useState(0);
 
-  const handleAddTwo = () => {
-    setCounterTwo((prevState) => prevState + 2);
-  };
+    const increment = () => {
+      setCount((prevCount) => prevCount + addAmount);
+    };
 
-  return (
-    <>
-      <div style={{textAlign: "center"}}>
-        <h1> Number : {counter}</h1>
-        <button onClick={handleAdd}>Add</button>
+    return { count, increment };
+  }
 
-        <h1>Number Two : {counterTwo}</h1>
-        <button onClick={handleAddTwo}> Add +2 </button>
-      </div>
-    </>
-  );
-}
+    const { count, increment } = useIncrement(1);
+    const { count: countTwo, increment: incrementTwo } = useIncrement(2);
+
+    return (
+      <>
+        <div style={{ textAlign: "center" }}>
+          <h1>Số: {count}</h1>
+          <button onClick={increment}>Thêm</button>
+          <h1>Số Hai: {countTwo}</h1>
+          <button onClick={incrementTwo}>Thêm +2</button>
+        </div>
+      </>
+    );
+  }
