@@ -40,3 +40,7 @@
 .error-flag{
   color: red;
 }
+
+.container mx-auto {
+  width: 25rem;
+}
