@@ -10,10 +10,10 @@ export default function FormContact() {
     <div>
       <Formik
         initialValues={{
-          name: "Tiến Đạt",
-          email: "tiendat@gmail.com",
-          phone: "0986745452",
-          message: "Một hai ba bốn năm sáu bảy tám chín mười",
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
         }}
         validationSchema={Yup.object({
           name: Yup.string()

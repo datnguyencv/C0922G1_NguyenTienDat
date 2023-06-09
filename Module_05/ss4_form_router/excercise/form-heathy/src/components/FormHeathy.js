@@ -35,7 +35,8 @@ export default function FormHeathy() {
               /^[A-Za-zvxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđĐ ]{5,50}$/,
               "Tên bạn nhập chưa đúng. Vui lòng kiểm tra lại"
             ),
-          idCard: Yup.string().matches(),
+            yearOld: Yup.number().min(1900).required("Vui lòng nhập không để trống"),
+            idCard: Yup.string().matches(),
           nationality: Yup.string().required("Vui lòng nhập không để trống"),
           company: Yup.string().required("Vui lòng nhập không để trống"),
           position: Yup.string().required("Vui lòng nhập không để trống"),
@@ -65,7 +66,7 @@ export default function FormHeathy() {
         }}
       >
         {({ isSubmitting }) => (
-          <div className="container">
+          <div className="container mx-auto">
             <div>
               <h2 className="mt-2"> Tờ khai y tế </h2>
             </div>
