@@ -152,13 +152,13 @@ export default function FormHeathy() {
                 </label>
                 <div>
                   <label>
-                    <Field type="radio" name="gender" value="0" />
+                    <Field type="radio" name="gender" value="Nam" />
                     Nam
                   </label>
                 </div>
                 <div>
                   <label>
-                    <Field type="radio" name="gender" value="1" />
+                    <Field type="radio" name="gender" value="Nữ" />
                     Nữ
                   </label>
                 </div>
