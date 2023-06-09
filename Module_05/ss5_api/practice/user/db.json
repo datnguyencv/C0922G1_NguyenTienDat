@@ -1,0 +1,15 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "json-server"
+    }
+  ],
+  "article": [
+    {
+      "id": 1,
+      "article": "some comment"
+    }
+  ]
+
+}

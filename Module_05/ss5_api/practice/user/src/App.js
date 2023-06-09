@@ -1,25 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import axios from "axios";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    user_id;
+    constructor(props) {
+        super(props);
+        this.state = {
+            users: []
+        };
+    }
+
+    componentDidMount() {
+        const getUsers = axios.get("http://localhost:3000/users");
+        const getArticle = axios.get("http://localhost:3000/articles");
+        axios
+            .all([getUsers, getArticle])
+            .then(
+                axios.spread((res1, res2) => {
+                    const users = res1.data.map(user => {
+                        return {
+                            ...user,
+                            article: res2.data.filter(item => {
+                                return item.user_id === user.id;
+                            })
+                        };
+                    });
+                    this.setState({ users: users });
+                })
+            )
+            .catch(err => {
+                throw err;
+            });
+    }
+
+    render() {
+        const { users } = this.state;
+        return (
+            <div>
+            <h1>Users</h1>
+            <table>
+            <thead>
+            <tr>
+            <th>Name</th>
+            <th>Article numbers</th>
+        </tr>
+        </thead>
+        <tbody>
+        {users.map(user => (
+                <tr key={user.id}>
+            <td> {user.name} </td>
+            <td> {user.article.length} </td>
+            </tr>
+    ))}
+    </tbody>
+        </table>
+        </div>
+    );
+    }
 }
 
 export default App;

@@ -16,10 +16,10 @@ export class TodoApp extends Component {
   };
 
   handleAddItem () {
-    this.setState({
+    this.setState((state, props) => ({
       item: "",
-      list: [this.state.item, ...this.state.list],
-    });
+      list: [state.item, ...props.list],
+    }));
   };
 
   render() {
