@@ -35,8 +35,8 @@ export default function FormHeathy() {
               /^[A-Za-zvxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđĐ ]{5,50}$/,
               "Tên bạn nhập chưa đúng. Vui lòng kiểm tra lại"
             ),
-            yearOld: Yup.number().min(1900).required("Vui lòng nhập không để trống"),
-            idCard: Yup.string().matches(),
+            yearOld: Yup.number().min(1900,"Nhập lớn hơn 1900").required("Vui lòng nhập không để trống"),
+            idCard: Yup.string().required("Vui lòng nhập không để trống"),
           nationality: Yup.string().required("Vui lòng nhập không để trống"),
           company: Yup.string().required("Vui lòng nhập không để trống"),
           position: Yup.string().required("Vui lòng nhập không để trống"),
