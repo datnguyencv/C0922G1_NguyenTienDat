@@ -11,6 +11,6 @@ public interface ICategoryRepository extends JpaRepository<Category, Integer> {
     @Query(value = "select * from category", nativeQuery = true)
     List<Category> getAll();
 
-    @Query(value = "select * from book_type where id = :id", nativeQuery = true)
+    @Query(value = "select * from category where id = :id", nativeQuery = true)
     Category getWithId(@Param("id") Integer id);
 }

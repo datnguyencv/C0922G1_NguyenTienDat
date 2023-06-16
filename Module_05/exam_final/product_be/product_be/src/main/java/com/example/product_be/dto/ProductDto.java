@@ -31,6 +31,15 @@ public class ProductDto {
         this.categoryDto = categoryDto;
     }
 
+    public ProductDto(String code, String name, Integer quantity, Integer price, String inputDate, CategoryDto categoryDto) {
+        this.code = code;
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+        this.inputDate = inputDate;
+        this.categoryDto = categoryDto;
+    }
+
     public Integer getId() {
         return id;
     }

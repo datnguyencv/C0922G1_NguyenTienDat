@@ -57,6 +57,12 @@ public class RestProductController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/product/{id}")
+    public Product findId(@PathVariable Integer id) {
+        return productService.findWithId(id);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/product/{id}")
     public void deleteProduct(@PathVariable Integer id) {
         productService.deleteProduct(id);

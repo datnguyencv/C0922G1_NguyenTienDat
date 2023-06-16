@@ -13,7 +13,7 @@ import javax.transaction.Transactional;
 public interface IProductRepository extends JpaRepository<Product, Integer> {
 
     @Query(value = "select * from product where name like concat('%', :name, '%') " +
-            "and categoryId like concat('%', :id, '%')", nativeQuery = true)
+            "and category_Id like concat('%', :id, '%')", nativeQuery = true)
     Page<Product> getAllByNameAndCategory_Id(String name,Integer id, Pageable pageable);
 
     @Query(value = "select * from product where name like concat('%', :name, '%')", nativeQuery = true)
