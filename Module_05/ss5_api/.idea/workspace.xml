@@ -53,7 +53,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ss3_hooks/exercise/counter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../CODEGYM_PROJECT/furama-management/project-furama/furama-fe/furama-rebuild" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SvnConfiguration">
@@ -68,6 +68,7 @@
       <updated>1686281487931</updated>
       <workItem from="1686281489381" duration="3229000" />
       <workItem from="1686292639004" duration="1911000" />
+      <workItem from="1686710234763" duration="56000" />
     </task>
     <servers />
   </component>
@@ -84,12 +85,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1686285267859">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1686710288763">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1686285267859" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1686710288763" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1686294824769">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
