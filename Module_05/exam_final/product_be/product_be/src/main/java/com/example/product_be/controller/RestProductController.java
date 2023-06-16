@@ -56,22 +56,7 @@ public class RestProductController {
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/product/{id}")
-    public void deleteEmployee(@PathVariable Integer id) {
+    public void deleteProduct(@PathVariable Integer id) {
         productService.deleteProduct(id);
     }
-
-    @PostMapping("")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<?> createNewEmployeeTest(@Validated @RequestBody ProductDto productDto, BindingResult bindingResult){
-        if (!bindingResult.hasErrors()) {
-            Product product = new Product();
-            BeanUtils.copyProperties(productDto,product);
-            return ResponseEntity.ok(productService.addProduct(product));
-        } else {
-            return getResponseEntity(bindingResult);
-        }
-    }
-
-
-
 }

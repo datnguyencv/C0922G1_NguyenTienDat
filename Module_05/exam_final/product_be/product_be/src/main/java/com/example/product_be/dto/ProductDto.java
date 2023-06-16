@@ -18,19 +18,19 @@ public class ProductDto {
     private Integer price;
     @NotBlank(message = "Không để trống")
     private String inputDate;
-    private Category category;
+    private CategoryDto categoryDto;
 
     public ProductDto() {
     }
 
-    public ProductDto(Integer id, String code, String name, Integer quantity, Integer price, String inputDate, Category category) {
+    public ProductDto(Integer id, String code, String name, Integer quantity, Integer price, String inputDate, CategoryDto categoryDto) {
         this.id = id;
         this.code = code;
         this.name = name;
         this.quantity = quantity;
         this.price = price;
         this.inputDate = inputDate;
-        this.category = category;
+        this.categoryDto = categoryDto;
     }
 
     public Integer getId() {
@@ -81,11 +81,11 @@ public class ProductDto {
         this.inputDate = inputDate;
     }
 
-    public Category getCategory() {
-        return category;
+    public CategoryDto getCategoryDto() {
+        return categoryDto;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategoryDto(CategoryDto categoryDto) {
+        this.categoryDto = categoryDto;
     }
 }
