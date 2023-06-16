@@ -20,6 +20,28 @@ public class ProductService implements IProductService {
 
     @Override
     public Page<Product> findAllOption(String name, Integer id, Pageable pageable) {
-        return productRepository.getAllByNameContainingAndCategory_Id(name, id, pageable);
+        return productRepository.getAllByNameAndCategory_Id(name, id, pageable);
+    }
+
+    @Override
+    public Product findWithId(Integer id) {
+        return productRepository.findWithId(id);
+    }
+
+    @Override
+    public void deleteProduct(Integer id) {
+        productRepository.deleteProduct(id);
+    }
+
+    @Override
+    public void updateProduct(Product product) {
+//        Product product1 = new Product();
+//        product1.s
+//        productRepository.updateProduct(product);
+    }
+
+    @Override
+    public void addProduct(Product product) {
+
     }
 }

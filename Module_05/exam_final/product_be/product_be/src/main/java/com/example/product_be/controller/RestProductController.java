@@ -5,6 +5,7 @@ import com.example.product_be.model.Category;
 import com.example.product_be.model.Product;
 import com.example.product_be.service.ICategoryService;
 import com.example.product_be.service.IProductService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -54,23 +55,23 @@ public class RestProductController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @DeleteMapping("/{id}")
-    public void deleteEmployee(@PathVariable long id) {
-        Product product = this.productService.f(id);
-        employeeService.deleteEmployee(employee);
+    @DeleteMapping("/product/{id}")
+    public void deleteEmployee(@PathVariable Integer id) {
+        productService.deleteProduct(id);
     }
 
-    @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/{id}")
-    public ResponseEntity<?> update(@Validated @PathVariable int id, @RequestBody ProductDto producDto, BindingResult bindingResult){
+    @PostMapping("")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<?> createNewEmployeeTest(@Validated @RequestBody ProductDto productDto, BindingResult bindingResult){
         if (!bindingResult.hasErrors()) {
-            Product employee = new Product();
-            BeanUtils.copyProperties(employeeDTO,employee);
-            return ResponseEntity.ok(employeeService.update(id,employee));
+            Product product = new Product();
+            BeanUtils.copyProperties(productDto,product);
+            return ResponseEntity.ok(productService.addProduct(product));
         } else {
             return getResponseEntity(bindingResult);
         }
     }
+
 
 
 }

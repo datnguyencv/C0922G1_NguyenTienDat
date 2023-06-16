@@ -14,19 +14,20 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
 
     @Query(value = "select * from product where name like concat('%', :name, '%') " +
             "and categoryId like concat('%', :id, '%')", nativeQuery = true)
-    Page<Product> getAllByNameContainingAndCategory_Id(String name,Integer id, Pageable pageable);
+    Page<Product> getAllByNameAndCategory_Id(String name,Integer id, Pageable pageable);
 
     @Query(value = "select * from product where name like concat('%', :name, '%')", nativeQuery = true)
     Page<Product> getAllName(String name, Pageable pageable);
 
     @Modifying
     @Transactional
-    @Query(value = "insert into product (code, input_date, `name`, quantity, category_id) " +
-            "values (:code, :inputDate, :name, :quantity, :categoryId)", nativeQuery = true)
+    @Query(value = "insert into product (code, input_date, `name`, price , quantity, category_id) " +
+            "values (:code, :inputDate, :name, :price, :quantity, :categoryId)", nativeQuery = true)
     void addProduct (@Param("code") String code,
                      @Param("inputDate") String inputDate,
                      @Param("name") String name,
                      @Param("quantity") Integer quantity,
+                     @Param("price") Integer price,
                      @Param("categoryId") Integer categoryId);
 
     @Modifying
@@ -35,16 +36,17 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
     void deleteProduct(@Param("id") Integer id);
 
     @Query(value = "select * from product where id = :id", nativeQuery = true)
-    Product findProductWithId(@Param("id") Integer id);
+    Product findWithId(@Param("id") Integer id);
 
     @Modifying
     @Transactional
     @Query(value = "update product set code = :code, name = :name, input_date = :inputDate, " +
-            "quantity = :quantity, category_id = :categoryId where id = :id", nativeQuery = true)
+            "quantity = :quantity, price = :price, category_id = :categoryId where id = :id", nativeQuery = true)
     void updateProduct(@Param("code") String code,
                        @Param("inputDate") String inputDate,
                        @Param("name") String name,
                        @Param("quantity") Integer quantity,
+                       @Param("price") Integer price,
                        @Param("categoryId") Integer categoryId,
                        @Param("id") Integer id);
 
