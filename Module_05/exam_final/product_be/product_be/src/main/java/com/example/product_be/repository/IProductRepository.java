@@ -49,6 +49,4 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
                        @Param("price") Integer price,
                        @Param("categoryId") Integer categoryId,
                        @Param("id") Integer id);
-
-
 }

@@ -1,7 +1,5 @@
 package com.example.product_be.dto;
 
-import com.example.product_be.model.Category;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
