@@ -1,5 +1,6 @@
 package com.example.product_be.repository;
 
+import com.example.product_be.dto.ProductDto;
 import com.example.product_be.model.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
