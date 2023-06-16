@@ -62,7 +62,7 @@ public class RestProductController {
         productService.deleteProduct(id);
     }
 
-    @PostMapping("")
+    @PostMapping("/product")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@Validated @RequestBody ProductDto productDto, BindingResult bindingResult){
         if (!bindingResult.hasErrors()) {
@@ -73,7 +73,7 @@ public class RestProductController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/{id}")
+    @PutMapping("/product/{id}")
     public void update(@Validated @PathVariable int id, @RequestBody ProductDto productDto, BindingResult bindingResult){
         if (!bindingResult.hasErrors()) {
             productService.updateProduct(id,productDto);
