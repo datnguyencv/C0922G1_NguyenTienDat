@@ -80,7 +80,7 @@ public class RestProductController {
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/product/{id}")
-    public void update(@Validated @PathVariable int id, @RequestBody ProductDto productDto, BindingResult bindingResult){
+    public void update(@Validated @PathVariable Integer id, @RequestBody ProductDto productDto, BindingResult bindingResult){
         if (!bindingResult.hasErrors()) {
             productService.updateProduct(id,productDto);
         } else {
