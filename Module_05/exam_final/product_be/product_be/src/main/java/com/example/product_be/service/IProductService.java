@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 public interface IProductService {
     Page<Product> findAllName(String name, Pageable pageable);
     Page<Product> findAllOption(String name, Integer id, Pageable pageable);
-    Product findWithId(Integer id);
+    ProductDto findWithId(Integer id);
     void deleteProduct(Integer id);
     void updateProduct(Integer id, ProductDto productDto);
     void addProduct(ProductDto productDto);

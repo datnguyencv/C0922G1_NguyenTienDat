@@ -29,8 +29,12 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Product findWithId(Integer id) {
-        return productRepository.findWithId(id);
+    public ProductDto findWithId(Integer id) {
+        Product product = productRepository.findWithId(id);
+        ProductDto productDto = new ProductDto();
+        productDto.setCategoryDto(product.getCategory().getId(),product.getCategory().getName());
+        BeanUtils.copyProperties(product,productDto);
+        return productDto;
     }
 
     @Override

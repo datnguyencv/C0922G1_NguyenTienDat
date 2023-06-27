@@ -95,4 +95,7 @@ public class ProductDto {
     public void setCategoryDto(CategoryDto categoryDto) {
         this.categoryDto = categoryDto;
     }
+
+    public void setCategoryDto(Integer id, String name) {
+    }
 }

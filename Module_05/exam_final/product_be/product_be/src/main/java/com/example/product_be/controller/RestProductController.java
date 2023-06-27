@@ -58,7 +58,7 @@ public class RestProductController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/product/{id}")
-    public Product findId(@PathVariable Integer id) {
+    public ProductDto findId(@PathVariable Integer id) {
         return productService.findWithId(id);
     }
 
